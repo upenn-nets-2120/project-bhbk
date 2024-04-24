@@ -15,6 +15,20 @@
       "when": 1713988093741,
       "tag": "0001_perfect_puma",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1713990314193,
+      "tag": "0002_fair_argent",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1713990532660,
+      "tag": "0003_redundant_the_twelve",
+      "breakpoints": true
     }
   ]
 }

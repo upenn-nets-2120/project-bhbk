@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/common/navbar/Navbar";
 import { cn } from "@/lib/utils";
+import { UserProvider } from "@/providers/UserProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen bg-background")}>
         <div className="relative flex min-h-screen flex-col bg-background">
-          <Navbar />
-          {children}
+          <UserProvider>
+            <Navbar />
+            {children}
+          </UserProvider>
         </div>
       </body>
     </html>

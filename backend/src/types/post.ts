@@ -12,4 +12,3 @@ export interface UpdatePost {
     caption?: string;
     updatedAt?: Date;
 }
-

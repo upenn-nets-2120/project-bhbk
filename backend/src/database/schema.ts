@@ -32,7 +32,7 @@ export const posts = mysqlTable('posts', {
   id: serial('id').primaryKey(),
   contentUrl: varchar('contentUrl', { length: 2048 }),
   caption: varchar('caption', { length: 280 }),
-  authorId: int('authorId').references(() => users.id),
+  authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   createdAt: timestamp('createdAt').defaultNow(),
   updatedAt: timestamp('updatedAt').defaultNow()
 });
@@ -49,8 +49,8 @@ export const postsRelations = relations(posts, ({ one }) => ({
 
 export const comments = mysqlTable('comments', {
   id: serial('id').primaryKey(),
-  postId: int('postId').references(() => posts.id),
-  authorId: int('authorId').references(() => users.id),
+  postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   content: varchar('content', { length: 2048 }),
   createdAt: timestamp('createdAt').defaultNow(),
   updatedAt: timestamp('updatedAt').defaultNow()
@@ -68,8 +68,8 @@ export const commentsRelations = relations(comments, ({ one }) => ({
 }));
 
 export const postLikes = mysqlTable('post_likes', {
-  postId: int('postId').references(() => posts.id),
-  userId: int('userId').references(() => users.id),
+  postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  userId: int('userId').references(() => users.id, {onDelete: 'cascade'}),
   likedAt: timestamp('likedAt').defaultNow()
 }, (postLikes) => ({
   primaryKey: ['postId', 'userId']  

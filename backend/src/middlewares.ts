@@ -17,3 +17,12 @@ export function errorHandler(err: Error, req: Request, res: Response<ErrorRespon
     stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack,
   });
 }
+
+export const checkAuthentication = (req: Request, res: Response, next: NextFunction) => {
+  console.log(req.session);
+  if (req.session.isLoggedIn && req.session.user) {
+    next()
+  } else {
+    res.status(401).json({ message: "Unauthorized" });
+  }
+}

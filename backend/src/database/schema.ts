@@ -1,4 +1,3 @@
-import { relations } from 'drizzle-orm';
 import {
   mysqlTable,
   serial,
@@ -43,7 +42,9 @@ export const postsRelations = relations(posts, ({ one }) => ({
     fields: [posts.authorId],
     references: [users.id],
   }),
-}), ({ many }) => ({
+}));
+
+export const postsManyRelations = relations(posts, ({ many }) => ({
   comments: many(comments),
   postLikes: many(postLikes)
 }));

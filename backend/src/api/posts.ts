@@ -26,6 +26,6 @@ router.route('/p/:id')
   .get(getPostById);
 
 router.route('/p/by/:id')
-  .get(getPostsByUser);
+  .get(getPostByUserId);
 
 export default router;

@@ -29,14 +29,14 @@ export const users = mysqlTable('users', {
 //   postLikes: many(postLikes)
 // }));
 
-// export const posts = mysqlTable('posts', {
-//   id: serial('id').primaryKey(),
-//   contentUrl: varchar('contentUrl', { length: 2048 }),
-//   caption: varchar('caption', { length: 280 }),
-//   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
-//   createdAt: timestamp('createdAt').defaultNow(),
-//   updatedAt: timestamp('updatedAt').defaultNow()
-// });
+export const posts = mysqlTable('posts', {
+  id: serial('id').primaryKey(),
+  contentUrl: varchar('contentUrl', { length: 2048 }),
+  caption: varchar('caption', { length: 280 }),
+  authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
+  createdAt: timestamp('createdAt').defaultNow(),
+  updatedAt: timestamp('updatedAt').defaultNow()
+});
 
 // export const postsRelations = relations(posts, ({ one }) => ({
 //   author: one(users, {
@@ -50,14 +50,14 @@ export const users = mysqlTable('users', {
 //   postLikes: many(postLikes)
 // }));
 
-// export const comments = mysqlTable('comments', {
-//   id: serial('id').primaryKey(),
-//   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
-//   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
-//   content: varchar('content', { length: 2048 }),
-//   createdAt: timestamp('createdAt').defaultNow(),
-//   updatedAt: timestamp('updatedAt').defaultNow()
-// });
+export const comments = mysqlTable('comments', {
+  id: serial('id').primaryKey(),
+  postId: serial('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  authorId: serial('authorId').references(() => users.id, {onDelete: 'cascade'}),
+  content: varchar('content', { length: 2048 }),
+  createdAt: timestamp('createdAt').defaultNow(),
+  updatedAt: timestamp('updatedAt').defaultNow()
+});
 
 // export const commentsRelations = relations(comments, ({ one }) => ({
 //   author: one(users, {
@@ -70,13 +70,13 @@ export const users = mysqlTable('users', {
 //   }),
 // }));
 
-// export const postLikes = mysqlTable('post_likes', {
-//   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
-//   userId: int('userId').references(() => users.id, {onDelete: 'cascade'}),
-//   likedAt: timestamp('likedAt').defaultNow()
-// }, (postLikes) => ({
-//   primaryKey: ['postId', 'userId']  
-// }));
+export const postLikes = mysqlTable('post_likes', {
+  postId: serial('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  userId: serial('userId').references(() => users.id, {onDelete: 'cascade'}),
+  likedAt: timestamp('likedAt').defaultNow()
+}, (postLikes) => ({
+  primaryKey: ['postId', 'userId']  
+}));
 
 // export const likesRelations = relations(postLikes, ({ one }) => ({
 //   author: one(users, {

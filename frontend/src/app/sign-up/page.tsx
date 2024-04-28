@@ -1,4 +1,10 @@
 import { SignUpCard } from "@/components/auth/SignUpCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign Up | InstaLite",
+  description: "Sign up into the InstaLite community",
+};
 
 const SignUpPage = () => {
   return (

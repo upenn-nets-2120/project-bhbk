@@ -7,20 +7,26 @@ import session from 'express-session';
 import * as middlewares from './middlewares';
 import api from './api';
 import MessageResponse from './types/MessageResponse';
+import cookieParser from 'cookie-parser';
 
 require('dotenv').config();
 
 const app = express();
 
+const MemoryStore = session.MemoryStore;
+
 app.use(morgan('dev'));
 app.use(helmet());
-app.use(cors({origin: true, credentials: true}));
+app.use(cookieParser());
 app.use(session({
   secret: 'supersecret',
   resave: false,
-  saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 60 * 24, secure: true }
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false },
+  store: new MemoryStore(),
 }))
+
+app.use(cors({origin: true, credentials: true}));
 
 app.use(express.json());
 

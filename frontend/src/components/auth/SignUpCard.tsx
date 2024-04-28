@@ -16,6 +16,7 @@ import { DatePicker } from "../common/forms/DatePicker";
 import { MdAppRegistration, MdError } from "react-icons/md";
 import { useUser } from "@/providers/UserProvider";
 import { User } from "@/types/user";
+import { AiOutlineLoading } from "react-icons/ai";
 
 export const signUpCardGraphicSize = 40;
 
@@ -29,7 +30,12 @@ export const SignUpCard = () => {
   const [password, setPassword] = useState<string>();
   const [affiliation, setAffiliation] = useState<string>();
   const [dob, setDob] = useState<Date>();
-  const { setUser, registerUser } = useUser();
+  const {
+    setUser,
+    registerUser,
+    error: userError,
+    isMakingRequest,
+  } = useUser();
   const [error, setError] = useState<string>();
   const isMissingFields =
     !username ||
@@ -71,16 +77,16 @@ export const SignUpCard = () => {
 
   return (
     <Card className="w-[80%] md:w-[500px]">
-      <CardHeader className="flex items-center">
+      <CardHeader className="flex items-center text-center">
         <BsInstagram size={signUpCardGraphicSize} className="text-primary" />
         <CardTitle>Welcome to InstaLite!</CardTitle>
         <CardDescription>
           Sign up to join the InstaLite community
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-3 md:px-6">
         <form>
-          <div className="grid w-full grid-cols-2 items-center gap-4">
+          <div className="grid w-full grid-cols-1 md:grid-cols-2 items-center gap-4">
             <InputForm
               setValue={setUsername}
               label="Username"
@@ -121,16 +127,26 @@ export const SignUpCard = () => {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between flex-col space-y-2">
-        <Button className="w-full" onClick={signUp}>
+        <Button disabled={isMakingRequest} className="w-full" onClick={signUp}>
           <div className="flex space-x-1 items-center">
             <span>Register</span>
-            <MdAppRegistration size={signUpRegisterGraphicSize} />
+            {isMakingRequest ? (
+              <AiOutlineLoading className="animate-spin" />
+            ) : (
+              <MdAppRegistration size={signUpRegisterGraphicSize} />
+            )}
           </div>
         </Button>
         {error && (
           <div className="bg-red-500 w-full items-center justify-center text-sm rounded-md text-background px-4 py-2 flex space-x-2">
             <MdError />
             <span>{error}</span>
+          </div>
+        )}
+        {userError && (
+          <div className="bg-red-500 w-full items-center justify-center text-sm rounded-md text-background px-4 py-2 flex space-x-2">
+            <MdError />
+            <span>{userError}</span>
           </div>
         )}
       </CardFooter>

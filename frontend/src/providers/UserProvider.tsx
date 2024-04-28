@@ -44,10 +44,15 @@ export const useUser = () => {
 
 export const userRevalidationInterval = 100 * 1000;
 
-interface UserProviderProps extends PropsWithChildren {}
+interface UserProviderProps extends PropsWithChildren {
+  initialUser?: User;
+}
 
-export const UserProvider: FC<UserProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User>();
+export const UserProvider: FC<UserProviderProps> = ({
+  children,
+  initialUser,
+}) => {
+  const [user, setUser] = useState<User>(initialUser);
   const [error, setError] = useState<string>();
 
   const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
@@ -58,7 +63,7 @@ export const UserProvider: FC<UserProviderProps> = ({ children }) => {
     }
   );
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(initialUser ? true : false);
 
   const [isMakingRequest, setIsMakingRequest] = useState(false);
 

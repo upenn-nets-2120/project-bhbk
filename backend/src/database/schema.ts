@@ -51,7 +51,7 @@ export const posts = mysqlTable('posts', {
 // }));
 
 export const comments = mysqlTable('comments', {
-  id: int('id').primaryKey().autoincrement();
+  id: int('id').primaryKey().autoincrement(),
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   content: varchar('content', { length: 2048 }),
@@ -70,7 +70,7 @@ export const comments = mysqlTable('comments', {
 //   }),
 // }));
 
-export const postLikes = mysqlTable('post_likes', {
+export const postLikes = mysqlTable('posts_likes', {
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
   userId: int('userId').references(() => users.id, {onDelete: 'cascade'}),
   likedAt: timestamp('likedAt').defaultNow()

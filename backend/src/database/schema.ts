@@ -23,12 +23,6 @@ export const users = mysqlTable('users', {
     emailIndex: uniqueIndex('email_idx').on(users.email),
 }));
 
-// export const usersRelations = relations(users, ({ many }) => ({
-//   posts: many(posts),
-//   comments: many(comments),
-//   postLikes: many(postLikes)
-// }));
-
 export const posts = mysqlTable('posts', {
   id: int('id').primaryKey().autoincrement(),
   contentUrl: varchar('contentUrl', { length: 2048 }),
@@ -38,37 +32,14 @@ export const posts = mysqlTable('posts', {
   updatedAt: timestamp('updatedAt').defaultNow()
 });
 
-// export const postsRelations = relations(posts, ({ one }) => ({
-//   author: one(users, {
-//     fields: [posts.authorId],
-//     references: [users.id],
-//   }),
-// }));
-
-// export const postsManyRelations = relations(posts, ({ many }) => ({
-//   comments: many(comments),
-//   postLikes: many(postLikes)
-// }));
-
 export const comments = mysqlTable('comments', {
-  id: int('id').primaryKey().autoincrement();
+  id: int('id').primaryKey().autoincrement(),
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   content: varchar('content', { length: 2048 }),
   createdAt: timestamp('createdAt').defaultNow(),
   updatedAt: timestamp('updatedAt').defaultNow()
 });
-
-// export const commentsRelations = relations(comments, ({ one }) => ({
-//   author: one(users, {
-//     fields: [comments.authorId],
-//     references: [users.id],
-//   }),
-//   posts: one(posts, {
-//     fields: [comments.postId],
-//     references: [posts.id],
-//   }),
-// }));
 
 export const postLikes = mysqlTable('post_likes', {
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
@@ -78,13 +49,39 @@ export const postLikes = mysqlTable('post_likes', {
   primaryKey: ['postId', 'userId']  
 }));
 
-// export const likesRelations = relations(postLikes, ({ one }) => ({
-//   author: one(users, {
-//     fields: [postLikes.userId],
-//     references: [users.id],
-//   }),
-//   posts: one(posts, {
-//     fields: [postLikes.postId],
-//     references: [posts.id],
-//   }),
-// }));
+export const usersRelations = relations(users, ({ many }) => ({
+  posts: many(posts),
+  comments: many(comments),
+  postLikes: many(postLikes)
+}));
+
+export const postsRelations = relations(posts, ({ one, many }) => ({
+  author: one(users, {
+    fields: [posts.authorId],
+    references: [users.id],
+  }),
+  comments: many(comments),
+  postLikes: many(postLikes)
+}));
+
+export const commentsRelations = relations(comments, ({ one }) => ({
+  author: one(users, {
+    fields: [comments.authorId],
+    references: [users.id],
+  }),
+  posts: one(posts, {
+    fields: [comments.postId],
+    references: [posts.id],
+  }),
+}));
+
+export const likesRelations = relations(postLikes, ({ one }) => ({
+  author: one(users, {
+    fields: [postLikes.userId],
+    references: [users.id],
+  }),
+  posts: one(posts, {
+    fields: [postLikes.postId],
+    references: [posts.id],
+  }),
+}));

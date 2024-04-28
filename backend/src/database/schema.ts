@@ -52,8 +52,8 @@ export const posts = mysqlTable('posts', {
 
 export const comments = mysqlTable('comments', {
   id: serial('id').primaryKey(),
-  postId: serial('postId').references(() => posts.id, {onDelete: 'cascade'}),
-  authorId: serial('authorId').references(() => users.id, {onDelete: 'cascade'}),
+  postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   content: varchar('content', { length: 2048 }),
   createdAt: timestamp('createdAt').defaultNow(),
   updatedAt: timestamp('updatedAt').defaultNow()
@@ -71,8 +71,8 @@ export const comments = mysqlTable('comments', {
 // }));
 
 export const postLikes = mysqlTable('post_likes', {
-  postId: serial('postId').references(() => posts.id, {onDelete: 'cascade'}),
-  userId: serial('userId').references(() => users.id, {onDelete: 'cascade'}),
+  postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
+  userId: int('userId').references(() => users.id, {onDelete: 'cascade'}),
   likedAt: timestamp('likedAt').defaultNow()
 }, (postLikes) => ({
   primaryKey: ['postId', 'userId']  

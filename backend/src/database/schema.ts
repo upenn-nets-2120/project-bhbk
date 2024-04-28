@@ -6,6 +6,7 @@ import {
   date,
   timestamp,
   uniqueIndex,
+  boolean
 } from 'drizzle-orm/mysql-core';
 import { relations } from 'drizzle-orm';
 
@@ -18,7 +19,8 @@ export const users = mysqlTable('users', {
     hashedPassword: varchar('password', { length: 256}),
     affiliation: varchar('affiliation', { length: 256 }),
     profileUrl: varchar('profileUrl', { length: 256 }),
-    dob: date('dob')
+    dob: date('dob'),
+    hasOnboarded: boolean('hasOnboarded')
     }, (users) => ({
     emailIndex: uniqueIndex('email_idx').on(users.email),
 }));
@@ -41,7 +43,7 @@ export const comments = mysqlTable('comments', {
   updatedAt: timestamp('updatedAt').defaultNow()
 });
 
-export const postLikes = mysqlTable('post_likes', {
+export const postLikes = mysqlTable('posts_likes', {
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
   userId: int('userId').references(() => users.id, {onDelete: 'cascade'}),
   likedAt: timestamp('likedAt').defaultNow()

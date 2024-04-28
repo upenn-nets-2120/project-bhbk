@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1713985605497,
-      "tag": "0000_absurd_mister_sinister",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1713988093741,
-      "tag": "0001_perfect_puma",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1713993212637,
-      "tag": "0002_moaning_stellaris",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "5",
-      "when": 1714008947635,
-      "tag": "0003_famous_otto_octavius",
+      "when": 1714269600002,
+      "tag": "0000_swift_gamora",
       "breakpoints": true
     }
   ]

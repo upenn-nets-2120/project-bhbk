@@ -10,7 +10,7 @@ import {
 import { relations } from 'drizzle-orm';
 
 export const users = mysqlTable('users', {
-    id: serial('id').primaryKey(),
+    id: int('id').primaryKey().autoincrement(),
     username: varchar('username', { length: 256 }),
     firstName: varchar('firstName', { length: 256 }),
     lastName: varchar('lastName', { length: 256 }),
@@ -30,7 +30,7 @@ export const users = mysqlTable('users', {
 // }));
 
 export const posts = mysqlTable('posts', {
-  id: serial('id').primaryKey(),
+  id: int('id').primaryKey().autoincrement(),
   contentUrl: varchar('contentUrl', { length: 2048 }),
   caption: varchar('caption', { length: 280 }),
   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
@@ -51,7 +51,7 @@ export const posts = mysqlTable('posts', {
 // }));
 
 export const comments = mysqlTable('comments', {
-  id: serial('id').primaryKey(),
+  id: int('id').primaryKey().autoincrement();
   postId: int('postId').references(() => posts.id, {onDelete: 'cascade'}),
   authorId: int('authorId').references(() => users.id, {onDelete: 'cascade'}),
   content: varchar('content', { length: 2048 }),

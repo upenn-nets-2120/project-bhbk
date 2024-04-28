@@ -25,6 +25,8 @@ export const toolBarGraphicSize = 16;
 export const ToolBar = () => {
   const { isLoggedIn } = useUser();
 
+  console.log(isLoggedIn);
+
   return (
     <div className="flex items-center gap-4 text-sm lg:gap-6">
       {toolBarLinks.map((tool) => (
@@ -43,6 +45,19 @@ export const ToolBar = () => {
       <div className="flex space-x-2">
         {isLoggedIn ? (
           <>
+            <Link
+              href="/profile"
+              className="transition-colors hidden md:flex items-center space-x-1.5 text-foreground hover:text-primary"
+            >
+              <FaUserCircle
+                size={toolBarGraphicSize}
+                className="text-primary"
+              />
+              <span className="text-sm">Profile</span>
+            </Link>
+          </>
+        ) : (
+          <>
             <Link href="/log-in">
               <Button className="text-xs h-fit py-2 px-3" variant="default">
                 Log in
@@ -57,14 +72,6 @@ export const ToolBar = () => {
               </Button>
             </Link>
           </>
-        ) : (
-          <Link
-            href="/profile"
-            className="transition-colors hidden md:flex items-center space-x-1.5 text-foreground hover:text-primary"
-          >
-            <FaUserCircle size={toolBarGraphicSize} className="text-primary" />
-            <span className="text-sm">Profile</span>
-          </Link>
         )}
       </div>
     </div>

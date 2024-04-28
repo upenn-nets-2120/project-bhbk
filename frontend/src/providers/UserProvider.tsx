@@ -42,15 +42,20 @@ export const useUser = () => {
   return context;
 };
 
+export const userRevalidationInterval = 100 * 1000;
+
 interface UserProviderProps extends PropsWithChildren {}
 
 export const UserProvider: FC<UserProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User>();
   const [error, setError] = useState<string>();
 
-  const { data: revalidateUserData, error: revalidateUserError } = useSWR(
+  const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
     "/auth",
-    fetcher
+    fetcher,
+    {
+      refreshInterval: userRevalidationInterval,
+    }
   );
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -104,7 +109,16 @@ export const UserProvider: FC<UserProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(revalidateUserData);
+    if (revalidateUserError) {
+      setUser(undefined);
+      setIsLoggedIn(false);
+      return;
+    }
+
+    if (revalidateUserData) {
+      setUser(revalidateUserData);
+      setIsLoggedIn(true);
+    }
   }, [revalidateUserData]);
 
   const value = useMemo(

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "drizzle-orm": "^0.30.9",
+    "postgres": "^3.4.4"
+  }
+}

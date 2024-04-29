@@ -24,6 +24,9 @@ interface UserContextProps {
   registerUser: () => Promise<void>;
   logInUser: (username: string, password: string) => Promise<void>;
   setUser: (usert: User) => void;
+  updateUser: (updatedUser: Partial<User>) => Promise<void>;
+  refreshUser: () => Promise<void>;
+  uploadProfilePic: (profile: File) => Promise<void>;
   error?: string;
   isMakingRequest: boolean;
 }
@@ -52,7 +55,7 @@ export const UserProvider: FC<UserProviderProps> = ({
   children,
   initialUser,
 }) => {
-  const [user, setUser] = useState<User>(initialUser);
+  const [user, setUser] = useState<User | undefined>(initialUser);
   const [error, setError] = useState<string>();
 
   const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
@@ -79,6 +82,7 @@ export const UserProvider: FC<UserProviderProps> = ({
         "Registered sucessfully",
         `Registration successful for ${user?.username}`
       );
+      setError(undefined);
     } catch (error: any | AxiosError) {
       if (axios.isAxiosError(error)) {
         setIsMakingRequest(false);
@@ -102,10 +106,74 @@ export const UserProvider: FC<UserProviderProps> = ({
         "Logged in sucessfully",
         `Log in successful for ${loggedInUser.username}`
       );
+      setError(undefined);
       router.push("/");
     } catch (error: any | AxiosError) {
       setIsMakingRequest(false);
       if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        setError(errorMessage ? errorMessage.message : undefined);
+      }
+    }
+  };
+
+  const updateUser = async (updatedUser: Partial<User>) => {
+    try {
+      setIsMakingRequest(true);
+
+      await api.put("/user/update-user", updatedUser);
+
+      toast("Update user details sucessfully!");
+
+      setError(undefined);
+
+      setIsMakingRequest(false);
+    } catch (error: any | AxiosError) {
+      setIsMakingRequest(false);
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        setError(errorMessage ? errorMessage.message : undefined);
+      }
+    }
+  };
+
+  const refreshUser = async () => {
+    try {
+      const { data: refreshedUser } = await api.get<User>("/auth");
+      setUser(refreshedUser);
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        console.log(errorMessage);
+      }
+    }
+  };
+
+  const uploadProfilePic = async (profile: File) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", profile);
+
+      const { data: profileUrl } = await api.post<string>(
+        "/image/upload/profile-pic",
+        formData
+      );
+
+      await updateUser({ profileUrl });
+
+      toast(
+        "Sucessfully uploaded profile picture",
+        `Uploaded file ${profile.name}`
+      );
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
+        toast(
+          "Failed to upload profile picture",
+          `Failed to upload file ${profile.name}`
+        );
         const errorMessage: ErrorReponse = error.response?.data;
 
         setError(errorMessage ? errorMessage.message : undefined);
@@ -135,6 +203,9 @@ export const UserProvider: FC<UserProviderProps> = ({
       setUser,
       error,
       isMakingRequest,
+      updateUser,
+      refreshUser,
+      uploadProfilePic,
     }),
     [
       user,
@@ -144,6 +215,9 @@ export const UserProvider: FC<UserProviderProps> = ({
       error,
       setError,
       setIsMakingRequest,
+      updateUser,
+      refreshUser,
+      uploadProfilePic,
     ]
   );
 

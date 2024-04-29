@@ -31,18 +31,19 @@ export default async function RootLayout({
     });
     initialUser = userData;
   } catch (error) {
-    console.log("Errro");
-    console.log(error.message);
+    console.log(error);
     initialUser = undefined;
   }
 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen bg-background")}>
-        <div className="relative  max-w-screen-xl mx-auto flex min-h-screen flex-col bg-background">
+        <div className="relative flex min-h-screen flex-col bg-background">
           <UserProvider initialUser={initialUser}>
             <Navbar />
-            {children}
+            <div className="relative flex h-full max-w-screen-md md:w-full mx-3.5 md:mx-auto">
+              {children}
+            </div>
           </UserProvider>
         </div>
         <Toaster position="bottom-center" />

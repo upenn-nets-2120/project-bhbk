@@ -9,6 +9,9 @@ interface InputFormProps {
   inputProps?: InputProps;
   labelProps?: LabelProps;
   setValue?: (value: any) => void;
+  value?: any;
+  type?: string;
+  disabled?: boolean;
 }
 
 export const InputForm: FC<InputFormProps> = ({
@@ -17,6 +20,9 @@ export const InputForm: FC<InputFormProps> = ({
   inputProps,
   labelProps,
   setValue,
+  value,
+  disabled,
+  type,
 }) => {
   const onChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -35,6 +41,9 @@ export const InputForm: FC<InputFormProps> = ({
         id={label.toLowerCase()}
         placeholder={placeholder}
         onChange={onChangeEvent}
+        value={value}
+        disabled={disabled}
+        type={type}
         {...inputProps}
       />
     </div>

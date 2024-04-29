@@ -18,6 +18,8 @@ import { isEqual } from "lodash";
 import { Button } from "../ui/button";
 import { MdError, MdUpdate } from "react-icons/md";
 import { AiOutlineLoading } from "react-icons/ai";
+import { Avatar, AvatarImage } from "../ui/avatar";
+import { Label } from "../ui/label";
 
 const processUser = (user?: Partial<User>) => {
   const processedUser = { ...user };
@@ -40,6 +42,7 @@ export const ProfileDetails = () => {
   } = useUser();
 
   const [username, setUsername] = useState<string | undefined>(user?.username);
+  const [password, setPassword] = useState<string | undefined>();
   const [email, setEmail] = useState<string | undefined>(user?.email);
   const [firstName, setFirstName] = useState<string | undefined>(
     user?.firstName
@@ -74,20 +77,34 @@ export const ProfileDetails = () => {
       lastName,
       dob,
       affiliation,
+      ...(password && {
+        password,
+      }),
     };
 
     setUpdatedUser({ ...user, ...newUser });
-  }, [username, email, firstName, lastName, affiliation, dob, profilePic]);
+  }, [
+    username,
+    email,
+    firstName,
+    lastName,
+    affiliation,
+    dob,
+    profilePic,
+    password,
+  ]);
 
   const updateUserDetails = async () => {
     if (updatedUser) {
       await updateUser(updatedUser);
+      setPassword(undefined);
       await refreshUser();
     }
 
     if (profilePic) {
       await uploadProfilePic(profilePic);
       await refreshUser();
+      setProfilePic(undefined);
     }
   };
 
@@ -104,12 +121,12 @@ export const ProfileDetails = () => {
 
   return (
     <div className="flex flex-col space-y-6">
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col md:space-y-2">
         <div className="text-primary text-2xl md:text-[2rem] font-semibold">
           Welcome, {user?.username}!
         </div>
         <div className="text-foreground text-sm text-opacity-40">
-          Mange your user profile here.
+          Manage your user profile here.
         </div>
       </div>
       <Card className="w-full max-w-full">
@@ -132,7 +149,6 @@ export const ProfileDetails = () => {
                 label="Email"
                 placeholder="Your email..."
                 value={email}
-                disabled
               />
               <InputForm
                 setValue={setFirstName}
@@ -159,14 +175,32 @@ export const ProfileDetails = () => {
                 placeholder="Your DOB..."
               />
               <InputForm
+                setValue={setPassword}
+                label="Change your password"
+                placeholder="Your new password..."
+                value={password}
+              />
+              <InputForm
                 type="file"
-                label="Your Profile Pic"
+                label={
+                  user?.profileUrl
+                    ? "Change your profile pic"
+                    : "Upload your profile pic"
+                }
                 placeholder="Upload your profile picture..."
                 inputProps={{
                   onChange: onProfilePicChange,
                   accept: "image/*",
                 }}
               />
+              {user && user?.profileUrl && (
+                <div className="flex space-y-2 flex-col">
+                  <Label>Your current profile pic</Label>
+                  <Avatar className="border-2 border-primary w-12 h-12">
+                    <AvatarImage src={user.profileUrl} />
+                  </Avatar>
+                </div>
+              )}
             </div>
           </form>
         </CardContent>

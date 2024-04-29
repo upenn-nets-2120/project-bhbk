@@ -23,6 +23,7 @@ interface UserContextProps {
   isLoggedIn: boolean;
   registerUser: () => Promise<void>;
   logInUser: (username: string, password: string) => Promise<void>;
+  logOutUser: () => Promise<void>;
   setUser: (usert: User) => void;
   updateUser: (updatedUser: Partial<User>) => Promise<void>;
   refreshUser: () => Promise<void>;
@@ -154,6 +155,7 @@ export const UserProvider: FC<UserProviderProps> = ({
 
   const uploadProfilePic = async (profile: File) => {
     try {
+      setIsMakingRequest(true);
       const formData = new FormData();
       formData.append("file", profile);
 
@@ -168,12 +170,31 @@ export const UserProvider: FC<UserProviderProps> = ({
         "Sucessfully uploaded profile picture",
         `Uploaded file ${profile.name}`
       );
+      setIsMakingRequest(false);
     } catch (error: any | AxiosError) {
       if (axios.isAxiosError(error)) {
         toast(
           "Failed to upload profile picture",
           `Failed to upload file ${profile.name}`
         );
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        setError(errorMessage ? errorMessage.message : undefined);
+      }
+    }
+  };
+
+  const logOutUser = async () => {
+    try {
+      setIsMakingRequest(true);
+      await api.post("/auth/log-out");
+      setIsLoggedIn(false);
+      setUser(undefined);
+      setIsMakingRequest(false);
+      router.push("/");
+      toast("Sucessfully logged out of Instalite", "See you next time!");
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
         const errorMessage: ErrorReponse = error.response?.data;
 
         setError(errorMessage ? errorMessage.message : undefined);
@@ -206,6 +227,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       updateUser,
       refreshUser,
       uploadProfilePic,
+      logOutUser,
     }),
     [
       user,
@@ -218,6 +240,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       updateUser,
       refreshUser,
       uploadProfilePic,
+      logOutUser,
     ]
   );
 

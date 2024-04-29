@@ -2,6 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import { checkAuthentication } from '../middlewares';
 import { uploadFile } from '../views/image';
+import { updatePostById } from '../views/post';
 
 const router = express.Router();
 
@@ -22,6 +23,31 @@ router.post('/upload/profile-pic', checkAuthentication, upload.single('file'), a
     } catch (error) {
         console.error(error);
         next(error);
+    }
+})
+
+router.post('/upload/:postId/image', checkAuthentication, upload.single('file'), async (req, res, next) => {
+    try {
+        const file = req.file;
+
+        const postId = parseInt(req.params.postId);
+
+        if (!file) {
+            return res.status(400).json("No file uploaded");
+        }
+
+        if (!postId) {
+            return res.status(500).json("Invalid post id");
+        }
+
+        const fileUrl = await uploadFile(file);
+
+        const updatedPost = await updatePostById(postId, { imageUrl: fileUrl  });
+
+        return res.status(200).json(updatedPost)
+    } catch (error) {
+        console.error(error);
+        next(error)
     }
 })
 

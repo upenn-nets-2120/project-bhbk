@@ -12,7 +12,11 @@ export const createPost = async (post: NewPost) => {
     return createdPost;
 };
 
+<<<<<<< HEAD:backend/src/views/posts.ts
 export const updatePost = async (postId: number, updateData: UpdatePost) => {
+=======
+export const updatePostById = async (postId: number, updateData: Partial<NewPost>) => {
+>>>>>>> 209d971 (frontend improv):backend/src/views/post.ts
     const updatedPost = await db.update(posts)
         .set({
             ...updateData,

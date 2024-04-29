@@ -1,31 +1,26 @@
 import express from 'express';
+import { NewPost } from '../types/post';
 import {
-    createPost,
-    updatePost,
-    deletePost,
-    getPostById,
-    getPostByUserId,
-    getPostsByChron,
-    getPostsByPopularity,
-    getAllPosts,
-    handleLikePost
-} from '../views/posts';
+    createPost
+} from '../views/post';
 
 const router = express.Router();
 
-router.route('/p')
-  .get(getAllPosts);
 
-router.route('/p/timeline')
-  .get(getPostsByChron);
+router.post("/create", async (req, res, next) => {
+  try {
+    const post = req.body;
+    
+    const newPost = post satisfies NewPost;
 
-router.route('/p/pop')
-  .get(getPostsByPopularity);
+    const createdPost = await createPost(newPost);
 
-router.route('/p/:id')
-  .get(getPostById);
+    return res.status(200).json(createdPost);
 
-router.route('/p/by/:id')
-  .get(getPostByUserId);
+  } catch (error) {
+    console.error(error);
+    next(error)
+  }
+})
 
 export default router;

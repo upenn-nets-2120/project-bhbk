@@ -16,7 +16,7 @@ export const createUser = async (user: SignUpUser) => {
 
     const hashedPassword = await encryptPassword(password);
 
-    const checkUserExist = and(eq(users.email, email), eq(users.username, username));
+    const checkUserExist = and(eq(users.username, username));
 
     const foundUsers = await db.select().from(users).where(checkUserExist);
 

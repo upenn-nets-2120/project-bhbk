@@ -28,8 +28,8 @@ export const users = mysqlTable('users', {
 
 export const posts = mysqlTable('posts', {
   id: int('id').primaryKey().autoincrement(),
-  contentUrl: varchar('contentUrl', { length: 2048 }),
-  caption: varchar('caption', { length: 280 }),
+  imageUrl: varchar('imageUrl', { length: 256 }),
+  text: text('text'),
   authorId: int('authorId').references(() => users.id, { onDelete: 'cascade' }),
   createdAt: timestamp('createdAt').defaultNow(),
   updatedAt: timestamp('updatedAt').defaultNow()

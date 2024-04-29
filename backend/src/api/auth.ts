@@ -12,7 +12,7 @@ router.get('/', checkAuthentication, async (req, res, next) => {
     console.error(error);
     next(error);
   }
-});
+}); 
 
 router.post('/sign-up', async (req, res, next) => {
   try { 

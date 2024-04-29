@@ -12,7 +12,7 @@ export const createPost = async (post: NewPost) => {
     return createdPost;
 };
 
-export const updatePost = async (postId: number, updateData: UpdatePost) => {
+export const updatePostById = async (postId: number, updateData: UpdatePost) => {
     const updatedPost = await db.update(posts)
         .set({
             ...updateData,

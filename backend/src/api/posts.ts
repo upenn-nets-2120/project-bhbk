@@ -2,7 +2,7 @@ import express from 'express';
 import { NewPost } from '../types/post';
 import {
     createPost
-} from '../views/post';
+} from '../views/posts';
 
 const router = express.Router();
 

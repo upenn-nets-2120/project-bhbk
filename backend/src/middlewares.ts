@@ -19,7 +19,6 @@ export function errorHandler(err: Error, req: Request, res: Response<ErrorRespon
 }
 
 export const checkAuthentication = (req: Request, res: Response, next: NextFunction) => {
-  console.log(req.session);
   if (req.session.isLoggedIn && req.session.user) {
     next()
   } else {

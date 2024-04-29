@@ -1,0 +1,34 @@
+import express from 'express';
+import { checkAuthentication } from '../middlewares';
+import { NewUser } from '../types/user';
+import { updateUser } from '../views/user';
+
+const router = express.Router();
+
+router.put('/update-user', checkAuthentication, async (req, res, next) => {
+    try {
+      const user = req.body;
+  
+      const updatedUser: Partial<NewUser> = user;
+  
+      if (updatedUser.dob) {
+        const newDob = new Date(updatedUser.dob)
+        newDob.setDate(newDob.getDate() + 1);
+        updatedUser.dob = newDob
+      }
+  
+      const userId = req.session.user.id satisfies number;
+  
+      const newlyUpdatedUser = await updateUser(userId, updatedUser);
+  
+      req.session.user = newlyUpdatedUser;
+  
+      return res.status(200).json(newlyUpdatedUser);
+  
+    } catch (error) {
+      console.error(error);
+      next(error);
+    }
+  })
+
+export default router;

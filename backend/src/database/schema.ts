@@ -54,6 +54,7 @@ export const postLikes = mysqlTable('posts_likes', {
 
 export const chat = mysqlTable('chat', {
   id: int('id').primaryKey().autoincrement(),
+  name: varchar('name', { length: 256 }),
   memberId: int('memberId').references(() => users.id, { onDelete: 'cascade' }),
 });
 

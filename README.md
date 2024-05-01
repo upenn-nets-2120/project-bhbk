@@ -1,46 +1,48 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/sYr67WnG)
+
 # NETS 2120 Course Project
 
 ## Milestones and Deadlines
-* Teams of 4 must form by **Friday, April 5, 2024**
-* Four group check-ins with your shepherd TA, no later than **4/19, 4/24, 5/1, and 5/6**
-* Code and report due in Gradescope on **May 6, 2024**
-* Demos during **finals week** (May 6-14)
+
+- Teams of 4 must form by **Friday, April 5, 2024**
+- Four group check-ins with your shepherd TA, no later than **4/19, 4/24, 5/1, and 5/6**
+- Code and report due in Gradescope on **May 6, 2024**
+- Demos during **finals week** (May 6-14)
 
 All deadlines are at 11:59 PM Eastern Time.
 
 ## Overview
 
-The course project will involve building "InstaLite," an Instagram-like social media site with full support for images (and optionally videos). This project is to be done in *teams* and will build upon components you built over the semester in your homeworks.
+The course project will involve building "InstaLite," an Instagram-like social media site with full support for images (and optionally videos). This project is to be done in _teams_ and will build upon components you built over the semester in your homeworks.
 
-*Instructors' note*: During interviews, companies often ask you to tell them about a technical project you worked on. If you invest enough time, this project can play that role; you can add it to your “portfolio” of system that you can show a potential employer!  (We do ask that you keep your repo private, however.)
+_Instructors' note_: During interviews, companies often ask you to tell them about a technical project you worked on. If you invest enough time, this project can play that role; you can add it to your “portfolio” of system that you can show a potential employer! (We do ask that you keep your repo private, however.)
 
-*General Advice*: Read through this entire document and compile a list of (1) data resources you'll need to design, (2) backend endpoints, (3) frontend pages / widgets, (4) interfaces to additional components such as ChatGPT and Apache Spark. Try to establish "core" functionality and build outwards.
+_General Advice_: Read through this entire document and compile a list of (1) data resources you'll need to design, (2) backend endpoints, (3) frontend pages / widgets, (4) interfaces to additional components such as ChatGPT and Apache Spark. Try to establish "core" functionality and build outwards.
 
 ## Project Technology Stack
 
 Your project will have a number of elements, building upon what you did with the homework. We expect the following:
 
-* **Backend** services in Node.js and/or Java, hosted on Amazon EC2 (you may use `nginx` to make these accessible through the same TCP port)
-* **Database** (accounts, social network, etc.) hosted in RDS and/or DynamoDB (many aspects will work better in RDS)
-* **Image search** based on embeddings similarity, in ChromaDB
-* Large objects stored in S3, as necessary
-* **Natural language search** using GPT or an alternative LLM
-* Social **news streaming** via Apache Kafka
-* Adsorption ranking of posts and individuals via Apache Spark
-* Proper handling of security and sessions
-* **Frontend** in React and Javascript
-* Code in GitHub
+- **Backend** services in Node.js and/or Java, hosted on Amazon EC2 (you may use `nginx` to make these accessible through the same TCP port)
+- **Database** (accounts, social network, etc.) hosted in RDS and/or DynamoDB (many aspects will work better in RDS)
+- **Image search** based on embeddings similarity, in ChromaDB
+- Large objects stored in S3, as necessary
+- **Natural language search** using GPT or an alternative LLM
+- Social **news streaming** via Apache Kafka
+- Adsorption ranking of posts and individuals via Apache Spark
+- Proper handling of security and sessions
+- **Frontend** in React and Javascript
+- Code in GitHub
 
 ## User Signup and User Accounts Backend
 
 New users should be able to sign up for an account. They should enter, at the very least, a login name, a password, a first and last name, an email address, an affiliation (such as Penn), and a birthday.
 
-* The password should be *salted* and encrypted following best practices.
-* Users should be able to *upload a profile photo* -- on mobile, perhaps even taking a selfie for that photo -- as a starting point.
-* Users should include a number of hashtags of interests.  The top-10 most popular hash tags (by occurrence) should be shown so they have a starting point.
+- The password should be _salted_ and encrypted following best practices.
+- Users should be able to _upload a profile photo_ -- on mobile, perhaps even taking a selfie for that photo -- as a starting point.
+- Users should include a number of hashtags of interests. The top-10 most popular hash tags (by occurrence) should be shown so they have a starting point.
 
-The user should be able to link to a given *actor account* from IMDB by matching the *embedding* of their selfie with the *profile photos* of the 5 most similar actors.  They will be able to choose from those actors.
+The user should be able to link to a given _actor account_ from IMDB by matching the _embedding_ of their selfie with the _profile photos_ of the 5 most similar actors. They will be able to choose from those actors.
 
 We will provide you with a set of actor embeddings and profile photos in the form of a ChromaDB database. You should use this to match the user's selfie to the actor's profile photos.
 
@@ -50,17 +52,17 @@ The user should be able to log in with their user ID and password. (See Extra Cr
 
 ## The User Page / Main Content Feed
 
-When the user logs in, they should see an Instagram-style feed with status updates, new friendships, and profile updates (posts) made by friends. When Alice posts on Bob’s wall, her post should appear on both Alice’s and Bob’s walls and home pages.  Below is an example taken directly from Instagram.
+When the user logs in, they should see an Instagram-style feed with status updates, new friendships, and profile updates (posts) made by friends. When Alice posts on Bob’s wall, her post should appear on both Alice’s and Bob’s walls and home pages. Below is an example taken directly from Instagram.
 
 <img src="instagram-screenshot.png" alt="Screenshot" style="width:50%;">
 
-**User Posts**: Each user should be able to make posts, containing an optional image and optional text. The post might include hashtags. Although each field is optional, a post should at least have *some* content to be valid.
+**User Posts**: Each user should be able to make posts, containing an optional image and optional text. The post might include hashtags. Although each field is optional, a post should at least have _some_ content to be valid.
 
-**What Goes in the Feed**: Each user should see *posts* from their friends, themselves, as well as from *prominent figures*.  Posts can have text and images.  Some of the posts will also come from the social media stream (see below on **Feed**).
+**What Goes in the Feed**: Each user should see _posts_ from their friends, themselves, as well as from _prominent figures_. Posts can have text and images. Some of the posts will also come from the social media stream (see below on **Feed**).
 
 **Commenting**: Users should be able to add a comment under any post they can see (that is, both their own posts and their friends’ posts). These comments should appear under the post they respond to, in a threaded fashion.
 
-The user page should include non-scrolling menu elements on the left (as in the screenshot) or top, for access to other capabilities such as the user profile and search (see below).  The main feed should paginate (default behavior) or support infinite scrolling by fetching more data on demand (see Extra Credit).
+The user page should include non-scrolling menu elements on the left (as in the screenshot) or top, for access to other capabilities such as the user profile and search (see below). The main feed should paginate (default behavior) or support infinite scrolling by fetching more data on demand (see Extra Credit).
 
 ### Feed
 
@@ -69,12 +71,12 @@ As with Instagram, your user will see a **feed** of different posts. All posts a
 1. Come from the user's friends
 2. Reference the user's selected hashtags of interests
 3. Come from others with high SocialRank
-4. Come from the course project **Twitter/X Feed** and score highly.  This will be made accessible to you through an Apache Kafka Topic.
+4. Come from the course project **Twitter/X Feed** and score highly. This will be made accessible to you through an Apache Kafka Topic.
 
-**Feed updates**: Your server, while running, should refresh the data necessary for computing the feed once an hour.  This will involve fetching any "new news" from Kafka and from recent posts / activities; and ranking the content.  If you precompute the data, it should be easy for the client to produce the page upon login.
+**Feed updates**: Your server, while running, should refresh the data necessary for computing the feed once an hour. This will involve fetching any "new news" from Kafka and from recent posts / activities; and ranking the content. If you precompute the data, it should be easy for the client to produce the page upon login.
 
 **User actions**:
-Users should be able to “like” posts, and should be able to comment on them.  If a post or comment includes **hashtags** a link between the hashtag and post should be established.
+Users should be able to “like” posts, and should be able to comment on them. If a post or comment includes **hashtags** a link between the hashtag and post should be established.
 
 **Ranking posts**: Every candidate post should be assigned (for each user) a weight. Weights will be computed with an implementation of the adsorption algorithm in Spark. This should run periodically, once per hour as descried above.
 
@@ -93,17 +95,17 @@ The Spark jobs should assign weights to the edges.
   to 1.
 - Similarly, the outgoing edges from a post `p` should have equal weights that sum to 1.
 - For each user `u`:
-    - The weights on the `(u, h)` edges should be equal and sum up to 0.3
-    - The weights on the `(u, p)` edges should be equal and sum up to 0.4
-    - The weights on the `(u, u′)` edges should be equal and sum up to 0.3
+  - The weights on the `(u, h)` edges should be equal and sum up to 0.3
+  - The weights on the `(u, p)` edges should be equal and sum up to 0.4
+  - The weights on the `(u, u′)` edges should be equal and sum up to 0.3
 
 Now run adsorption from the users to assign a user label + weight to each node (including the article nodes). Run to a maximum of 15 iterations or until convergence. Given the ranked graph as above, the social network recommender should take the set of potential articles (those from the same day, minus ones that have already been recommended), and normalize the adsorption-derived weights on these articles. Then it should randomly choose an article based on this weighted random distribution.
 
-**Interfacing the Spark job with the Web Application**: We recommend your group thinks carefully about how the different components (data storage, Spark job to recompute weights, search / recommendation) interface.  You likely will want to invoke the Spark task via Livy or the equivalent, with an easily configurable address for the Spark Coordinator Node. Most likely you’ll want to use some form of persistent storage (e.g. RDS) to share the graph and other state.
+**Interfacing the Spark job with the Web Application**: We recommend your group thinks carefully about how the different components (data storage, Spark job to recompute weights, search / recommendation) interface. You likely will want to invoke the Spark task via Livy or the equivalent, with an easily configurable address for the Spark Coordinator Node. Most likely you’ll want to use some form of persistent storage (e.g. RDS) to share the graph and other state.
 
 ### Federated Posts
 
-Your site should have a *unique ID* distinguishing it from all other NETS 2120 sites. This will be your team number (e.g. `g01`). Through the Kafka `FederatedPosts` channel, your site should both *read* and *send* posts that can be used by other projects' InstaLite sites. Posts should have a JSON component called `post_json`:
+Your site should have a _unique ID_ distinguishing it from all other NETS 2120 sites. This will be your team number (e.g. `g01`). Through the Kafka `FederatedPosts` channel, your site should both _read_ and _send_ posts that can be used by other projects' InstaLite sites. Posts should have a JSON component called `post_json`:
 
 ```
 {
@@ -115,7 +117,7 @@ Your site should have a *unique ID* distinguishing it from all other NETS 2120 s
 }
 ```
 
-as well as a binary component, `attach`, including an optional image.  The `content_type` field in the JSON should be the HTTP content-type associated with the binary data.
+as well as a binary component, `attach`, including an optional image. The `content_type` field in the JSON should be the HTTP content-type associated with the binary data.
 
 ## Secondary Screens
 
@@ -154,13 +156,13 @@ There should be a way for users to chat with each other. You can implement this 
 
 ### 4. Natural Language Search
 
-Uses should be able to search (1) for people, and (2) for posts. These should use *retrieval-augmented generation* over the indexed content of actors, movie reviews, and posts; and should use a Large Language Model to find the best matches.
+Uses should be able to search (1) for people, and (2) for posts. These should use _retrieval-augmented generation_ over the indexed content of actors, movie reviews, and posts; and should use a Large Language Model to find the best matches.
 
 **EC**: ensure the search results return links so users can add friend / follow / interest based on the returned results.
 
 ### Security and Scalability
 
-You should ensure that your design is secure: for instance, users should not be able to impersonate other users (without knowing their password), and they should not be able to modify or delete content that was created by other users. 
+You should ensure that your design is secure: for instance, users should not be able to impersonate other users (without knowing their password), and they should not be able to modify or delete content that was created by other users.
 
 Your design should also be scalable: if a million users signed up for your system tomorrow, your system should still work and provide good performance (although of course you will have to add some extra resources, e.g., additional EC2 instances). Keep in mind that many of the cloud services we have discussed, such as DynamoDB and Spark/MapReduce, are naturally scalable.
 
@@ -172,15 +174,15 @@ Based on the link structure of the graph as well as the activity and hashtag str
 
 We will give a liberal amount of extra credit for creativity in the project. Below are some suggestions for extra-credit items:
 
-* (+2) LinkedIn-style friend requests with confirmation (i.e., users can accept or deny friend requests); 
-* (+5) A "forgot password" option that sends to the user's email address a password reset token and a link to the password reset screen;
-* (+5) Privacy controls (e.g., limiting who can see a particular post);
-* (+5) Infinite scrolling;
-* (+5) Groups (i.e. ones similar to Facebook communities);
-* (+5) Targeted advertising, based on users’ interests or on words in their posts; 
-* (+5) Site-wide "what’s trending" feature;
-* (+5) WebSockets for chat;
-* (+5) The LLM search always returns valid links for search results.
+- (+2) LinkedIn-style friend requests with confirmation (i.e., users can accept or deny friend requests);
+- (+5) A "forgot password" option that sends to the user's email address a password reset token and a link to the password reset screen;
+- (+5) Privacy controls (e.g., limiting who can see a particular post);
+- (+5) Infinite scrolling;
+- (+5) Groups (i.e. ones similar to Facebook communities);
+- (+5) Targeted advertising, based on users’ interests or on words in their posts;
+- (+5) Site-wide "what’s trending" feature;
+- (+5) WebSockets for chat;
+- (+5) The LLM search always returns valid links for search results.
 
 However, these are just examples - feel free to consider other features as well, e.g., based on functionality that the current Facebook has, or even novel features that you define yourself. If you are considering a particular feature and are not sure whether it would be counted as extra credit, feel free to post a question on Ed Discussion. Extra credit will be awarded based on the complexity of a feature, not just based on its presence; for instance, profile pictures are easier than groups and thus would be worth less, and adding a simple input field where users can declare group memberships would yield considerably less extra credit than a full implementation with separate pages for groups where members can post messages, etc.
 
@@ -190,12 +192,12 @@ For this iteration of the course, we do not set a ceiling on the amount of extra
 
 At the end of the project, your team must include a short final report, as a PDF file of approximately five pages (excluding images) within your GitHub repository. This report, in the final `final-report.pdf`, will be part of your project score; grading will be based both on clarity of writing and on technical content. The report should contain, at least:
 
-* A short overview of the system you built;
-* A technical description of the components you built;
-* A discussion of nontrivial design decisions;
-* A discussion of changes you made along the way, and lessons you learned;
-* A brief description of the extra-credit features, if any;
-* A series of screenshots of your system in action (one for each main feature/page).
+- A short overview of the system you built;
+- A technical description of the components you built;
+- A discussion of nontrivial design decisions;
+- A discussion of changes you made along the way, and lessons you learned;
+- A brief description of the extra-credit features, if any;
+- A series of screenshots of your system in action (one for each main feature/page).
 
 Please try to choose the right level of detail (not too nitty-gritty, not too high-level), and please avoid repeating points that are already in this handout. For instance, don’t write that your solution has a news feed (this was required!); instead, write how you designed the DynamoDB table that the newsfeed uses, and why you did it that way.
 
@@ -211,15 +213,15 @@ Once your team has registered, it will be assigned a TA as a “shepherd”. You
 
 For the first session, you should prepare 1) a quick overview of your design, and 2) a set of specific milestones for for sessions #2, #3, and #4, subject to the following requirements:
 
-* Each milestone should be associated with one specific team member, who will be responsible for reaching it. It is okay for team members to help each other, but there has to be a single “lead” who will assume responsibility.
+- Each milestone should be associated with one specific team member, who will be responsible for reaching it. It is okay for team members to help each other, but there has to be a single “lead” who will assume responsibility.
 
-* There should be at least two milestones per session for each team member. Each milestone should be specific (e.g., in terms of features implemented and working) and demoable – that is, there should be a way to show later that the milestone has been reached.
+- There should be at least two milestones per session for each team member. Each milestone should be specific (e.g., in terms of features implemented and working) and demoable – that is, there should be a way to show later that the milestone has been reached.
 
-* The session-3 milestones should cover at least 1) user registration, 2) the home page, 3) account changes, 4) the list of friends, and 5) having the news articles loaded into the database. The session-4 milestones should cover at least 80% of the basic/required features; it should be clear that the required features can be completed by May 6th. The milestones do not need to cover extra credit.
+- The session-3 milestones should cover at least 1) user registration, 2) the home page, 3) account changes, 4) the list of friends, and 5) having the news articles loaded into the database. The session-4 milestones should cover at least 80% of the basic/required features; it should be clear that the required features can be completed by May 6th. The milestones do not need to cover extra credit.
 
-* The work should be spread roughly uniformly across the project (there should be no weeks that are substantially busier, or less busy, than others) and it should be split roughly equally between the team members.
+- The work should be spread roughly uniformly across the project (there should be no weeks that are substantially busier, or less busy, than others) and it should be split roughly equally between the team members.
 
-* The milestones should be concrete tasks that can be clearly demo-ed or measured. Attempt to reduce dependencies between team members as much as possible (e.g., if one team member is blocked, the others should still be able to make progress).
+- The milestones should be concrete tasks that can be clearly demo-ed or measured. Attempt to reduce dependencies between team members as much as possible (e.g., if one team member is blocked, the others should still be able to make progress).
 
 Your shepherd will give you feedback on your materials, and will answer any questions. After the meeting, you should email the (potentially revised) milestones to your shepherd.
 
@@ -243,7 +245,7 @@ Each team will receive a project AWS Academy account via email during the first 
 
 Each team is responsible for the security of its AWS account(s). It is important to make sure that all team members understand how the AWS firewall works, and what a security rule is. In particular, it is critical that all security rules be as restrictive as possible; DO NOT just open all ports to anyone on the whole planet (0.0.0.0/0) because that virtually guarantees that your account will be hacked!
 
-We will have a shared OpenAI API key.  Our expectation is that you will only use a limited number of prompts (<100 requests) so this will be adequate for testing and for the course.  If you need more credits, your team can use your own private key under your own billing.
+We will have a shared OpenAI API key. Our expectation is that you will only use a limited number of prompts (<100 requests) so this will be adequate for testing and for the course. If you need more credits, your team can use your own private key under your own billing.
 
 ### GitHub Classroom
 
@@ -251,17 +253,16 @@ This assignment is released as a Group Assignment on GitHub Classroom. One membe
 
 ### Submission Checklist
 
-* Your code contains a reasonable amount of useful documentation.
+- Your code contains a reasonable amount of useful documentation.
 
-* You have checked your final code into the Git repository.
+- You have checked your final code into the Git repository.
 
-* You have removed all AWS credentials from the code you are submitting.
+- You have removed all AWS credentials from the code you are submitting.
 
-* Your repository contains all the files needed to compile and run your solution (including all .js/.ejs files, and all Spark code); as well as README file that describes 1) the team number and team name, 2) the full names and SEAS login names of all team members, 3) a description of features implemented, 4) any extra credit claimed, 5) a list of source files included, 6) a declaration that all the code you are submitting was written by you, and 7) instructions for building an running your project. The instructions must be sufficiently detailed for us to set up and run your application.
+- Your repository contains all the files needed to compile and run your solution (including all .js/.ejs files, and all Spark code); as well as README file that describes 1) the team number and team name, 2) the full names and SEAS login names of all team members, 3) a description of features implemented, 4) any extra credit claimed, 5) a list of source files included, 6) a declaration that all the code you are submitting was written by you, and 7) instructions for building an running your project. The instructions must be sufficiently detailed for us to set up and run your application.
 
-* Please avoid checking your `target` folder in to GitHub. Please do not include large data files (these can be hosted on S3), or your `node_modules`. If you used third-party libraries and are not including them in your submission, please state in the README file what libraries, and include them in the appropriate `pom.xml` or `package.json` files. We have provided a starter `.gitignore`, but you may need to update it as needed.
+- Please avoid checking your `target` folder in to GitHub. Please do not include large data files (these can be hosted on S3), or your `node_modules`. If you used third-party libraries and are not including them in your submission, please state in the README file what libraries, and include them in the appropriate `pom.xml` or `package.json` files. We have provided a starter `.gitignore`, but you may need to update it as needed.
 
-* You are submitting your final report as a PDF file of no more than five pages (including appendices, screenshots, images, and any references).  This should be called `final-report.pdf` and be in the root of your GitHub project.
+- You are submitting your final report as a PDF file of no more than five pages (including appendices, screenshots, images, and any references). This should be called `final-report.pdf` and be in the root of your GitHub project.
 
-* You submitted your GitHub repo with your final report via Gradescope, before the deadline on the first page of this handout. Late hours cannot be used for the project.
-
+- You submitted your GitHub repo with your final report via Gradescope, before the deadline on the first page of this handout. Late hours cannot be used for the project.

@@ -20,11 +20,18 @@ router.post("/imageSearch", checkAuthentication, async (req, res, next) => {
       return res.status(200).json([]);
     }
 
-    const documents = new Set<any>(results[0].documents[0].map((document: string) => document.replaceAll('.jpg', '')));
+    const documents = new Set<any>(
+      results[0].documents[0].map((document: string) =>
+        document.replaceAll(".jpg", "")
+      )
+    );
 
-    const names = await parseLocalTsv('data/names.tsv');
+    const names = await parseLocalTsv("data/names.tsv");
 
-    const filteredNames = names.filter(name => documents.has(name.nconst)).map(name => name.primaryName).reverse();
+    const filteredNames = names
+      .filter((name) => documents.has(name.nconst))
+      .map((name) => name.primaryName)
+      .reverse();
 
     return res.status(200).json(filteredNames);
   } catch (error) {

@@ -4,7 +4,7 @@ const tf = require("@tensorflow/tfjs-node");
 const faceapi = require("@vladmandic/face-api");
 const https = require("https");
 
-import { ChromaClient } from 'chromadb';
+import { ChromaClient } from "chromadb";
 
 let optionsSSDMobileNet;
 
@@ -14,14 +14,16 @@ const getArray = (array) => {
 
 async function getImageFromUrl(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, res => {
-      const bufs = [];
-      res.on('data', chunk => bufs.push(chunk));
-      res.on('end', () => {
+    https
+      .get(url, (res) => {
+        const bufs = [];
+        res.on("data", (chunk) => bufs.push(chunk));
+        res.on("end", () => {
           const data = Buffer.concat(bufs);
           resolve(data); // Resolve the Promise with the image data
-      });
-    }).on('error', reject); // Reject the Promise on an error
+        });
+      })
+      .on("error", reject); // Reject the Promise on an error
   });
 }
 
@@ -118,7 +120,6 @@ async function compareImages(file1, file2) {
 }
 
 const indexData = async (collection: any) => {
-
   const files = fs.readdirSync("images");
 
   const promises = files.map((file) =>
@@ -127,8 +128,7 @@ const indexData = async (collection: any) => {
 
   await Promise.all(promises);
   console.log("All images indexed.");
-  
-}
+};
 
 export const searchImages = async (imageURL: string) => {
   const client = new ChromaClient({ path: "http://localhost:3030" });

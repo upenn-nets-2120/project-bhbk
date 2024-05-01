@@ -35,12 +35,8 @@
           "name": "chat_memberId_users_id_fk",
           "tableFrom": "chat",
           "tableTo": "users",
-          "columnsFrom": [
-            "memberId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["memberId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -48,9 +44,7 @@
       "compositePrimaryKeys": {
         "chat_id": {
           "name": "chat_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}
@@ -87,12 +81,8 @@
           "name": "chat_messages_id_chat_id_fk",
           "tableFrom": "chat_messages",
           "tableTo": "chat",
-          "columnsFrom": [
-            "id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -100,12 +90,8 @@
           "name": "chat_messages_id_chat_memberId_fk",
           "tableFrom": "chat_messages",
           "tableTo": "chat",
-          "columnsFrom": [
-            "id"
-          ],
-          "columnsTo": [
-            "memberId"
-          ],
+          "columnsFrom": ["id"],
+          "columnsTo": ["memberId"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -167,12 +153,8 @@
           "name": "comments_postId_posts_id_fk",
           "tableFrom": "comments",
           "tableTo": "posts",
-          "columnsFrom": [
-            "postId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["postId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -180,12 +162,8 @@
           "name": "comments_authorId_users_id_fk",
           "tableFrom": "comments",
           "tableTo": "users",
-          "columnsFrom": [
-            "authorId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["authorId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -193,9 +171,7 @@
       "compositePrimaryKeys": {
         "comments_id": {
           "name": "comments_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}
@@ -247,9 +223,7 @@
       "compositePrimaryKeys": {
         "hashtags_id": {
           "name": "hashtags_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}
@@ -286,12 +260,8 @@
           "name": "posts_likes_postId_posts_id_fk",
           "tableFrom": "posts_likes",
           "tableTo": "posts",
-          "columnsFrom": [
-            "postId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["postId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -299,12 +269,8 @@
           "name": "posts_likes_userId_users_id_fk",
           "tableFrom": "posts_likes",
           "tableTo": "users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -366,12 +332,8 @@
           "name": "posts_authorId_users_id_fk",
           "tableFrom": "posts",
           "tableTo": "users",
-          "columnsFrom": [
-            "authorId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["authorId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -379,9 +341,7 @@
       "compositePrimaryKeys": {
         "posts_id": {
           "name": "posts_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}
@@ -417,12 +377,8 @@
           "name": "posts_to_hashtags_post_id_posts_id_fk",
           "tableFrom": "posts_to_hashtags",
           "tableTo": "posts",
-          "columnsFrom": [
-            "post_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["post_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "cascade"
         },
@@ -430,12 +386,8 @@
           "name": "posts_to_hashtags_hashtag_id_hashtags_id_fk",
           "tableFrom": "posts_to_hashtags",
           "tableTo": "hashtags",
-          "columnsFrom": [
-            "hashtag_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["hashtag_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "cascade"
         }
@@ -443,16 +395,11 @@
       "compositePrimaryKeys": {
         "posts_to_hashtags_id": {
           "name": "posts_to_hashtags_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         },
         "posts_to_hashtags_post_id_hashtag_id_pk": {
           "name": "posts_to_hashtags_post_id_hashtag_id_pk",
-          "columns": [
-            "post_id",
-            "hashtag_id"
-          ]
+          "columns": ["post_id", "hashtag_id"]
         }
       },
       "uniqueConstraints": {}
@@ -534,9 +481,7 @@
       "indexes": {
         "email_idx": {
           "name": "email_idx",
-          "columns": [
-            "email"
-          ],
+          "columns": ["email"],
           "isUnique": true
         }
       },
@@ -544,9 +489,7 @@
       "compositePrimaryKeys": {
         "users_id": {
           "name": "users_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}

@@ -1,17 +1,14 @@
-import express from 'express';
-import { checkAuthentication } from '../middlewares';
-import { NewPost } from '../types/post';
-import {
-    createPost, getPostsByChronology
-} from '../views/posts';
+import express from "express";
+import { checkAuthentication } from "../middlewares";
+import { NewPost } from "../types/post";
+import { createPost, getPostsByChronology } from "../views/posts";
 
 const router = express.Router();
-
 
 router.post("/create", checkAuthentication, async (req, res, next) => {
   try {
     const post = req.body;
-    
+
     const newPost = post satisfies NewPost;
 
     const userId = req.session.user.id satisfies number;
@@ -19,12 +16,11 @@ router.post("/create", checkAuthentication, async (req, res, next) => {
     const createdPost = await createPost(newPost, userId);
 
     return res.status(200).json(createdPost);
-
   } catch (error) {
     console.error(error);
-    next(error)
+    next(error);
   }
-})
+});
 
 router.get("/chronology", async (_, res, next) => {
   try {
@@ -35,6 +31,6 @@ router.get("/chronology", async (_, res, next) => {
     console.error(error);
     next(error);
   }
-})
+});
 
 export default router;

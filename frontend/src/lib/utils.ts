@@ -1,9 +1,9 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-import { toast as sonnerToast } from "sonner"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { toast as sonnerToast } from "sonner";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const toast = (title: string, description?: string) => {
@@ -13,5 +13,5 @@ export const toast = (title: string, description?: string) => {
       label: "Dismiss",
       onClick: () => undefined,
     },
-  })
-}
+  });
+};

@@ -1,4 +1,4 @@
 export type ErrorReponse = {
-    message: string;
-    stack?: string;
-}
+  message: string;
+  stack?: string;
+};

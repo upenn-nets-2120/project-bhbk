@@ -1,6 +1,13 @@
 "use client";
 
+import { extractHashtags } from "@/lib/posts";
+import { usePosts } from "@/providers/PostsProvider";
+import { Post } from "@/types/post";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { AiOutlineLoading } from "react-icons/ai";
+import { BsPlusCircleFill } from "react-icons/bs";
+import { MdError } from "react-icons/md";
 import { InputForm } from "../common/forms/InputForm";
 import { TextareaForm } from "../common/forms/TextareaForm";
 import { Button } from "../ui/button";
@@ -19,7 +26,19 @@ export const CreatePanel = () => {
 
   const [postGraphic, setPostGraphic] = useState<File>();
 
+  const [hashtags, setHashtags] = useState<string[]>([]);
+
   const previewImgRef = useRef<HTMLImageElement>(null);
+
+  const router = useRouter();
+
+  const {
+    uploadPost,
+    isMakingRequest,
+    uploadPostGraphic,
+    uploadPostHashtags,
+    error,
+  } = usePosts();
 
   const onPostGraphicChange = async (
     event: React.ChangeEvent<HTMLInputElement>
@@ -38,7 +57,46 @@ export const CreatePanel = () => {
     }
   }, [previewImgRef, postGraphic]);
 
-  const submitPost = () => {};
+  const submitPost = async () => {
+    if (!text) {
+      return;
+    }
+
+    if (text) {
+      const newPost: Post = {
+        text,
+      };
+
+      const createdPost = await uploadPost(newPost);
+
+      setText(undefined);
+
+      if (previewImgRef.current) {
+        previewImgRef.current.src = "";
+      }
+
+      if (createdPost && createdPost.id && postGraphic) {
+        await uploadPostGraphic(createdPost.id, postGraphic);
+        setPostGraphic(undefined);
+      }
+
+      if (createdPost && createdPost.id && hashtags.length > 0) {
+        await uploadPostHashtags(createdPost.id, hashtags);
+        setHashtags([]);
+      }
+
+      router.push("/");
+    }
+  };
+
+  useEffect(() => {
+    if (!text) {
+      return;
+    }
+
+    const extractedHashtags = extractHashtags(text);
+    setHashtags(extractedHashtags);
+  }, [text]);
 
   return (
     <div className="flex flex-col space-y-6">
@@ -80,12 +138,49 @@ export const CreatePanel = () => {
                 label="Post's content"
                 placeholder="Your post's content..."
                 value={text}
+                textareaProps={{
+                  className: "min-h-[200px]",
+                }}
               />
+              {hashtags.length > 0 && (
+                <div className="flex flex-col items-center space-y-3">
+                  <Label className="w-full text-left">
+                    Preview post's hashtags
+                  </Label>
+                  <div className="flex w-full flex-wrap gap-2">
+                    {hashtags.map((hashtag) => (
+                      <div
+                        key={hashtag}
+                        className="text-sm px-3 py-2 rounded-full text-background bg-primary"
+                      >
+                        #{hashtag}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </form>
         </CardContent>
-        <CardFooter>
-          <Button className="w-full">Create post</Button>
+        <CardFooter className="flex flex-col space-y-1">
+          <Button
+            onClick={submitPost}
+            className="w-full flex space-x-2"
+            disabled={isMakingRequest}
+          >
+            {isMakingRequest ? (
+              <AiOutlineLoading className="animate-spin" />
+            ) : (
+              <BsPlusCircleFill />
+            )}
+            <span>Create post</span>
+          </Button>
+          {error && (
+            <Button variant="destructive" className="w-full flex space-x-2">
+              <MdError />
+              <span>{error}</span>
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </div>

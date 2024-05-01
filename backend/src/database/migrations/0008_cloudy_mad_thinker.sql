@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `linkedActor` varchar(256);

@@ -1,0 +1,1697 @@
+[33mWARNING[0m:  [01-05-2024 04:21:20] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 04:21:20] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component System
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 04:21:20] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 04:21:20] Started server process [[36m41517[0m]
+[32mINFO[0m:     [01-05-2024 04:21:20] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 04:21:20] Application startup complete.
+[32mINFO[0m:     [01-05-2024 04:21:20] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 04:21:37] Shutting down
+[32mINFO[0m:     [01-05-2024 04:21:38] Waiting for application shutdown.
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component System
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component SegmentAPI
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component Posthog
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 04:21:38] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [01-05-2024 04:21:38] Application shutdown complete.
+[32mINFO[0m:     [01-05-2024 04:21:38] Finished server process [[36m41517[0m]
+[33mWARNING[0m:  [01-05-2024 12:41:52] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 12:41:52] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component System
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 12:41:52] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 12:41:52] Started server process [[36m52801[0m]
+[32mINFO[0m:     [01-05-2024 12:41:52] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 12:41:52] Application startup complete.
+[32mINFO[0m:     [01-05-2024 12:41:52] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 12:41:56] Shutting down
+[32mINFO[0m:     [01-05-2024 12:41:56] Waiting for application shutdown.
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component System
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component SegmentAPI
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component Posthog
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 12:41:56] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [01-05-2024 12:41:56] Application shutdown complete.
+[32mINFO[0m:     [01-05-2024 12:41:56] Finished server process [[36m52801[0m]
+[33mWARNING[0m:  [01-05-2024 12:42:15] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 12:42:15] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component System
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 12:42:15] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 12:42:15] Started server process [[36m52854[0m]
+[32mINFO[0m:     [01-05-2024 12:42:15] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 12:42:15] Application startup complete.
+[32mINFO[0m:     [01-05-2024 12:42:15] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [01-05-2024 12:42:23] Collection 486ec1c8-9aea-4c18-89ab-36361fb02048 already exists
+Traceback (most recent call last):
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/db/mixins/sysdb.py", line 258, in create_collection
+    cur.execute(sql, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: collections.name, collections.database_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 78, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 92, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 130, in wrapper
+    return await f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 630, in create_collection
+    await to_thread.run_sync(
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 620, in process_create_collection
+    return self._api.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 143, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/api/segment.py", line 173, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 143, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/chromadb/db/mixins/sysdb.py", line 260, in create_collection
+    raise UniqueConstraintError(
+chromadb.db.base.UniqueConstraintError: Collection 486ec1c8-9aea-4c18-89ab-36361fb02048 already exists
+[32mINFO[0m:     [01-05-2024 12:42:23] ::1:64082 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [01-05-2024 12:42:23] ::1:64083 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 12:42:24] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [01-05-2024 12:42:24] ::1:64082 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:20] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:20] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:20] ::1:64160 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:20] ::1:64161 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:21] ::1:64160 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:21] ::1:64160 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:26] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:26] ::1:64178 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:26] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:26] ::1:64179 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:26] ::1:64178 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:26] ::1:64179 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:45] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:45] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:45] ::1:64200 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:45] ::1:64201 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:45] ::1:64200 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:45] ::1:64201 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:47] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:47] ::1:64200 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:47] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:45:47] ::1:64201 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:47] ::1:64200 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:45:47] ::1:64201 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:46:13] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:46:13] ::1:64219 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:46:14] ::1:64219 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:46:47] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:46:47] ::1:64249 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:46:48] ::1:64249 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:19] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:47:19] ::1:64278 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:19] ::1:64278 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:43] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:47:43] ::1:64302 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:43] ::1:64302 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:52] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:47:52] ::1:64309 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:47:52] ::1:64309 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[33mWARNING[0m:  [01-05-2024 12:57:29] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 12:57:29] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component System
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 12:57:29] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 12:57:29] Started server process [[36m54840[0m]
+[32mINFO[0m:     [01-05-2024 12:57:29] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 12:57:29] Application startup complete.
+[32mINFO[0m:     [01-05-2024 12:57:29] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 12:57:32] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 12:57:32] ::1:64652 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 12:57:45] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64679 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64687 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64696 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64672 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64697 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64698 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64674 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64701 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64685 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64686 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64658 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64703 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64706 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64707 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64708 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64709 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64710 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64711 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64712 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64689 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64714 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64715 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64716 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64705 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64717 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64718 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64719 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64720 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64721 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64723 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64724 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64725 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64726 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64727 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64691 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64728 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64730 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64731 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64732 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64663 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64734 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64735 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64729 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64736 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64737 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64682 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64740 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64664 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64741 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64742 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64744 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64745 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64746 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64747 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64748 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64749 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64750 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64751 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64752 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64753 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64754 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64755 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64756 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64757 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64758 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64759 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64760 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64761 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64704 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64763 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64764 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64765 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64766 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64767 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64768 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64769 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64743 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64771 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64772 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64773 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64774 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64775 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64776 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64777 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64778 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64699 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64779 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64781 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64782 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64783 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64784 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64785 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64786 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64780 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64661 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64660 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64733 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64667 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64670 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64671 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64688 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64739 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64669 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64690 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64692 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64695 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64693 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64713 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64770 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64762 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64700 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64655 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64675 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64659 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64662 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64681 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64657 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64665 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64677 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64684 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64694 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64668 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64722 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64702 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64738 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64678 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:45] ::1:64683 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64676 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64656 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64673 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64666 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64680 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 12:57:46] ::1:64652 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 12:59:25] Shutting down
+[32mINFO[0m:     [01-05-2024 12:59:25] Finished server process [[36m54840[0m]
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component System
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component SegmentAPI
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component Posthog
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 12:59:25] Stopping component OpenTelemetryClient
+[31mERROR[0m:    [01-05-2024 12:59:25] Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1511, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1504, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1377, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 555, in uvloop.loop.Loop._run
+  File "uvloop/loop.pyx", line 474, in uvloop.loop.Loop._on_idle
+  File "uvloop/cbhandles.pyx", line 83, in uvloop.loop.Handle._run
+  File "uvloop/cbhandles.pyx", line 63, in uvloop.loop.Handle._run
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    with self.capture_signals():
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/server.py", line 328, in capture_signals
+    signal.raise_signal(captured_signal)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 741, in lifespan
+    await receive()
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[33mWARNING[0m:  [01-05-2024 13:00:56] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 13:00:56] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component System
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:00:56] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 13:00:56] Started server process [[36m54972[0m]
+[32mINFO[0m:     [01-05-2024 13:00:56] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 13:00:56] Application startup complete.
+[32mINFO[0m:     [01-05-2024 13:00:56] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 13:00:59] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:00:59] ::1:64890 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 13:01:13] Starting component PersistentLocalHnswSegment
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000859.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000859.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0087404.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64897 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0087404.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000428.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000428.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64916 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0199841.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0199841.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64896 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0115218.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0115218.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64935 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64923 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0237597.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0237597.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64937 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0003124.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0003124.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64908 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0267638.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0267638.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64939 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0268125.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0268125.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64941 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0281808.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0281808.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64942 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0153713.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0153713.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64925 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0279038.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0279038.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0292433.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64943 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0292433.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64944 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0285643.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0285643.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64945 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0292810.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0292810.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64947 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0316993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0316993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0321088.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64946 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0321088.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64948 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0316995.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0316995.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64949 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0335788.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0335788.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64951 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0366008.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0366008.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64952 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0249379.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0249379.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64936 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0182537.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0182537.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64930 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0363227.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0363227.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0366586.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64950 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0366586.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64954 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0045800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0045800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0382730.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64911 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0382730.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64957 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0380965.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0380965.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64958 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0382954.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0382954.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64959 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0421041.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0421041.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0392442.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64961 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0392442.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64960 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000122.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000122.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64894 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0427659.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0427659.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64964 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0431433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0431433.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64963 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0431484.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0431484.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64966 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0464137.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0464137.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64967 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0466773.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0466773.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64968 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0470328.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0470328.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0448987.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64969 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0448987.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64965 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0484439.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0484439.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64971 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0167760.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0167760.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64927 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0502752.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0502752.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0511104.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64972 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0511104.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64973 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0515979.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0515979.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64975 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002161.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002161.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64905 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0523932.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0523932.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64977 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0531759.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0531759.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64978 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0106785.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0106785.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64919 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0531584.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0531584.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64979 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0550615.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0550615.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64981 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0567756.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0567756.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64982 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0553184.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0553184.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64983 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0591704.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0591704.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64984 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0571186.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0571186.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64985 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0601698.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0601698.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64986 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0594291.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0594291.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64987 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0603875.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0603875.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64988 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0602905.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0602905.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64989 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0651627.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0651627.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64990 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0632160.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0632160.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64991 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0659947.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0659947.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64992 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0657874.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0657874.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64993 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0098376.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0098376.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64917 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0680368.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0680368.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64994 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0663860.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0663860.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64995 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0681933.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0681933.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64997 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0701012.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0701012.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64998 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0706926.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0706926.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64999 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0728230.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0728230.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65000 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0124279.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0124279.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64922 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0792514.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0792514.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65002 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0784407.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0784407.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0370564.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65003 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0370564.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64955 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0807580.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0807580.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65005 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0820607.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0820607.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65006 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0829171.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0829171.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65007 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0838843.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0838843.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65008 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0107574.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0107574.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0841797.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0841797.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64921 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65009 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0842239.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0842239.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65011 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0864931.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0864931.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65012 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0875983.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0875983.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65013 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0891238.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0891238.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65014 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0878035.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0878035.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65015 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0909825.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0909825.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65016 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0910400.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0910400.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65017 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0916665.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0916665.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65018 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0912478.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0912478.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65019 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0925118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0925118.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65020 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0917467.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0917467.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65021 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0928108.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0928108.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0717468.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65022 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0717468.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65001 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0926599.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0926599.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0930290.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65023 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0930290.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65024 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0949403.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0949403.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65025 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0398446.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0398446.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64962 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0524306.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0524306.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64976 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0806565.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0806565.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65004 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0681927.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0681927.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64996 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0551222.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0551222.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64980 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0199087.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0199087.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64934 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0848232.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0848232.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:65010 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0478359.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0478359.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64970 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0001316.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0001316.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64901 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0187981.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0187981.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64932 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0516001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0516001.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64974 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000406.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000406.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64895 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002031.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002031.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64902 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002311.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002311.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64906 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002233.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002233.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64907 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0267916.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0267916.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64938 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0071992.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0071992.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64912 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002935.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002935.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64909 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0103567.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0103567.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64920 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0078116.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0078116.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64915 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0076800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0076800.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64914 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000891.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000891.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64899 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0176699.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0176699.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64929 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0178270.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0178270.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64931 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0365121.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0365121.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64953 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002118.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64904 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0002001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0002001.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64903 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0000847.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0000847.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64898 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0269771.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0269771.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64940 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0376396.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0376396.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64956 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0190516.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0190516.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64933 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0003425.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0003425.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64910 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0092290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0092290.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64918 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0165744.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0165744.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64924 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0001366.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0001366.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64900 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0174682.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0174682.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64928 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0069373.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0069373.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64913 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[33mWARNING[0m:  [01-05-2024 13:01:13] Insert of existing embedding ID: nm0173993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:13] Add of existing embedding ID: nm0173993.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64926 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/add HTTP/1.1" 201
+[32mINFO[0m:     [01-05-2024 13:01:13] ::1:64890 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:23] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:01:23] ::1:65034 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:24] ::1:65034 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:26] Shutting down
+[32mINFO[0m:     [01-05-2024 13:01:26] Finished server process [[36m54972[0m]
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component System
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component SegmentAPI
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:01:26] Stopping component OpenTelemetryClient
+[31mERROR[0m:    [01-05-2024 13:01:26] Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1511, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1504, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1377, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 555, in uvloop.loop.Loop._run
+  File "uvloop/loop.pyx", line 474, in uvloop.loop.Loop._on_idle
+  File "uvloop/cbhandles.pyx", line 83, in uvloop.loop.Handle._run
+  File "uvloop/cbhandles.pyx", line 63, in uvloop.loop.Handle._run
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    with self.capture_signals():
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/server.py", line 328, in capture_signals
+    signal.raise_signal(captured_signal)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/starlette/routing.py", line 741, in lifespan
+    await receive()
+  File "/Users/bachtran/.local/share/virtualenvs/project-bhbk-crnb_ebU/lib/python3.12/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[33mWARNING[0m:  [01-05-2024 13:01:28] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 13:01:28] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component System
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:01:28] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 13:01:28] Started server process [[36m55072[0m]
+[32mINFO[0m:     [01-05-2024 13:01:28] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 13:01:28] Application startup complete.
+[32mINFO[0m:     [01-05-2024 13:01:28] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 13:01:31] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:01:31] ::1:65043 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 13:01:32] Starting component PersistentLocalHnswSegment
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000859.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0087404.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000428.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0199841.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0115218.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0237597.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0003124.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0267638.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0268125.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0281808.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0153713.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0279038.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0292433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0285643.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0292810.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0316993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0321088.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0316995.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0335788.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0366008.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0249379.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0182537.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0363227.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0366586.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0045800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0382730.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0380965.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0382954.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0421041.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0392442.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000122.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0427659.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0431433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0431484.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0464137.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0466773.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0470328.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0448987.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0484439.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0167760.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0502752.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0511104.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0515979.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002161.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0523932.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0531759.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0106785.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0531584.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0550615.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0567756.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0553184.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0591704.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0571186.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0601698.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0594291.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0603875.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0602905.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0651627.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0632160.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0659947.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0657874.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0098376.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0680368.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0663860.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0681933.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0701012.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0706926.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0728230.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0124279.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0792514.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0784407.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0370564.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0807580.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0820607.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0829171.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0838843.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0107574.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0841797.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0842239.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0864931.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0875983.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0891238.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0878035.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0909825.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0910400.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0916665.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0912478.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0925118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0917467.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0928108.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0717468.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0926599.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0930290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0949403.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0398446.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0524306.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0806565.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0681927.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0551222.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0199087.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0848232.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0478359.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0001316.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0187981.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0516001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000406.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002031.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002311.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002233.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0267916.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0071992.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002935.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0103567.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0078116.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0076800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000891.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0176699.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0178270.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0365121.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0002001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0000847.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0269771.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0376396.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0190516.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0003425.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0092290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0165744.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0001366.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0174682.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0069373.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:32] Add of existing embedding ID: nm0173993.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:32] ::1:65043 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:33] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:01:33] ::1:65043 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:33] ::1:65043 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:01:42] Shutting down
+[32mINFO[0m:     [01-05-2024 13:01:42] Waiting for application shutdown.
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component System
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component SegmentAPI
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:01:42] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [01-05-2024 13:01:42] Application shutdown complete.
+[32mINFO[0m:     [01-05-2024 13:01:42] Finished server process [[36m55072[0m]
+[33mWARNING[0m:  [01-05-2024 13:01:45] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 13:01:45] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component System
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:01:45] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 13:01:45] Started server process [[36m55154[0m]
+[32mINFO[0m:     [01-05-2024 13:01:45] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 13:01:45] Application startup complete.
+[32mINFO[0m:     [01-05-2024 13:01:45] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 13:01:56] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:01:56] ::1:65058 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 13:01:56] Starting component PersistentLocalHnswSegment
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000859.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0087404.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000428.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0199841.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0115218.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0237597.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0003124.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0267638.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0268125.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0281808.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0153713.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0279038.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0292433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0285643.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0292810.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0316993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0321088.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0316995.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0335788.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0366008.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0249379.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0182537.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0363227.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0366586.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0045800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0382730.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0380965.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0382954.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0421041.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0392442.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000122.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0427659.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0431433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0431484.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0464137.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0466773.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0470328.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0448987.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0484439.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0167760.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0502752.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0511104.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0515979.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002161.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0523932.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0531759.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0106785.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0531584.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0550615.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0567756.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0553184.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0591704.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0571186.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0601698.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0594291.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0603875.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0602905.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0651627.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0632160.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0659947.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0657874.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0098376.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0680368.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0663860.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0681933.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0701012.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0706926.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0728230.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0124279.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0792514.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0784407.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0370564.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0807580.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0820607.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0829171.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0838843.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0107574.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0841797.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0842239.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0864931.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0875983.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0891238.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0878035.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0909825.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0910400.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0916665.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0912478.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0925118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0917467.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0928108.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0717468.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0926599.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0930290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0949403.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0398446.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0524306.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0806565.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0681927.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0551222.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0199087.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0848232.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0478359.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0001316.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0187981.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0516001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000406.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002031.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002311.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002233.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0267916.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0071992.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002935.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0103567.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0078116.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0076800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000891.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0176699.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0178270.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0365121.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0002001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0000847.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0269771.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0376396.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0190516.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0003425.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0092290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0165744.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0001366.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0174682.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0069373.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:01:56] Add of existing embedding ID: nm0173993.jpg-1
+[32mINFO[0m:     [01-05-2024 13:01:56] ::1:65058 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:02:02] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:02:02] ::1:65066 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:02:03] ::1:65066 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:02:48] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:02:48] ::1:65105 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:02:48] ::1:65105 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:12] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:12] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:12] ::1:65128 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:12] ::1:65129 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:12] ::1:65128 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:12] ::1:65129 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:20] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:20] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:20] ::1:65147 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:20] ::1:65148 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:20] ::1:65147 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:20] ::1:65148 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:22] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:22] ::1:65147 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:22] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:22] ::1:65148 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:22] ::1:65147 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:22] ::1:65148 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:39] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:39] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:03:39] ::1:65207 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:39] ::1:65208 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:39] ::1:65207 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:03:39] ::1:65208 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:05:06] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:05:06] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:05:06] ::1:65244 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:05:06] ::1:65245 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:05:07] ::1:65244 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:05:07] ::1:65245 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:17:39] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:17:39] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:17:39] ::1:49509 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:17:39] ::1:49510 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:17:39] ::1:49509 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:17:39] ::1:49510 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:46] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:18:46] ::1:49622 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:46] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:18:46] ::1:49623 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:47] ::1:49622 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:47] ::1:49623 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:58] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:18:58] ::1:49649 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:58] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:18:58] ::1:49650 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:58] ::1:49649 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:18:58] ::1:49650 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:25:36] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:25:36] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:25:36] ::1:49918 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:25:36] ::1:49919 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:25:37] ::1:49918 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:25:37] ::1:49918 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:35:57] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:35:57] ::1:50276 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:35:57] ::1:50276 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:17] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:37:17] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:37:17] ::1:50335 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:17] ::1:50336 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:18] ::1:50335 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:18] ::1:50336 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:22] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:37:22] ::1:50335 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:22] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:37:22] ::1:50336 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:22] ::1:50335 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:37:22] ::1:50336 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[33mWARNING[0m:  [01-05-2024 13:46:04] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 13:46:05] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component System
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 13:46:05] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 13:46:05] Started server process [[36m59170[0m]
+[32mINFO[0m:     [01-05-2024 13:46:05] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 13:46:05] Application startup complete.
+[32mINFO[0m:     [01-05-2024 13:46:05] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [01-05-2024 13:46:39] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:46:39] ::1:50609 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [01-05-2024 13:46:39] Starting component PersistentLocalHnswSegment
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000859.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0087404.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000428.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0199841.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0115218.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0237597.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0003124.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0267638.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0268125.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0281808.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0153713.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0279038.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0292433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0285643.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0292810.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0316993.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0321088.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0316995.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0335788.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0366008.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0249379.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0182537.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0363227.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0366586.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0045800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0382730.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0380965.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0382954.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0421041.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0392442.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000122.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0427659.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0431433.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0431484.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0464137.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0466773.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0470328.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0448987.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0484439.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0167760.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0502752.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0511104.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0515979.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002161.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0523932.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0531759.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0106785.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0531584.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0550615.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0567756.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0553184.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0591704.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0571186.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0601698.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0594291.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0603875.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0602905.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0651627.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0632160.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0659947.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0657874.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0098376.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0680368.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0663860.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0681933.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0701012.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0706926.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0728230.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0124279.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0792514.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0784407.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0370564.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0807580.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0820607.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0829171.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0838843.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0107574.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0841797.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0842239.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0864931.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0875983.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0891238.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0878035.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0909825.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0910400.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0916665.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0912478.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0925118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0917467.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0928108.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0717468.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0926599.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0930290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0949403.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0398446.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0524306.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0806565.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0681927.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0551222.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0199087.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0848232.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0478359.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0001316.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0187981.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0516001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000406.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002031.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002311.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002233.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0267916.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0071992.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002935.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0103567.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0078116.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0076800.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000891.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0176699.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0178270.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0365121.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002118.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0002001.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0000847.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0269771.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0376396.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0190516.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0003425.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0092290.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0165744.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0001366.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0174682.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0069373.jpg-1
+[33mWARNING[0m:  [01-05-2024 13:46:39] Add of existing embedding ID: nm0173993.jpg-1
+[32mINFO[0m:     [01-05-2024 13:46:39] ::1:50609 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:48:18] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 13:48:18] ::1:50683 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 13:48:19] ::1:50683 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:27:09] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:27:09] ::1:50982 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:27:38] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:27:38] ::1:51004 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:28:09] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:28:09] ::1:51033 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:28:09] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:28:09] ::1:51034 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:36] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:29:36] ::1:51079 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:43] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:29:43] ::1:51087 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:44] ::1:51087 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:51] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:29:51] ::1:51103 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:51] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:29:51] ::1:51104 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:51] ::1:51103 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:29:51] ::1:51104 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:30:12] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:30:12] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:30:12] ::1:51140 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:30:12] ::1:51141 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:30:12] ::1:51140 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:30:13] ::1:51141 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:27] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:33:27] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:33:27] ::1:51225 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:27] ::1:51226 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:27] ::1:51225 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:28] ::1:51226 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:43] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:33:43] ::1:51234 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:33:44] ::1:51234 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:35:16] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:35:16] ::1:51296 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:35:16] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:35:16] ::1:51297 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:35:17] ::1:51296 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:35:17] ::1:51297 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:36:45] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:36:45] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:36:45] ::1:51399 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:36:45] ::1:51400 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:36:45] ::1:51399 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:36:45] ::1:51400 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:38:55] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:38:55] ::1:51498 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:38:56] ::1:51498 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:42:49] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:42:49] ::1:51540 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:42:49] ::1:51540 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:44:54] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:44:54] ::1:51581 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:44:54] ::1:51581 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:48:46] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 14:48:46] ::1:51697 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 14:48:46] ::1:51697 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:20] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:37:20] ::1:52866 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:21] ::1:52866 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:25] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:37:25] ::1:52866 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:25] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:37:25] ::1:52881 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:25] ::1:52866 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:37:26] ::1:52866 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:04] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:38:04] ::1:52954 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:04] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:38:04] ::1:52955 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:05] ::1:52954 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:05] ::1:52955 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:05] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:38:05] ::1:52954 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:05] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 15:38:05] ::1:52955 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:06] ::1:52954 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 15:38:06] ::1:52955 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:08:07] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:08:07] ::1:53449 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:08:07] ::1:53449 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:14:13] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:14:13] ::1:53656 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:14:13] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:14:13] ::1:53657 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:14:13] ::1:53656 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:14:13] ::1:53657 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:14] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:14] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:14] ::1:53818 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:14] ::1:53819 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:15] ::1:53818 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:15] ::1:53819 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:26] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:26] ::1:53840 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:26] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:26] ::1:53841 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:27] ::1:53840 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:27] ::1:53841 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:38] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:38] ::1:53863 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:38] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:17:38] ::1:53864 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:38] ::1:53863 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:17:38] ::1:53864 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:18:59] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:18:59] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:18:59] ::1:53944 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:18:59] ::1:53945 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:00] ::1:53944 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:00] ::1:53945 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:36] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:19:36] ::1:54135 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:36] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:19:36] ::1:54136 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:37] ::1:54135 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:19:37] ::1:54136 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:21:00] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:21:00] ::1:54531 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:21:00] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:21:00] ::1:54532 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:21:00] ::1:54531 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:21:00] ::1:54532 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:00] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:22:00] ::1:54807 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:00] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:22:00] ::1:54808 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:00] ::1:54807 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:00] ::1:54808 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:28] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:22:28] ::1:54957 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:28] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:22:28] ::1:54958 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:29] ::1:54957 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:22:29] ::1:54958 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:23:13] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:23:13] ::1:55055 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:23:13] ::1:55055 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:25:33] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:25:33] ::1:55189 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:25:33] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:25:33] ::1:55190 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:25:33] ::1:55189 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:25:33] ::1:55190 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:26:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:26:40] ::1:55225 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:26:48] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:26:48] ::1:55247 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:26:48] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:26:48] ::1:55248 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:26:57] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:26:57] ::1:55256 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:26:57] ::1:55256 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:28:18] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:28:18] ::1:55311 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:28:18] ::1:55311 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:31:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:31:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:31:40] ::1:55397 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:31:40] ::1:55398 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:31:40] ::1:55397 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:59:28] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 16:59:28] ::1:55871 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 16:59:29] ::1:55871 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:01:55] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:01:55] ::1:56254 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:01:55] ::1:56254 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:02:10] Backing off send_request(...) for 0.6s (requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='us-api.i.posthog.com', port=443): Read timed out. (read timeout=15))
+[32mINFO[0m:     [01-05-2024 18:03:24] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:03:24] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:03:24] ::1:56330 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:03:24] ::1:56331 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:03:25] ::1:56330 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:03:25] ::1:56331 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:11:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:11:40] ::1:56678 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:11:40] ::1:56678 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:12:23] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:12:23] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:12:23] ::1:56706 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:12:23] ::1:56707 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:12:23] ::1:56706 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:12:23] ::1:56707 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:41] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:25:41] ::1:56864 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:41] ::1:56864 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:47] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:25:47] ::1:56881 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:47] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:25:47] ::1:56882 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:48] ::1:56881 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:25:48] ::1:56882 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:17] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:28:17] ::1:57347 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:17] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:28:17] ::1:57348 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:17] ::1:57347 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:18] ::1:57348 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:34] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:28:34] ::1:57371 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:34] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:28:34] ::1:57372 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:35] ::1:57371 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:28:35] ::1:57372 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:29] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:30:29] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:30:29] ::1:57425 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:29] ::1:57426 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:29] ::1:57425 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:30] ::1:57426 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:53] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:30:53] ::1:57465 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:53] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:30:53] ::1:57466 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:53] ::1:57465 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:30:53] ::1:57466 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:32:54] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:32:54] ::1:57534 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:32:54] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:32:54] ::1:57535 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:32:54] ::1:57534 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:32:54] ::1:57535 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:33:16] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:33:16] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:33:16] ::1:57568 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:33:16] ::1:57569 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:33:16] ::1:57568 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:33:16] ::1:57569 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:38] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:40:38] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:40:38] ::1:57865 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:38] ::1:57866 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:39] ::1:57865 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:39] ::1:57866 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:40:40] ::1:57865 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:40:40] ::1:57866 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:40] ::1:57865 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:40:40] ::1:57866 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:41:05] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:41:05] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:41:05] ::1:58006 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:41:05] ::1:58007 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:41:06] ::1:58006 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:41:06] ::1:58007 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:42:01] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:42:01] ::1:58337 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:42:01] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:42:01] ::1:58338 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:42:01] ::1:58337 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:42:02] ::1:58338 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:47:59] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:47:59] ::1:59833 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:48:00] ::1:59833 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:48:15] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:48:15] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 18:48:15] ::1:59920 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:48:15] ::1:59921 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:48:15] ::1:59920 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 18:48:15] ::1:59921 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:05:41] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:05:41] ::1:64269 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:05:41] ::1:64269 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:08:04] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:08:04] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:08:04] ::1:64918 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:08:04] ::1:64919 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:08:04] ::1:64918 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:08:04] ::1:64919 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:12:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:12:40] ::1:49703 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:12:40] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:12:40] ::1:49704 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:12:40] ::1:49703 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:12:40] ::1:49704 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:13:06] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:13:06] ::1:49817 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:13:06] ::1:49817 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:13:56] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:13:56] ::1:50032 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:13:56] ::1:50032 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:14:30] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:14:30] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:14:30] ::1:50184 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:14:30] ::1:50185 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:14:30] ::1:50184 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:14:31] ::1:50185 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:22:10] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:22:10] Collection face-api is not created.
+[32mINFO[0m:     [01-05-2024 19:22:10] ::1:52110 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:22:10] ::1:52111 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:22:10] ::1:52110 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[32mINFO[0m:     [01-05-2024 19:22:10] ::1:52111 - "POST /api/v1/collections/98743b28-fc33-4416-9887-c866e7f6ccd3/query HTTP/1.1" 200
+[33mWARNING[0m:  [01-05-2024 19:24:37] chroma_server_nofile is set to 65535, but this is less than current soft limit of 1048575. chroma_server_nofile will not be set.
+[32mINFO[0m:     [01-05-2024 19:24:37] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component System
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component SqliteDB
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component Posthog
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [01-05-2024 19:24:37] Starting component SegmentAPI
+[32mINFO[0m:     [01-05-2024 19:24:37] Started server process [[36m71593[0m]
+[32mINFO[0m:     [01-05-2024 19:24:37] Waiting for application startup.
+[32mINFO[0m:     [01-05-2024 19:24:37] Application startup complete.
+[32mINFO[0m:     [01-05-2024 19:24:37] Uvicorn running on [1mhttp://localhost:3030[0m (Press CTRL+C to quit)

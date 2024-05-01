@@ -29,6 +29,55 @@
       "when": 1714418208030,
       "tag": "0003_stiff_stephen_strange",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1714516543068,
+      "tag": "0004_aspiring_charles_xavier",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1714537076251,
+      "tag": "0005_brave_george_stacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1714537562530,
+      "tag": "0006_smooth_radioactive_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1714537864317,
+      "tag": "0007_black_slyde",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1714556956174,
+      "tag": "0008_cloudy_mad_thinker",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1714590327803,
+      "tag": "0009_previous_black_panther",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1714604282201,
+      "tag": "0010_careless_vision",
+      "breakpoints": true
     }
   ]
 }

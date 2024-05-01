@@ -7,3 +7,11 @@ export const rdsConfig = {
     database: 'instalitedb',
     port: 3306
 }
+
+export const imdbConfig = {
+    host: "imdbdatabase.cryiiqiqodn9.us-east-1.rds.amazonaws.com",
+    user: "admin",
+    password: "rds-password",
+    database: "imdbdatabase",
+    port: 3306
+}

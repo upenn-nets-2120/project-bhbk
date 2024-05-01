@@ -7,7 +7,8 @@ import {
   date,
   timestamp,
   uniqueIndex,
-  boolean
+  boolean,
+  primaryKey
 } from 'drizzle-orm/mysql-core';
 import { relations } from 'drizzle-orm';
 
@@ -21,7 +22,8 @@ export const users = mysqlTable('users', {
   affiliation: varchar('affiliation', { length: 256 }),
   profileUrl: varchar('profileUrl', { length: 256 }),
   dob: date('dob'),
-  hasOnboarded: boolean('hasOnboarded')
+  hasOnboarded: boolean('hasOnboarded'),
+  linkedActor: varchar('linkedActor', { length: 256 })
 }, (users) => ({
   emailIndex: uniqueIndex('email_idx').on(users.email),
 }));
@@ -44,6 +46,14 @@ export const comments = mysqlTable('comments', {
   updatedAt: timestamp('updatedAt').defaultNow()
 });
 
+export const hashtags = mysqlTable('hashtags', {
+  id: int('id').primaryKey().autoincrement(),
+  content: varchar('content', { length: 2048 }),
+  createdAt: timestamp('createdAt').defaultNow(),
+  updatedAt: timestamp('updatedAt').defaultNow(),
+  count: int('count').default(0).notNull(),
+})
+
 export const postLikes = mysqlTable('posts_likes', {
   postId: int('postId').references(() => posts.id, { onDelete: 'cascade' }),
   userId: int('userId').references(() => users.id, { onDelete: 'cascade' }),
@@ -65,11 +75,63 @@ export const chatMessages = mysqlTable('chat_messages', {
   sentAt: timestamp('sentAt').defaultNow()
 })
 
+export const postsToHashtags = mysqlTable(
+  'posts_to_hashtags',
+  {
+    postId: int('post_id')
+      .notNull()
+      .references(() => posts.id, { onDelete: 'cascade', onUpdate: 'cascade' }),
+    hashtagId: int('hashtag_id')
+      .notNull()
+      .references(() => hashtags.id, { onDelete: 'cascade', onUpdate: 'cascade' }),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.postId, t.hashtagId] }),
+  })
+);
+
+export const userFriends = mysqlTable('user_friends', {
+  userId: int('user_id').notNull().references(() => users.id),
+  friendId: int('friend_id').notNull().references(() => users.id),
+}, (t) => {
+  return {
+    pk: primaryKey(t.userId, t.friendId),
+  };
+});
+
+export const userHashtags = mysqlTable('user_hashtags', {
+  userId: int('user_id').notNull().references(() => users.id),
+  hashtagId: int('hashtag_id').notNull().references(() => hashtags.id),
+}, (t) => {
+  return {
+    pk: primaryKey(t.userId, t.hashtagId),
+  };
+});
+
 export const usersRelations = relations(users, ({ many }) => ({
   posts: many(posts),
   comments: many(comments),
-  postLikes: many(postLikes)
+  postLikes: many(postLikes),
+  hashtags: many(userHashtags, {
+    fields: [userHashtags.userId],
+    references: [users.id],
+  }),
+  friends: many(userFriends, {
+    fields: [userFriends.userId],
+    references: [users.id],
+  }),
 }));
+
+export const hashtagsRelations = relations(hashtags, ({ many }) => ({
+  posts: many(postsToHashtags, {
+    fields: [postsToHashtags.hashtagId],
+    references: [hashtags.id],
+  }),
+  users: many(userHashtags, {
+    fields: [userHashtags.hashtagId],
+    references: [hashtags.id],
+  }),
+}))
 
 export const postsRelations = relations(posts, ({ one, many }) => ({
   author: one(users, {
@@ -77,6 +139,10 @@ export const postsRelations = relations(posts, ({ one, many }) => ({
     references: [users.id],
   }),
   comments: many(comments),
+  hashtags: many(postsToHashtags, {
+    fields: [postsToHashtags.postId],
+    references: [posts.id],
+  }),
   postLikes: many(postLikes)
 }));
 

@@ -9,6 +9,8 @@ import { useUser } from "@/providers/UserProvider";
 import { IoCreateOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { cn } from "@/lib/utils";
+import { Avatar } from "@/components/ui/avatar";
+import { AvatarImage } from "@radix-ui/react-avatar";
 
 export const toolBarLinks = [
   {
@@ -44,7 +46,7 @@ export const loggedIntoolBarLinks = [
 export const toolBarGraphicSize = 16;
 
 export const ToolBar = () => {
-  const { isLoggedIn } = useUser();
+  const { isLoggedIn, user } = useUser();
 
   return (
     <div className="flex items-center gap-4 text-sm lg:gap-6">
@@ -71,10 +73,19 @@ export const ToolBar = () => {
                 "transition-colors hidden md:flex items-center space-x-1.5 text-foreground hover:text-primary"
               )}
             >
-              <tool.IconComponent
-                size={toolBarGraphicSize}
-                className="text-primary"
-              />
+              {tool.href === "/profile" &&
+              isLoggedIn &&
+              user &&
+              user.profileUrl ? (
+                <Avatar className="w-[17px] h-[17px] border-primary border-1">
+                  <AvatarImage src={user?.profileUrl} />
+                </Avatar>
+              ) : (
+                <tool.IconComponent
+                  size={toolBarGraphicSize}
+                  className="text-primary"
+                />
+              )}
               <span className="text-sm">{tool.name}</span>
             </Link>
           ))}

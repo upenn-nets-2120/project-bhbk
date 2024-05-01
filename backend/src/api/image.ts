@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import { checkAuthentication } from '../middlewares';
 import { uploadFile } from '../views/image';
-import { updatePostById } from '../views/post';
+import { updatePostById } from '../views/posts';
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ router.post('/upload/profile-pic', checkAuthentication, upload.single('file'), a
     }
 })
 
-router.post('/upload/:postId/image', checkAuthentication, upload.single('file'), async (req, res, next) => {
+router.post('/upload/:postId/graphic', checkAuthentication, upload.single('file'), async (req, res, next) => {
     try {
         const file = req.file;
 
@@ -42,9 +42,9 @@ router.post('/upload/:postId/image', checkAuthentication, upload.single('file'),
 
         const fileUrl = await uploadFile(file);
 
-        const updatedPost = await updatePostById(postId, { imageUrl: fileUrl  });
+        await updatePostById(postId, { imageUrl: fileUrl  });
 
-        return res.status(200).json(updatedPost)
+        return res.status(200).json(fileUrl)
     } catch (error) {
         console.error(error);
         next(error)

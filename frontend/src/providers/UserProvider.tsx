@@ -30,6 +30,7 @@ interface UserContextProps {
   uploadProfilePic: (profile: File) => Promise<void>;
   error?: string;
   isMakingRequest: boolean;
+  actorRecommendations: string[];
 }
 
 export const UserContext = createContext<UserContextProps | undefined>(
@@ -58,6 +59,9 @@ export const UserProvider: FC<UserProviderProps> = ({
 }) => {
   const [user, setUser] = useState<User | undefined>(initialUser);
   const [error, setError] = useState<string>();
+  const [actorRecommendations, setActorRecommendations] = useState<string[]>(
+    []
+  );
 
   const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
     "/auth",
@@ -119,27 +123,6 @@ export const UserProvider: FC<UserProviderProps> = ({
     }
   };
 
-  const updateUser = async (updatedUser: Partial<User>) => {
-    try {
-      setIsMakingRequest(true);
-
-      await api.put("/user/update-user", updatedUser);
-
-      toast("Update user details sucessfully!");
-
-      setError(undefined);
-
-      setIsMakingRequest(false);
-    } catch (error: any | AxiosError) {
-      setIsMakingRequest(false);
-      if (axios.isAxiosError(error)) {
-        const errorMessage: ErrorReponse = error.response?.data;
-
-        setError(errorMessage ? errorMessage.message : undefined);
-      }
-    }
-  };
-
   const refreshUser = async () => {
     try {
       const { data: refreshedUser } = await api.get<User>("/auth");
@@ -153,11 +136,36 @@ export const UserProvider: FC<UserProviderProps> = ({
     }
   };
 
+  const updateUser = async (updatedUser: Partial<User>) => {
+    try {
+      setIsMakingRequest(true);
+
+      await api.put("/user/update-user", updatedUser);
+
+      toast("Update user details sucessfully!");
+
+      setError(undefined);
+
+      setIsMakingRequest(false);
+
+      refreshUser();
+    } catch (error: any | AxiosError) {
+      setIsMakingRequest(false);
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        setError(errorMessage ? errorMessage.message : undefined);
+      }
+    }
+  };
+
   const uploadProfilePic = async (profile: File) => {
     try {
       setIsMakingRequest(true);
       const formData = new FormData();
       formData.append("file", profile);
+
+      setError(undefined);
 
       const { data: profileUrl } = await api.post<string>(
         "/image/upload/profile-pic",
@@ -202,6 +210,27 @@ export const UserProvider: FC<UserProviderProps> = ({
     }
   };
 
+  const getActorRecommendations = async () => {
+    try {
+      if (user?.profileUrl) {
+        const { data: fetchedActors } = await api.post<string[]>(
+          "/search/imageSearch",
+          { imageUrl: user?.profileUrl }
+        );
+
+        console.log(fetchedActors);
+
+        setActorRecommendations(fetchedActors);
+      }
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        console.error(errorMessage);
+      }
+    }
+  };
+
   useEffect(() => {
     if (revalidateUserError) {
       setUser(undefined);
@@ -214,6 +243,10 @@ export const UserProvider: FC<UserProviderProps> = ({
       setIsLoggedIn(true);
     }
   }, [revalidateUserData]);
+
+  useEffect(() => {
+    getActorRecommendations();
+  }, [user?.profileUrl]);
 
   const value = useMemo(
     () => ({
@@ -228,6 +261,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       refreshUser,
       uploadProfilePic,
       logOutUser,
+      actorRecommendations,
     }),
     [
       user,
@@ -241,6 +275,8 @@ export const UserProvider: FC<UserProviderProps> = ({
       refreshUser,
       uploadProfilePic,
       logOutUser,
+      actorRecommendations,
+      setActorRecommendations,
     ]
   );
 

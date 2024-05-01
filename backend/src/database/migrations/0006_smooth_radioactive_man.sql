@@ -1,0 +1,1 @@
+ALTER TABLE `hashtags` ADD `count` int DEFAULT 0 NOT NULL;

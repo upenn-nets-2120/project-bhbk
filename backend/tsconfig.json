@@ -14,8 +14,8 @@
     "./*.js",
     "src/**/*.ts",
     "test/**/*.ts",
-    "src/views/imageSearch.js",
-    "src/views/imageSearch.js",
-    "src/api/imageSearch.js"
+    "src/views/imageSearch.ts",
+    "src/views/imageSearch.ts",
+    "src/api/search.js"
   ]
 }

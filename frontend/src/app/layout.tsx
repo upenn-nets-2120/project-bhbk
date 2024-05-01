@@ -8,6 +8,7 @@ import "./globals.css";
 import { api } from "@/lib/api";
 import { User } from "@/types/user";
 import { cookies } from "next/headers";
+import { PostsProvider } from "@/providers/PostsProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,10 +41,12 @@ export default async function RootLayout({
       <body className={cn(inter.className, "min-h-screen bg-background")}>
         <div className="relative flex min-h-screen flex-col bg-background">
           <UserProvider initialUser={initialUser}>
-            <Navbar />
-            <div className="relative flex h-full max-w-screen-md md:w-full mx-3.5 md:mx-auto">
-              {children}
-            </div>
+            <PostsProvider>
+              <Navbar />
+              <div className="relative flex h-full max-w-screen-md md:w-full mx-3.5 md:mx-auto">
+                {children}
+              </div>
+            </PostsProvider>
           </UserProvider>
         </div>
         <Toaster position="bottom-center" />

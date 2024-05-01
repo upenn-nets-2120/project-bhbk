@@ -3,20 +3,29 @@ import { posts, postLikes } from "../database/schema";
 import { NewPost, UpdatePost } from "../types/post";
 import { sql, desc, eq, and } from "drizzle-orm"
 
-export const createPost = async (post: NewPost) => {
-    const createdPost = await db.insert(posts).values({
+export const createPost = async (post: NewPost, authorId: number) => {
+
+    const newPost: NewPost = {
         ...post,
+        authorId,
         createdAt: new Date(),
         updatedAt: new Date()
-    });
-    return createdPost;
+    }
+
+    const newRows = await db.insert(posts).values(newPost);
+
+    if (newRows.length <= 0) {
+        throw new Error("Failed to create new post")
+    }
+
+    const newRowId = newRows[0].insertId;
+
+    newPost.id = newRowId;
+
+    return newPost;
 };
 
-<<<<<<< HEAD:backend/src/views/posts.ts
-export const updatePost = async (postId: number, updateData: UpdatePost) => {
-=======
 export const updatePostById = async (postId: number, updateData: Partial<NewPost>) => {
->>>>>>> 209d971 (frontend improv):backend/src/views/post.ts
     const updatedPost = await db.update(posts)
         .set({
             ...updateData,
@@ -32,7 +41,7 @@ export const deletePost = async (postId: number) => {
 };
 
 export const getPostById = async (postId: number) => {
-    const selectedPost = await db.query.posts.findMany({
+    const selectedPost = await db.query.posts.findFirst({
         where: eq(posts.id, postId)
       });
     return selectedPost;
@@ -49,9 +58,20 @@ export const getPostByUserId = async (userId: number) => {
     return post;
 };
 
-export const getPostsByChron = async () => {
+export const getPostsByChronology = async () => {
     const post = await db.query.posts.findMany({
-        orderBy: [desc(posts.createdAt)]
+        orderBy: [desc(posts.createdAt)],
+        with: {
+            author: {
+                columns: {
+                    id: true,
+                    username: true,
+                    profileUrl: true,
+                    affiliation: true,
+                    linkedActor: true
+                }
+            },
+        }
     }); 
     return post;
 };

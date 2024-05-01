@@ -20,6 +20,9 @@ import { MdError, MdUpdate } from "react-icons/md";
 import { AiOutlineLoading } from "react-icons/ai";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Label } from "../ui/label";
+import useSWR from "swr";
+import { fetcher } from "@/lib/api";
+import { Hashtag } from "@/lib/hashtag";
 
 const processUser = (user?: Partial<User>) => {
   const processedUser = { ...user };
@@ -54,6 +57,8 @@ export const ProfileDetails = () => {
   const [dob, setDob] = useState<Date | undefined>(user?.dob);
 
   const [profilePic, setProfilePic] = useState<File>();
+
+  const [previewUrl, setPreviewUrl] = useState<string>();
 
   const [updatedUser, setUpdatedUser] = useState<Partial<User> | undefined>(
     user
@@ -106,6 +111,8 @@ export const ProfileDetails = () => {
       await refreshUser();
       setProfilePic(undefined);
     }
+
+    setPreviewUrl(undefined);
   };
 
   const onProfilePicChange = async (
@@ -115,6 +122,8 @@ export const ProfileDetails = () => {
       if (event.target.files.length > 0) {
         const file = event.target.files[0];
         setProfilePic(file);
+        const preview = URL.createObjectURL(file);
+        setPreviewUrl(preview);
       }
     }
   };
@@ -193,6 +202,14 @@ export const ProfileDetails = () => {
                   accept: "image/*",
                 }}
               />
+              {previewUrl && (
+                <div className="flex space-y-2 flex-col">
+                  <Label>Preview your updated profile pic</Label>
+                  <Avatar className="border-2 border-primary w-12 h-12">
+                    <AvatarImage src={previewUrl} />
+                  </Avatar>
+                </div>
+              )}
               {user && user?.profileUrl && (
                 <div className="flex space-y-2 flex-col">
                   <Label>Your current profile pic</Label>

@@ -2,6 +2,7 @@ import express from 'express';
 import { checkAuthentication } from '../middlewares';
 import { NewUser } from '../types/user';
 import { encryptPassword } from '../utils/encrypt';
+import { createPost } from '../views/posts';
 import { updateUser } from '../views/user';
 
 const router = express.Router();
@@ -27,6 +28,10 @@ router.put('/update-user', checkAuthentication, async (req, res, next) => {
       const userId = req.session.user.id satisfies number;
   
       const newlyUpdatedUser = await updateUser(userId, updatedUser);
+
+      if (newlyUpdatedUser.linkedActor && newlyUpdatedUser.linkedActor !== req.session.user.linkedActor) {
+        await createPost({ text: `I am now linked to ${newlyUpdatedUser.linkedActor}`}, userId);
+      }
   
       req.session.user = newlyUpdatedUser;
   

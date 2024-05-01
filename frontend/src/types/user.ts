@@ -7,4 +7,5 @@ export type User = {
     email: string;
     affiliation: string;
     profileUrl?: string;
+    linkedActor?: string;
 }

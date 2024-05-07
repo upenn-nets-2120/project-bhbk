@@ -23,6 +23,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   let initialUser = undefined;
+  let initialUsers = [];
 
   try {
     const { data: userData } = await api.get<User>("/auth", {
@@ -30,10 +31,19 @@ export default async function RootLayout({
         Cookie: cookies().toString(),
       },
     });
+
+    const { data: users } = await api.get<User[]>("/user/list", {
+      headers: {
+        Cookie: cookies().toString(),
+      },
+    });
+
     initialUser = userData;
+    initialUsers = users;
   } catch (error) {
     console.log(error);
     initialUser = undefined;
+    initialUsers = [];
   }
 
   return (

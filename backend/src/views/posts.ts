@@ -1,7 +1,8 @@
 import { db } from "../database/setup";
-import { posts, postLikes } from "../database/schema";
+import { posts, postLikes, comments } from "../database/schema";
 import { NewPost, UpdatePost } from "../types/post";
 import { sql, desc, eq, and } from "drizzle-orm";
+import { NewComment } from "../types/comment";
 
 export const createPost = async (post: NewPost, authorId: number) => {
   const newPost: NewPost = {
@@ -97,23 +98,91 @@ export const getAllPosts = async () => {
   return post;
 };
 
-export const handleLikePost = async (postId: number, userId: number) => {
+export const likePost = async (postId: number, userId: number) => {
   const existingLike = await db
     .select()
     .from(postLikes)
     .where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)));
 
-  if (existingLike.length % 2 == 0) {
-    const likeAction = await db.insert(postLikes).values({
-      postId: postId,
-      userId: userId,
-      likedAt: new Date(),
-    });
-    return likeAction;
-  } else {
-    const likeAction = await db
-      .delete(postLikes)
-      .where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)));
-    return likeAction;
+  if (existingLike.length >= 1) {
+    return;
   }
+
+  await db.insert(postLikes).values({
+    postId: postId,
+    userId: userId,
+    likedAt: new Date(),
+  });
 };
+
+export const unlikePost = async (postId: number, userId: number) => {
+  const existingLike = await db
+    .select()
+    .from(postLikes)
+    .where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)));
+  
+  if (existingLike.length <= 0) {
+    return;
+  }
+
+  await db.delete(postLikes)
+  .where(
+    and(eq(postLikes.postId, postId), eq(postLikes.userId, userId))
+  )
+}
+
+export const getUsersByLikedPost = async (postId: number) => {
+  const likedUsers = await db.query.postLikes.findMany({
+    where: (postLikes, { eq }) => eq(postLikes.postId, postId),
+    with: {
+      author: {
+        columns: {
+          id: true,
+          username: true,
+          affiliation: true,
+          linkedActor: true,
+          profileUrl: true,
+          isOnline: true
+        }
+      }
+    },
+  });
+
+  return likedUsers.map(likedUser => likedUser.author);
+}
+
+export const addCommentToPost = async (postId: number, userId: number, comment: NewComment) => {
+  const newComment: NewComment = {
+    ...comment,
+    postId,
+    authorId: userId,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+
+  await db.insert(comments).values(newComment);
+}
+
+export const getCommentsOfPost = async (postId: number) => {
+  const postWithComments = await db.query.posts.findFirst({
+    where: eq(posts.id, postId),
+    with: {
+      comments: {
+        with: {
+          author: {
+            columns: {
+              id: true,
+              username: true,
+              profileUrl: true,
+              isOnline: true,
+              affiliation: true,
+              linkedActor: true
+            }
+          }
+        }
+      }
+    }
+  })
+
+  return postWithComments?.comments || []
+}

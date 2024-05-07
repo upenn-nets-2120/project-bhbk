@@ -24,7 +24,7 @@ export const users = mysqlTable(
     affiliation: varchar("affiliation", { length: 256 }),
     profileUrl: varchar("profileUrl", { length: 256 }),
     dob: date("dob"),
-    hasOnboarded: boolean("hasOnboarded"),
+    isOnline: boolean("isOnline").notNull().default(false),
     linkedActor: varchar("linkedActor", { length: 256 }),
   },
   (users) => ({
@@ -43,8 +43,8 @@ export const posts = mysqlTable("posts", {
 
 export const comments = mysqlTable("comments", {
   id: int("id").primaryKey().autoincrement(),
-  postId: int("postId").references(() => posts.id, { onDelete: "cascade" }),
-  authorId: int("authorId").references(() => users.id, { onDelete: "cascade" }),
+  postId: int("postId").references(() => posts.id),
+  authorId: int("authorId").references(() => users.id),
   content: varchar("content", { length: 2048 }),
   createdAt: timestamp("createdAt").defaultNow(),
   updatedAt: timestamp("updatedAt").defaultNow(),
@@ -61,8 +61,8 @@ export const hashtags = mysqlTable("hashtags", {
 export const postLikes = mysqlTable(
   "posts_likes",
   {
-    postId: int("postId").references(() => posts.id, { onDelete: "cascade" }),
-    userId: int("userId").references(() => users.id, { onDelete: "cascade" }),
+    postId: int("postId").references(() => posts.id),
+    userId: int("userId").references(() => users.id),
     likedAt: timestamp("likedAt").defaultNow(),
   },
   (postLikes) => ({

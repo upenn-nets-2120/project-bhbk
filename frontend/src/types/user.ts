@@ -8,4 +8,6 @@ export type User = {
   affiliation: string;
   profileUrl?: string;
   linkedActor?: string;
+  id?: number;
+  isOnline?: boolean;
 };

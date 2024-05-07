@@ -3,7 +3,7 @@ import { checkAuthentication } from "../middlewares";
 import { NewUser } from "../types/user";
 import { encryptPassword } from "../utils/encrypt";
 import { createPost } from "../views/posts";
-import { updateUser } from "../views/user";
+import { getAllUsers, updateUser } from "../views/user";
 
 const router = express.Router();
 
@@ -47,5 +47,18 @@ router.put("/update-user", checkAuthentication, async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/list", checkAuthentication, async (req, res, next) => {
+  try {
+    const userId: number = req.session.user.id;
+
+    const users = await getAllUsers(userId);
+
+    return res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+})
 
 export default router;

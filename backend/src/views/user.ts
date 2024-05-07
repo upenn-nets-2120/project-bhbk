@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, not } from "drizzle-orm";
 import { users } from "../database/schema";
 import { db } from "../database/setup";
 import { NewUser } from "../types/user";
@@ -26,3 +26,19 @@ export const updateUser = async (
 
   return newUpdatedUser;
 };
+
+export const getAllUsers = async (userId: number) => {
+  const allUsers = await db.query.users.findMany({
+    columns: {
+      id: true,
+      username: true,
+      profileUrl: true,
+      linkedActor: true,
+      affiliation: true,
+      isOnline: true
+    },
+    where: not(eq(users.id, userId))
+  })
+
+  return allUsers;
+}

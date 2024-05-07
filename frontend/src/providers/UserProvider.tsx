@@ -20,6 +20,7 @@ import useSWR from "swr";
 
 interface UserContextProps {
   user?: User;
+  users?: User[];
   isLoggedIn: boolean;
   registerUser: () => Promise<void>;
   logInUser: (username: string, password: string) => Promise<void>;
@@ -28,8 +29,12 @@ interface UserContextProps {
   updateUser: (updatedUser: Partial<User>) => Promise<void>;
   refreshUser: () => Promise<void>;
   uploadProfilePic: (profile: File) => Promise<void>;
+  addFriend: (friendId: number) => Promise<void>;
+  removeFriend: (friendId: number) => Promise<void>;
+  setFriends: (friends: User[]) => void;
   error?: string;
   isMakingRequest: boolean;
+  friends: User[];
   actorRecommendations: string[];
 }
 
@@ -51,11 +56,13 @@ export const userRevalidationInterval = 100 * 1000;
 
 interface UserProviderProps extends PropsWithChildren {
   initialUser?: User;
+  initialUsers: User[];
 }
 
 export const UserProvider: FC<UserProviderProps> = ({
   children,
   initialUser,
+  initialUsers,
 }) => {
   const [user, setUser] = useState<User | undefined>(initialUser);
   const [error, setError] = useState<string>();
@@ -63,12 +70,27 @@ export const UserProvider: FC<UserProviderProps> = ({
     []
   );
 
+  const [users, setUsers] = useState<User[]>(initialUsers);
+  const [friends, setFriends] = useState<User[]>([]);
+
   const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
     "/auth",
     fetcher,
     {
       refreshInterval: userRevalidationInterval,
     }
+  );
+
+  const { data: allUsers, error: allUsersError } = useSWR<User[]>(
+    "/user/list",
+    fetcher,
+    { refreshInterval: 2000 }
+  );
+
+  const { data: allFriends, error: allFriendsError } = useSWR<User[]>(
+    "/friends/list",
+    fetcher,
+    { refreshInterval: 1000 }
   );
 
   const [isLoggedIn, setIsLoggedIn] = useState(initialUser ? true : false);
@@ -106,6 +128,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       });
       setUser(loggedInUser);
       setIsLoggedIn(true);
+      updateUserOnlineStatus(true);
       setIsMakingRequest(false);
       toast(
         "Logged in sucessfully",
@@ -159,6 +182,10 @@ export const UserProvider: FC<UserProviderProps> = ({
     }
   };
 
+  const updateUserOnlineStatus = async (isOnline: boolean) => {
+    await api.put("/user/update-user", { isOnline });
+  };
+
   const uploadProfilePic = async (profile: File) => {
     try {
       setIsMakingRequest(true);
@@ -195,6 +222,7 @@ export const UserProvider: FC<UserProviderProps> = ({
   const logOutUser = async () => {
     try {
       setIsMakingRequest(true);
+      await updateUserOnlineStatus(false);
       await api.post("/auth/log-out");
       setIsLoggedIn(false);
       setUser(undefined);
@@ -218,10 +246,36 @@ export const UserProvider: FC<UserProviderProps> = ({
           { imageUrl: user?.profileUrl }
         );
 
-        console.log(fetchedActors);
-
         setActorRecommendations(fetchedActors);
       }
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        console.error(errorMessage);
+      }
+    }
+  };
+
+  const addFriend = async (friendId: number) => {
+    try {
+      setIsMakingRequest(true);
+      await api.post("/friends/add", { friendId });
+      setIsMakingRequest(false);
+    } catch (error: any | AxiosError) {
+      if (axios.isAxiosError(error)) {
+        const errorMessage: ErrorReponse = error.response?.data;
+
+        console.error(errorMessage);
+      }
+    }
+  };
+
+  const removeFriend = async (friendId: number) => {
+    try {
+      setIsMakingRequest(true);
+      await api.post("/friends/remove", { friendId });
+      setIsMakingRequest(false);
     } catch (error: any | AxiosError) {
       if (axios.isAxiosError(error)) {
         const errorMessage: ErrorReponse = error.response?.data;
@@ -239,14 +293,50 @@ export const UserProvider: FC<UserProviderProps> = ({
     }
 
     if (revalidateUserData) {
+      updateUserOnlineStatus(true);
       setUser(revalidateUserData);
       setIsLoggedIn(true);
     }
-  }, [revalidateUserData]);
+  }, [revalidateUserData, revalidateUserError]);
 
   useEffect(() => {
     getActorRecommendations();
   }, [user?.profileUrl]);
+
+  useEffect(() => {
+    if (allUsersError) {
+      setUsers([]);
+      return;
+    }
+
+    if (allUsers) {
+      setUsers(allUsers);
+    }
+  }, [allUsers, allUsersError]);
+
+  useEffect(() => {
+    if (allFriendsError) {
+      setFriends([]);
+      return;
+    }
+
+    if (allFriends) {
+      console.log(allFriends);
+      setFriends(allFriends);
+    }
+  }, [allFriends, allFriendsError]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      updateUserOnlineStatus(false);
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -261,7 +351,12 @@ export const UserProvider: FC<UserProviderProps> = ({
       refreshUser,
       uploadProfilePic,
       logOutUser,
+      users,
       actorRecommendations,
+      addFriend,
+      removeFriend,
+      friends,
+      setFriends,
     }),
     [
       user,
@@ -277,6 +372,12 @@ export const UserProvider: FC<UserProviderProps> = ({
       logOutUser,
       actorRecommendations,
       setActorRecommendations,
+      users,
+      setUsers,
+      addFriend,
+      removeFriend,
+      friends,
+      setFriends,
     ]
   );
 

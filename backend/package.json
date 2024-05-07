@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "make-migrations": "drizzle-kit generate:mysql",
     "migrate": "tsx src/database/migrate.ts",
-    "studio": " drizzle-kit studio"
+    "studio": " drizzle-kit studio",
+    "kafka": "tsx src/api/news.ts"
   },
   "keywords": [],
   "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",

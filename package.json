@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "drizzle-orm": "^0.30.9",
+    "openai": "^4.42.0",
     "postgres": "^3.4.4"
   }
 }

@@ -4,6 +4,8 @@ import { parseLocalTsv } from "../utils/tsv";
 
 import { searchImages } from "../views/imageSearch";
 
+import { getGPTResponse } from "../views/llmSearch";
+
 const router = express.Router();
 
 router.post("/imageSearch", checkAuthentication, async (req, res, next) => {
@@ -38,6 +40,23 @@ router.post("/imageSearch", checkAuthentication, async (req, res, next) => {
     console.log(JSON.stringify(error));
     console.error("Error during image search: ", error);
     next(error);
+  }
+});
+
+router.post("/llmsearch", checkAuthentication, async (req, res, next) => {
+  try {
+    const query = req.body.query; 
+    if (!query) {
+      return res.status(400).send({ message: "Search query is required" });
+    }
+
+    console.log(`Processing search for query: ${query}`);
+    const response = await getGPTResponse(query);
+    return res.send({ result: response });  
+  } catch (error) {
+    console.log(JSON.stringify(error));
+    console.error("Error during search: ", error);
+    next(error);  
   }
 });
 

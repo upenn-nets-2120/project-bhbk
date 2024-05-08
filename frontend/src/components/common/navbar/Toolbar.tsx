@@ -11,6 +11,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
 import { AvatarImage } from "@radix-ui/react-avatar";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const toolBarLinks = [
   {
@@ -108,6 +109,7 @@ export const ToolBar = () => {
           </Link>
         </div>
       )}
+      <ThemeToggle />
     </div>
   );
 };

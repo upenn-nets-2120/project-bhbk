@@ -11,6 +11,7 @@ import { cookies } from "next/headers";
 import { PostsProvider } from "@/providers/PostsProvider";
 import { Layout } from "@/components/common/layout/Layout";
 import { ChatProvider } from "@/providers/ChatProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,14 +53,19 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen bg-background")}>
         <div className="relative flex min-h-screen flex-col bg-background">
-          <UserProvider initialUser={initialUser} initialUsers={initialUsers}>
-            <PostsProvider>
-              <ChatProvider>
-                <Navbar />
-                <Layout>{children}</Layout>
-              </ChatProvider>
-            </PostsProvider>
-          </UserProvider>
+          <ThemeProvider attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+            <UserProvider initialUser={initialUser} initialUsers={initialUsers}>
+              <PostsProvider>
+                <ChatProvider>
+                  <Navbar />
+                  <Layout>{children}</Layout>
+                </ChatProvider>
+              </PostsProvider>
+            </UserProvider>
+          </ThemeProvider>
         </div>
         <Toaster position="bottom-center" />
       </body>

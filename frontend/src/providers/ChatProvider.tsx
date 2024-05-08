@@ -2,7 +2,7 @@
 
 import { api, createWebSocketConnection, fetcher } from "@/lib/api";
 import { toast } from "@/lib/utils";
-import { ChatMessage } from "@/types/chat";
+import { ChatGroup, ChatMessage } from "@/types/chat";
 import { User } from "@/types/user";
 import {
   createContext,
@@ -14,6 +14,7 @@ import {
   useState,
 } from "react";
 import useSWR from "swr";
+import { useUser } from "./UserProvider";
 
 interface ChatContextProps {
   chatUsers: User[];
@@ -24,6 +25,7 @@ interface ChatContextProps {
   sendMessage: (text: string) => void;
   messages: ChatMessage[];
   getMessageFromChatId: (id: number) => Promise<ChatMessage[]>;
+  groups: ChatGroup[];
 }
 
 export const ChatContext = createContext<ChatContextProps | undefined>(
@@ -45,6 +47,8 @@ interface ChatProviderProps extends PropsWithChildren {}
 export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
   const [chatId, setChatId] = useState<number | null>(null);
 
+  const { user } = useUser();
+
   const [chatUsers, setChatUsers] = useState<User[]>([]);
 
   const [ws, setWs] = useState<WebSocket | undefined>();
@@ -53,8 +57,16 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
 
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
+  const [groups, setGroups] = useState<ChatGroup[]>([]);
+
   const { data: fetchedMessages } = useSWR(
     isValidChat ? `/chat/${chatId}/messages` : null,
+    fetcher,
+    { refreshInterval: 1000 }
+  );
+
+  const { data: fetchedGroups } = useSWR<ChatGroup[]>(
+    user ? "/chat/groups" : null,
     fetcher,
     { refreshInterval: 1000 }
   );
@@ -78,6 +90,12 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
 
     return messagesFromChat;
   };
+
+  useEffect(() => {
+    if (fetchedGroups && fetchedGroups.length > 0) {
+      setGroups(fetchedGroups);
+    }
+  }, [fetchedGroups]);
 
   useEffect(() => {
     if (isValidChat) {
@@ -108,8 +126,6 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       });
 
       ws.addEventListener("message", (event) => {
-        console.log(event.data);
-
         const newMessages = JSON.parse(event.data) as ChatMessage[];
 
         if (newMessages && newMessages.length > 0) {
@@ -129,6 +145,7 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       sendMessage,
       messages,
       getMessageFromChatId,
+      groups,
     }),
     [
       chatId,
@@ -139,6 +156,8 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       sendMessage,
       messages,
       getMessageFromChatId,
+      groups,
+      setGroups,
     ]
   );
 

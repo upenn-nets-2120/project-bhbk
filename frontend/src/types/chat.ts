@@ -8,3 +8,9 @@ export type ChatMessage = {
   user: User;
   sentAt: string;
 };
+
+export type ChatGroup = {
+  id: number,
+  name: string;
+  users: User[];
+}

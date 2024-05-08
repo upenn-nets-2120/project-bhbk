@@ -1,7 +1,8 @@
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { chatMessages, chats, userChats } from "../database/schema";
 import { db } from "../database/setup";
 import { Chat } from "../types/chat";
+import { NewUser } from "../types/user";
 import { getUserById } from "./user";
 
 export const createNewChat = async (userId: number, friendId: number) => {
@@ -28,10 +29,37 @@ export const createNewChat = async (userId: number, friendId: number) => {
   return createdChatId;
 };
 
-export const addUserToChat = async (chatId: number, userId: number) => {
+export const createNewChatMultiple = async (userIds: number[], name: string) => {
+    const userChecks = await Promise.all(userIds.map((id) => getUserById(id)));
+
+    userChecks.map(check => {
+        if (!check) {
+            throw new Error(undefined);
+        }
+    })
+
+    const result = await db.insert(chats).values({
+        name
+    });
+
+    if (result.length <= 0) {
+        throw new Error("Failed to create new chat");
+    }
+    
+    const createdChatId = result[0].insertId;
+
+    await Promise.all(userIds.map(id => addUserToChat(createdChatId, id, true)));
+
+    return createdChatId;
+}
+
+export const addUserToChat = async (chatId: number, userId: number, isGroup?: boolean) => {
   await db.insert(userChats).values({
     userId,
     chatId,
+    ...(isGroup && {
+      isGroup
+    })
   });
 };
 
@@ -43,7 +71,7 @@ export const getChatById = async (chatId: number) => {
 
 export const getChatOfUsers = async (userId: number) => {
   const chatUser = await db.query.userChats.findMany({
-    where: eq(userChats.userId, userId),
+    where: and(eq(userChats.userId, userId), eq(userChats.isGroup, false)),
   });
 
   const chatOfUsersRequests = chatUser.map(async (chat) => {
@@ -56,6 +84,36 @@ export const getChatOfUsers = async (userId: number) => {
 
   return chatOfUsers.filter((chat) => chat !== undefined) as Chat[];
 };
+
+export const getChatGroupsOfUsers = async (userId: number) => {
+  const chatUser = await db.query.userChats.findMany({
+    where: and(eq(userChats.userId, userId), eq(userChats.isGroup, true)),
+  });
+
+  const chatOfUsersRequests = chatUser.map(async (chat) => {
+    const fetchedChat = await getChatById(chat.chatId);
+
+    return fetchedChat;
+  });
+
+  const chatOfUsers = await Promise.all(chatOfUsersRequests);
+
+  return chatOfUsers.filter((chat) => chat !== undefined) as Chat[];
+}
+
+export const getUsersOfChats = async (chatId: number) => {
+    const chats = await db.query.userChats.findMany({
+        where: eq(userChats.chatId, chatId)
+    })
+
+    const users = await Promise.all(chats.map(chat => {
+        const userId = chat.userId;
+
+        return getUserById(userId);
+    }));
+
+    return users.filter(user => user !== undefined) as NewUser[];
+}
 
 export const getChatMembers = async (chatId: number) => {
   const chatMembers = await db.query.userChats.findMany({
@@ -101,6 +159,28 @@ export const getChatBetweenTwoUsers = async (
 
   return chatBetweenTwoUsers[0];
 };
+
+export const getChatOfUsersMultiple = async (userId: number) => {
+    const chatsOfUser = await getChatGroupsOfUsers(userId);
+    
+    
+    const filteredChats = chatsOfUser.map(async (chat) => {
+      const users = await getUsersOfChats(chat.id);
+
+      return {
+        ...chat,
+        users
+      }
+    })
+
+    const resolvedChatBetweenMultipleUsers = await Promise.all(filteredChats)
+
+    return resolvedChatBetweenMultipleUsers;
+}
+
+export const leaveChat = async (userId: number, chatId: number) => {
+  await db.delete()
+}
 
 export const getMessagesByChatId = async (chatId: number) => {
   const messages = await db.query.chatMessages.findMany({

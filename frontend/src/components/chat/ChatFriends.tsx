@@ -1,5 +1,6 @@
 "use client";
 
+import { useChat } from "@/providers/ChatProvider";
 import { useUser } from "@/providers/UserProvider";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
@@ -10,9 +11,12 @@ import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
 import { ChatFriendOption } from "./ChatFriendOption";
 import { ChatGroupCreateTrigger } from "./ChatGroupCreateTrigger";
+import { ChatGroupOption } from "./ChatGroupOption";
 
 export const ChatFriends = () => {
   const { friends } = useUser();
+
+  const { groups } = useChat();
 
   return (
     <div className="flex max-w-full md:max-w-[40%] w-full flex-col max-h-screen">
@@ -20,7 +24,7 @@ export const ChatFriends = () => {
         <div className="text-primary text-lg font-semibold">Your friends</div>
         <div className="py-2" />
         {friends.map((friend) => (
-          <ChatFriendOption friend={friend} />
+          <ChatFriendOption key={friend.id} friend={friend} />
         ))}
         <div className="py-3" />
         <div className="flex justify-between items-center pb-2">
@@ -29,6 +33,10 @@ export const ChatFriends = () => {
           </div>
           <ChatGroupCreateTrigger />
         </div>
+        <div className="py-2" />
+        {groups.map((group) => (
+          <ChatGroupOption key={group.id} group={group} />
+        ))}
       </ScrollArea>
     </div>
   );

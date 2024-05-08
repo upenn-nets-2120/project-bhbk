@@ -45,14 +45,21 @@ export const ChatMessage: FC<ChatMessageProps> = ({ message }) => {
               {timeSent}
             </div>
           )}
-          <div
-            className={cn(
-              isUser
-                ? "bg-primary text-background px-2.5 py-1.5 rounded-full"
-                : "border px-2.5 py-1.5 rounded-full"
+          <div className="flex flex-col">
+            {!isUser && (
+              <div className="text-[0.6rem] font-semibold text-opacity-60">
+                {message.user.username}
+              </div>
             )}
-          >
-            {message.content}
+            <div
+              className={cn(
+                isUser
+                  ? "bg-primary text-background px-2.5 py-1.5 rounded-full"
+                  : "border px-2.5 py-1.5 rounded-full"
+              )}
+            >
+              {message.content}
+            </div>
           </div>
           {!isUser && (
             <div className="text-[0.5rem] self-end text-opacity-50">

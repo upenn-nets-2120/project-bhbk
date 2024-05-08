@@ -12,7 +12,9 @@ import expressWs from "express-ws";
 import { checkAuthentication, checkWSAuthentication } from "./middlewares";
 import {
   createNewChat,
+  createNewChatMultiple,
   getChatBetweenTwoUsers,
+  getChatOfUsersMultiple,
   getMessagesByChatId,
 } from "./views/chat";
 import { ChatMessage } from "./types/chat";
@@ -97,13 +99,17 @@ app.post("/chat/create", checkAuthentication, async (req, res, next) => {
 });
 
 app.post("/chat/groups/create", checkAuthentication, async (req, res, next) => {
-  const friendId: number = req.body.friendIds;
+  const friendIds: number[] = req.body.friendIds;
 
   const userId: number = req.session.user.id;
 
+  const userIds = [...friendIds, userId];
+
+  const name: string = req.body.groupName;
+
   try {
-    
-    const chatId = await createNewChat(userId, friendId);
+
+    const chatId = await createNewChatMultiple(userIds, name);
 
     return res.status(200).json(chatId);
   } catch (error) {
@@ -111,6 +117,19 @@ app.post("/chat/groups/create", checkAuthentication, async (req, res, next) => {
     next(error);
   }
 });
+
+app.get("/api/chat/groups", checkAuthentication, async (req, res, next) => {
+  const userId: number = req.session.user.id;
+
+  try {
+    const chatGroups = await getChatOfUsersMultiple(userId);
+
+    return res.status(200).json(chatGroups);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+})
 
 app.get(
   "/api/chat/:chatId/messages",

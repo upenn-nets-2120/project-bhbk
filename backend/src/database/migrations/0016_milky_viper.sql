@@ -1,0 +1,1 @@
+ALTER TABLE `users_chats` ADD `isGroup` boolean DEFAULT false NOT NULL;

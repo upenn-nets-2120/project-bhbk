@@ -94,7 +94,7 @@ export const postsToHashtags = mysqlTable(
       .references(() => hashtags.id, {
         onDelete: "cascade",
         onUpdate: "cascade",
-      }),
+      })
   },
   (t) => ({
     pk: primaryKey({ columns: [t.postId, t.hashtagId] }),
@@ -110,6 +110,7 @@ export const userChats = mysqlTable(
     chatId: int("chat_id")
       .notNull()
       .references(() => chats.id),
+    isGroup: boolean("isGroup").notNull().default(false)
   },
   (t) => ({
     pk: primaryKey({ columns: [t.userId, t.chatId] }),

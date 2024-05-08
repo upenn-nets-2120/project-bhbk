@@ -1,7 +1,12 @@
 "use client";
 
+import { chatApi } from "@/lib/api";
 import { useUser } from "@/providers/UserProvider";
+import { User } from "@/types/user";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { useState } from "react";
+import { AiOutlineLoading } from "react-icons/ai";
+import { BsPlus } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
 import { InputForm } from "../common/forms/InputForm";
 import { Avatar, AvatarImage } from "../ui/avatar";
@@ -19,6 +24,31 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 export const ChatGroupCreateTrigger = () => {
   const { friends } = useUser();
 
+  const [groupName, setGroupName] = useState<string>();
+
+  const [selectedFriends, setSelectedFriends] = useState<User[]>([]);
+
+  const [isMakingRequest, setIsMakingRequest] = useState(false);
+
+  const onGroupChange = (values: string[]) => {
+    const selectedFriendIds = new Set(values.map((value) => parseInt(value)));
+
+    const filteredSelectedFriends = friends.filter((friend) =>
+      selectedFriendIds.has(friend.id || -1)
+    );
+
+    setSelectedFriends(filteredSelectedFriends);
+  };
+
+  const createGroup = async () => {
+    setIsMakingRequest(true);
+    const friendIds = selectedFriends.map((friend) => friend.id);
+    await chatApi.post("/groups/create", { friendIds, groupName });
+    setIsMakingRequest(false);
+    setSelectedFriends([]);
+    setGroupName("");
+  };
+
   return (
     <Dialog>
       <DialogTrigger>
@@ -34,12 +64,21 @@ export const ChatGroupCreateTrigger = () => {
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col space-y-3">
-          <InputForm label="Group name" placeholder="Name the group..." />
+          <InputForm
+            label="Group name"
+            placeholder="Name the group..."
+            value={groupName}
+            setValue={setGroupName}
+          />
           <ScrollArea className="min-h-[100px] max-h-[300px] overflow-auto h-full border rounded-md">
             <div className="font-semibold p-3">Pick members</div>
             <ToggleGroup
               className="flex flex-col items-start justify-start"
               type="multiple"
+              onValueChange={onGroupChange}
+              value={selectedFriends.map(
+                (friend) => friend.id?.toString() || ""
+              )}
             >
               {friends.map((friend) => (
                 <ToggleGroupItem
@@ -60,6 +99,28 @@ export const ChatGroupCreateTrigger = () => {
               ))}
             </ToggleGroup>
           </ScrollArea>
+          {selectedFriends.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-semibold">Selected friends:</span>{" "}
+              <div className="inline-flex flex-wrap gap-2">
+                {selectedFriends.map((friend) => (
+                  <div className="flex px-2 py-1 rounded-full bg-primary text-background">
+                    {friend.username}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {groupName && groupName.length > 0 && selectedFriends.length > 0 && (
+            <Button className="flex space-x-2" onClick={createGroup}>
+              {isMakingRequest ? (
+                <AiOutlineLoading className="animate-spin" />
+              ) : (
+                <BsPlus />
+              )}
+              <span>Create group</span>
+            </Button>
+          )}
         </div>
       </DialogContent>
     </Dialog>

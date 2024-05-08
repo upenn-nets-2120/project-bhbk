@@ -2,12 +2,16 @@
 
 import { chatApi } from "@/lib/api";
 import { useChat } from "@/providers/ChatProvider";
+import { useUser } from "@/providers/UserProvider";
+import { AvatarImage } from "@radix-ui/react-avatar";
 import { useState } from "react";
 import { BsSendPlus } from "react-icons/bs";
+import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
 import { MdCreate } from "react-icons/md";
 import { RiProgress8Line } from "react-icons/ri";
 import { TextareaForm } from "../common/forms/TextareaForm";
+import { Avatar } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import { ChatMessage } from "./ChatMessage";
@@ -16,6 +20,8 @@ export const ChatContent = () => {
   const { chatUsers, chatId, setChatId, sendMessage, messages } = useChat();
 
   const [message, setMessage] = useState<string | undefined>();
+
+  const { user: contextUser } = useUser();
 
   const isNullChat = chatId === -1;
 
@@ -37,25 +43,34 @@ export const ChatContent = () => {
 
   return (
     <>
-      <div className="flex border-b sticky top-0 px-2 py-4 text-sm">
-        💬 Your chat with{" "}
-        <div className="inline-flex ml-1 space-x-2">
-          {chatUsers.map((user) => (
-            <div className="flex items-center">
-              <div className="font-semibold">{user.username}</div>
-              {user.isOnline ? (
-                <div className="flex space-x-0.5 text-background px-1 rounded-full text-[0.6rem] items-center text-green-500">
-                  <RiProgress8Line className="animate-pulse" />
-                  <span>Active</span>
-                </div>
-              ) : (
-                <div className="flex space-x-0.5 text-background px-1 rounded-full text-[0.6rem] items-center text-red-500">
-                  <IoMdLogOut />
-                  <span>Inactive</span>
-                </div>
-              )}
-            </div>
-          ))}
+      <div className="flex border-b sticky top-0 px-2 py-4 text-sm items-center space-x-1">
+        <div>💬 Your chat with </div>
+        <div className="inline-flex ml-1 flex-wrap gap-2">
+          {chatUsers
+            .filter((user) => user.id !== contextUser?.id)
+            .map((user) => (
+              <div className="flex items-center space-x-0.5">
+                <Avatar className="w-5 h-5">
+                  {user.profileUrl ? (
+                    <AvatarImage src={user.profileUrl} />
+                  ) : (
+                    <FaRegUserCircle className="w-full h-full text-primary" />
+                  )}
+                </Avatar>
+                <div className="font-semibold">{user.username}</div>
+                {user.isOnline ? (
+                  <div className="flex space-x-0.5 text-background px-1 rounded-full text-[0.6rem] items-center text-green-500">
+                    <RiProgress8Line className="animate-pulse" />
+                    <span>Active</span>
+                  </div>
+                ) : (
+                  <div className="flex space-x-0.5 text-background px-1 rounded-full text-[0.6rem] items-center text-red-500">
+                    <IoMdLogOut />
+                    <span>Inactive</span>
+                  </div>
+                )}
+              </div>
+            ))}
         </div>
       </div>
       <ScrollArea className="w-full overflow-y-scroll h-full max-h-[80%]">

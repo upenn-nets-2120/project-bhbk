@@ -327,14 +327,16 @@ export const UserProvider: FC<UserProviderProps> = ({
   }, [allFriends, allFriendsError]);
 
   useEffect(() => {
-    const handleBeforeUnload = () => {
-      updateUserOnlineStatus(false);
+    const handleBeforeUnload = async () => {
+      await updateUserOnlineStatus(false);
     };
 
     window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      updateUserOnlineStatus(false).then(() =>
+        window.removeEventListener("beforeunload", handleBeforeUnload)
+      );
     };
   }, []);
 

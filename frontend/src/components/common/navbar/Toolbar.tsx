@@ -72,6 +72,7 @@ export const ToolBar = () => {
               className={cn(
                 "transition-colors hidden md:flex items-center space-x-1.5 text-foreground hover:text-primary"
               )}
+              key={tool.name}
             >
               {tool.href === "/profile" &&
               isLoggedIn &&

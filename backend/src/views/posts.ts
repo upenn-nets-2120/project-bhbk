@@ -1,8 +1,9 @@
 import { db } from "../database/setup";
-import { posts, postLikes, comments } from "../database/schema";
+import { posts, postLikes, comments, postsToHashtags } from "../database/schema";
 import { NewPost, UpdatePost } from "../types/post";
 import { sql, desc, eq, and } from "drizzle-orm";
 import { NewComment } from "../types/comment";
+import { getHashtagById } from "./hashtags"
 
 export const createPost = async (post: NewPost, authorId: number) => {
   const newPost: NewPost = {
@@ -74,11 +75,24 @@ export const getPostsByChronology = async () => {
           affiliation: true,
           linkedActor: true,
         },
-      },
+      }
     },
   });
+
   return post;
-};
+}
+
+export const getHashtagsByPostId = async (postId: number) => {
+  const hashtagPosts = await db.query.postsToHashtags.findMany({
+    where: eq(postsToHashtags.postId, postId)
+  })
+
+  const hashtagsPromises = hashtagPosts.map(hp => getHashtagById(hp.hashtagId))
+
+  const hashtags = await Promise.all(hashtagsPromises);
+
+  return hashtags.flat();
+}
 
 export const getPostsByPopularity = async () => {
   const orderedByLikes = await db

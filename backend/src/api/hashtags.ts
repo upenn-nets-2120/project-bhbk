@@ -10,7 +10,7 @@ import {
   updateUserInterests,
   uploadHashtag,
 } from "../views/hashtags";
-import { getPostById } from "../views/posts";
+import { getHashtagsByPostId, getPostById } from "../views/posts";
 
 const router = express.Router();
 
@@ -42,6 +42,19 @@ router.post("/:postId/create", checkAuthentication, async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/posts/:postId", async (req, res, next) => {
+  try {
+    const postId = parseInt(req.params.postId);
+
+    const hashtags = await getHashtagsByPostId(postId);
+
+    return res.status(200).json(hashtags);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+})
 
 router.get("/top", checkAuthentication, async (req, res, next) => {
   try {

@@ -9,6 +9,8 @@ import { api } from "@/lib/api";
 import { User } from "@/types/user";
 import { cookies } from "next/headers";
 import { PostsProvider } from "@/providers/PostsProvider";
+import { Layout } from "@/components/common/layout/Layout";
+import { ChatProvider } from "@/providers/ChatProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +25,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   let initialUser = undefined;
-  let initialUsers = [];
+  let initialUsers: User[] = [];
 
   try {
     const { data: userData } = await api.get<User>("/auth", {
@@ -50,12 +52,12 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen bg-background")}>
         <div className="relative flex min-h-screen flex-col bg-background">
-          <UserProvider initialUser={initialUser}>
+          <UserProvider initialUser={initialUser} initialUsers={initialUsers}>
             <PostsProvider>
-              <Navbar />
-              <div className="relative flex h-full max-w-screen-md md:w-full mx-3.5 md:mx-auto">
-                {children}
-              </div>
+              <ChatProvider>
+                <Navbar />
+                <Layout>{children}</Layout>
+              </ChatProvider>
             </PostsProvider>
           </UserProvider>
         </div>

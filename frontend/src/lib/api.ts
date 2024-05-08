@@ -9,12 +9,17 @@ export const api = axios.create({
 
 export const chatApi = axios.create({
   baseURL: `${BASE_URL}/chat`,
-  withCredentials: true
-})
+  withCredentials: true,
+});
 
 export const fetcher = (url: string) => api.get(url).then((res) => res.data);
 
 export const createWebSocketConnection = (chatId: number) => {
-  const socket = new WebSocket(`ws://${BASE_URL.replace('http://', '').replace('https://', '')}/chat/${chatId}/message`);
+  const socket = new WebSocket(
+    `ws://${BASE_URL.replace("http://", "").replace(
+      "https://",
+      ""
+    )}/chat/${chatId}/message`
+  );
   return socket;
-}
+};

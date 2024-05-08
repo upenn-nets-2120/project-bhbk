@@ -72,7 +72,7 @@ export const postLikes = mysqlTable(
 
 export const chats = mysqlTable("chats", {
   id: int("id").primaryKey().autoincrement(),
-  name: varchar("name", { length: 256 })
+  name: varchar("name", { length: 256 }),
 });
 
 export const chatMessages = mysqlTable("chat_messages", {
@@ -101,16 +101,20 @@ export const postsToHashtags = mysqlTable(
   })
 );
 
-export const userChats = mysqlTable("users_chats", {
-  userId: int("user_id")
-  .notNull()
-  .references(() => users.id),
-  chatId: int("chat_id")
-  .notNull()
-  .references(() => chats.id),
-}, (t) => ({
-  pk: primaryKey({ columns: [t.userId, t.chatId] }),
-}))
+export const userChats = mysqlTable(
+  "users_chats",
+  {
+    userId: int("user_id")
+      .notNull()
+      .references(() => users.id),
+    chatId: int("chat_id")
+      .notNull()
+      .references(() => chats.id),
+  },
+  (t) => ({
+    pk: primaryKey({ columns: [t.userId, t.chatId] }),
+  })
+);
 
 export const userFriends = mysqlTable(
   "user_friends",
@@ -160,17 +164,16 @@ export const usersRelations = relations(users, ({ many }) => ({
   }),
   chats: many(userChats, {
     fields: [userChats.chatId],
-    references: [chats.id]
+    references: [chats.id],
   }),
 }));
 
 export const chatsRelations = relations(chats, ({ many }) => ({
   users: many(userChats, {
     fields: [userChats.userId],
-    references: [users.id]
-  })
-}))
-
+    references: [users.id],
+  }),
+}));
 
 export const userChatsRelations = relations(userChats, ({ one }) => ({
   user: one(users, {

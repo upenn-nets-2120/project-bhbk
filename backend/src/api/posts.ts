@@ -1,7 +1,15 @@
 import express from "express";
 import { checkAuthentication } from "../middlewares";
 import { NewPost } from "../types/post";
-import { addCommentToPost, createPost, getCommentsOfPost, getPostsByChronology, getUsersByLikedPost, likePost, unlikePost } from "../views/posts";
+import {
+  addCommentToPost,
+  createPost,
+  getCommentsOfPost,
+  getPostsByChronology,
+  getUsersByLikedPost,
+  likePost,
+  unlikePost,
+} from "../views/posts";
 
 const router = express.Router();
 
@@ -41,12 +49,12 @@ router.post("/like", checkAuthentication, async (req, res, next) => {
 
     await likePost(postId, userId);
 
-    return res.status(200).json("Liked post")
+    return res.status(200).json("Liked post");
   } catch (error) {
     console.error(error);
     next(error);
   }
-})
+});
 
 router.post("/unlike", checkAuthentication, async (req, res, next) => {
   try {
@@ -56,7 +64,7 @@ router.post("/unlike", checkAuthentication, async (req, res, next) => {
 
     await unlikePost(postId, userId);
 
-    return res.status(200).json("Unliked post")
+    return res.status(200).json("Unliked post");
   } catch (error) {
     console.error(error);
     next(error);
@@ -69,12 +77,12 @@ router.get("/:postId/liked-users", async (req, res, next) => {
 
     const likedUsers = await getUsersByLikedPost(postId);
 
-    return res.status(200).json(likedUsers)
+    return res.status(200).json(likedUsers);
   } catch (error) {
     console.error(error);
     next(error);
-  } 
-})
+  }
+});
 
 router.get("/:postId/comments", async (req, res, next) => {
   try {
@@ -86,25 +94,23 @@ router.get("/:postId/comments", async (req, res, next) => {
     console.error(error);
     next(error);
   }
-})
+});
 
 router.post("/:postId/comment", checkAuthentication, async (req, res, next) => {
   try {
-    const postId: number =  parseInt(req.params.postId);
+    const postId: number = parseInt(req.params.postId);
 
     const content: string = req.body.content;
 
     const userId: number = req.session.user.id;
 
-    await addCommentToPost(postId, userId, { content })
+    await addCommentToPost(postId, userId, { content });
 
     return res.status(200).json("Commented on post");
   } catch (error) {
     console.error(error);
     next(error);
   }
-})
-
-
+});
 
 export default router;

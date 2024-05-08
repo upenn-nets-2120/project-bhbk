@@ -35,10 +35,14 @@ export const checkAuthentication = (
   }
 };
 
-export const checkWSAuthentication = async (ws: ws, req: Request, next: NextFunction) => {
+export const checkWSAuthentication = async (
+  ws: ws,
+  req: Request,
+  next: NextFunction
+) => {
   if (req.session.isLoggedIn && req.session.user) {
-      next();
+    next();
   } else {
-      ws.close(401, 'Unauthorized')
+    ws.close(401, "Unauthorized");
   }
-}
+};

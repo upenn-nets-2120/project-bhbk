@@ -54,7 +54,7 @@ router.get("/posts/:postId", async (req, res, next) => {
     console.error(error);
     next(error);
   }
-})
+});
 
 router.get("/top", checkAuthentication, async (req, res, next) => {
   try {

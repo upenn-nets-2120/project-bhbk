@@ -19,6 +19,7 @@ export const ChatGroupOption: FC<ChatGroupOptionProps> = ({ group }) => {
     chatId,
     getMessageFromChatId,
     messages: contextMessages,
+    setIsGroup,
   } = useChat();
 
   const [messages, setMesssages] = useState<ChatMessage[]>([]);
@@ -26,6 +27,7 @@ export const ChatGroupOption: FC<ChatGroupOptionProps> = ({ group }) => {
   const onSelect = () => {
     setChatId(group.id);
     setChatUsers(group.users);
+    setIsGroup(true);
   };
 
   const isSelected = group.id === chatId;
@@ -55,7 +57,8 @@ export const ChatGroupOption: FC<ChatGroupOptionProps> = ({ group }) => {
           <div className="font-semibold text-sm">
             {group.name}{" "}
             <span className="text-[0.6rem] text-opacity-50">
-              / {group.users.length - 1} others
+              / {group.users.length - 1} other
+              {group.users.length - 1 > 1 && "s"}
             </span>
           </div>
         </div>

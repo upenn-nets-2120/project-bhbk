@@ -11,11 +11,14 @@ import cookieParser from "cookie-parser";
 import expressWs from "express-ws";
 import { checkAuthentication, checkWSAuthentication } from "./middlewares";
 import {
+  addUserToChat,
   createNewChat,
   createNewChatMultiple,
   getChatBetweenTwoUsers,
   getChatOfUsersMultiple,
   getMessagesByChatId,
+  getUsersOfChats,
+  leaveChat,
 } from "./views/chat";
 import { ChatMessage } from "./types/chat";
 import { createNewMessage } from "./views/friends";
@@ -111,6 +114,14 @@ app.post("/chat/groups/create", checkAuthentication, async (req, res, next) => {
 
     const chatId = await createNewChatMultiple(userIds, name);
 
+    const message: ChatMessage = {
+      chatId,
+      content: 'Created group',
+      senderId: userId,
+    }
+
+    await createNewMessage(message);
+
     return res.status(200).json(chatId);
   } catch (error) {
     console.error(error);
@@ -123,6 +134,7 @@ app.get("/api/chat/groups", checkAuthentication, async (req, res, next) => {
 
   try {
     const chatGroups = await getChatOfUsersMultiple(userId);
+    
 
     return res.status(200).json(chatGroups);
   } catch (error) {
@@ -130,6 +142,23 @@ app.get("/api/chat/groups", checkAuthentication, async (req, res, next) => {
     next(error);
   }
 })
+
+app.get(
+  "/api/chat/:chatId/users",
+  checkAuthentication,
+  async (req, res, next) => {
+    try {
+      const chatId: number = parseInt(req.params.chatId);
+
+      const users = await getUsersOfChats(chatId);
+
+      return res.status(200).json(users);
+    } catch (error) {
+      console.error(error);
+      next(error);
+    }
+  }
+);
 
 app.get(
   "/api/chat/:chatId/messages",
@@ -147,6 +176,40 @@ app.get(
     }
   }
 );
+
+app.post("/chat/groups/:chatId/leave", checkAuthentication, async (req, res, next) => {
+  try {
+    const chatId: number = parseInt(req.params.chatId);
+
+    const userId: number = req.session.user.id;
+
+    await leaveChat(userId, chatId);
+
+    return res.status(200).json("Leave chat sucessfully");
+
+  } catch (error) {
+    console.error(error);
+    next(error)
+  }
+})
+
+app.post("/chat/groups/:chatId/invite", checkAuthentication, async (req, res, next) => {
+  try {
+    const chatId: number = parseInt(req.params.chatId);
+
+    const friendIds: number[] = req.body.friendIds;
+
+    const addChatRequests = friendIds.map(id => addUserToChat(chatId, id, true))
+
+    await Promise.all(addChatRequests);
+
+    return res.status(200).json("Added to chat sucessfully");
+
+  } catch (error) {
+    console.error(error);
+    next(error)
+  }
+})
 
 app.ws(
   "/chat/:chatId/message",

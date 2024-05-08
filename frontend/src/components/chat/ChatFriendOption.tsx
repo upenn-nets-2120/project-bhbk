@@ -26,6 +26,7 @@ export const ChatFriendOption: FC<ChatFriendOptionProps> = ({ friend }) => {
     chatUsers,
     messages: contextMessages,
     getMessageFromChatId,
+    setIsGroup,
   } = useChat();
 
   const getChatId = async () => {
@@ -41,6 +42,7 @@ export const ChatFriendOption: FC<ChatFriendOptionProps> = ({ friend }) => {
   const onSelect = () => {
     setContextChatId(chatId || -1);
     setChatUsers([friend]);
+    setIsGroup(false);
   };
 
   useEffect(() => {

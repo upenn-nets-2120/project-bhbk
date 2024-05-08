@@ -179,7 +179,13 @@ export const getChatOfUsersMultiple = async (userId: number) => {
 }
 
 export const leaveChat = async (userId: number, chatId: number) => {
-  await db.delete()
+  await db.delete(userChats).where(and(eq(userChats.userId, userId), eq(userChats.chatId, chatId)));
+
+  const chatUsers = await getUsersOfChats(chatId);
+
+  if (chatUsers.length === 0) {
+    await db.delete(chats).where(eq(chats.id, chatId));
+  }
 }
 
 export const getMessagesByChatId = async (chatId: number) => {

@@ -14,10 +14,19 @@ import { TextareaForm } from "../common/forms/TextareaForm";
 import { Avatar } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
+import { ChatInviteTrigger } from "./ChatInviteTrigger";
 import { ChatMessage } from "./ChatMessage";
 
 export const ChatContent = () => {
-  const { chatUsers, chatId, setChatId, sendMessage, messages } = useChat();
+  const {
+    chatUsers,
+    chatId,
+    setChatId,
+    sendMessage,
+    messages,
+    isGroup,
+    leaveChat,
+  } = useChat();
 
   const [message, setMessage] = useState<string | undefined>();
 
@@ -34,6 +43,11 @@ export const ChatContent = () => {
     }
   };
 
+  const isNoMessageFromSelf =
+    contextUser &&
+    messages.find((message) => message.user.id === contextUser.id) ===
+      undefined;
+
   const sendChatMessage = () => {
     if (message && message.length > 0) {
       sendMessage(message);
@@ -46,6 +60,8 @@ export const ChatContent = () => {
       <div className="flex border-b sticky top-0 px-2 py-4 text-sm items-center space-x-1">
         <div>💬 Your chat with </div>
         <div className="inline-flex ml-1 flex-wrap gap-2">
+          {chatUsers.filter((user) => user.id !== contextUser?.id).length ===
+            0 && "no one 😭. Please invite someone!"}
           {chatUsers
             .filter((user) => user.id !== contextUser?.id)
             .map((user) => (
@@ -72,6 +88,17 @@ export const ChatContent = () => {
               </div>
             ))}
         </div>
+        {isGroup && (
+          <div className="flex space-x-2">
+            <Button
+              className="text-xs px-2 py-1.5 w-fit h-fit"
+              onClick={leaveChat}
+            >
+              Leave
+            </Button>
+            <ChatInviteTrigger />
+          </div>
+        )}
       </div>
       <ScrollArea className="w-full overflow-y-scroll h-full max-h-[80%]">
         {messages.length === 0 && (
@@ -92,6 +119,20 @@ export const ChatContent = () => {
             <MdCreate />
             <span>Create session</span>
           </Button>
+        )}
+        {isGroup && isNoMessageFromSelf && (
+          <div className="flex items-center w-full justify-center gap-2">
+            <span className="text-xs">
+              You have been invited to the group chat. Accept the invite by
+              sending a message or
+            </span>
+            <Button
+              className="inline-flex h-5 py-1 px-2 rounded-full text-xs w-fit"
+              onClick={leaveChat}
+            >
+              Reject invite
+            </Button>
+          </div>
         )}
         <TextareaForm
           label="Your message"

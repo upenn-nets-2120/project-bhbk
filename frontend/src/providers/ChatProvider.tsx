@@ -1,6 +1,6 @@
 "use client";
 
-import { api, createWebSocketConnection, fetcher } from "@/lib/api";
+import { api, chatApi, createWebSocketConnection, fetcher } from "@/lib/api";
 import { toast } from "@/lib/utils";
 import { ChatGroup, ChatMessage } from "@/types/chat";
 import { User } from "@/types/user";
@@ -26,6 +26,10 @@ interface ChatContextProps {
   messages: ChatMessage[];
   getMessageFromChatId: (id: number) => Promise<ChatMessage[]>;
   groups: ChatGroup[];
+  isGroup: boolean;
+  setIsGroup: (isGroup: boolean) => void;
+  leaveChat: () => Promise<void>;
+  getGroups: () => Promise<void>;
 }
 
 export const ChatContext = createContext<ChatContextProps | undefined>(
@@ -47,7 +51,7 @@ interface ChatProviderProps extends PropsWithChildren {}
 export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
   const [chatId, setChatId] = useState<number | null>(null);
 
-  const { user } = useUser();
+  const { user, friends } = useUser();
 
   const [chatUsers, setChatUsers] = useState<User[]>([]);
 
@@ -59,8 +63,16 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
 
   const [groups, setGroups] = useState<ChatGroup[]>([]);
 
-  const { data: fetchedMessages } = useSWR(
+  const [isGroup, setIsGroup] = useState(false);
+
+  const { data: fetchedMessages } = useSWR<ChatMessage[]>(
     isValidChat ? `/chat/${chatId}/messages` : null,
+    fetcher,
+    { refreshInterval: 1000 }
+  );
+
+  const { data: fetchedChatUsers } = useSWR<User[]>(
+    isValidChat ? `/chat/${chatId}/users` : null,
     fetcher,
     { refreshInterval: 1000 }
   );
@@ -89,6 +101,20 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
     );
 
     return messagesFromChat;
+  };
+
+  const getGroups = async () => {
+    const { data: groups } = await api.get<ChatGroup[]>(`/chat/groups`);
+    setGroups(groups);
+  };
+
+  const leaveChat = async () => {
+    await chatApi.post(`/groups/${chatId}/leave`);
+    setMessages([]);
+    setChatUsers([]);
+    sendMessage("Left the chat!");
+    await getGroups();
+    setChatId(null);
   };
 
   useEffect(() => {
@@ -120,11 +146,13 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    if (ws) {
-      ws.addEventListener("open", () => {
-        toast("Connected to chat!");
-      });
+    if (fetchedChatUsers && fetchedChatUsers.length > 0 && isValidChat) {
+      setChatUsers(fetchedChatUsers);
+    }
+  }, [fetchedChatUsers]);
 
+  useEffect(() => {
+    if (ws) {
       ws.addEventListener("message", (event) => {
         const newMessages = JSON.parse(event.data) as ChatMessage[];
 
@@ -134,6 +162,20 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       });
     }
   }, [ws]);
+
+  useEffect(() => {
+    const newlyUpdatedChatUsers = chatUsers.map((chatUser) => {
+      const newChatUser = friends.find((friend) => friend.id === chatUser.id);
+
+      if (newChatUser) {
+        return newChatUser;
+      }
+    });
+
+    setChatUsers(
+      newlyUpdatedChatUsers.filter((user) => user !== undefined) as User[]
+    );
+  }, [friends]);
 
   const value = useMemo(
     () => ({
@@ -146,6 +188,10 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       messages,
       getMessageFromChatId,
       groups,
+      isGroup,
+      setIsGroup,
+      leaveChat,
+      getGroups,
     }),
     [
       chatId,
@@ -158,6 +204,10 @@ export const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
       getMessageFromChatId,
       groups,
       setGroups,
+      isGroup,
+      setIsGroup,
+      leaveChat,
+      getGroups,
     ]
   );
 

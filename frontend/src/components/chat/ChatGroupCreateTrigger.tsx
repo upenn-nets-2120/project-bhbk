@@ -1,10 +1,12 @@
 "use client";
 
 import { chatApi } from "@/lib/api";
+import { toast } from "@/lib/utils";
+import { useChat } from "@/providers/ChatProvider";
 import { useUser } from "@/providers/UserProvider";
 import { User } from "@/types/user";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -23,6 +25,8 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 
 export const ChatGroupCreateTrigger = () => {
   const { friends } = useUser();
+
+  const { setChatId } = useChat();
 
   const [groupName, setGroupName] = useState<string>();
 
@@ -43,10 +47,17 @@ export const ChatGroupCreateTrigger = () => {
   const createGroup = async () => {
     setIsMakingRequest(true);
     const friendIds = selectedFriends.map((friend) => friend.id);
-    await chatApi.post("/groups/create", { friendIds, groupName });
+    const { data: chatId } = await chatApi.post("/groups/create", {
+      friendIds,
+      groupName,
+    });
+
     setIsMakingRequest(false);
     setSelectedFriends([]);
+    toast(`Created group ${groupName}`);
     setGroupName("");
+
+    setChatId(chatId);
   };
 
   return (

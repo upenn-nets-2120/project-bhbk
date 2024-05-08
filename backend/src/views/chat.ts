@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { chats, userChats } from "../database/schema"
+import { chatMessages, chats, userChats } from "../database/schema"
 import { db } from "../database/setup"
 import { Chat } from "../types/chat";
 import { getUserById } from "./user"
@@ -93,4 +93,24 @@ export const getChatBetweenTwoUsers = async (userId: number, friendId: number) =
     }
     
     return chatBetweenTwoUsers[0];
+}
+
+export const getMessagesByChatId = async (chatId: number) => {
+    const messages = await db.query.chatMessages.findMany({
+        where: eq(chatMessages.chatId, chatId)
+    })
+
+    const messagesWithUser = messages.map(async message => {
+        if (message.senderId) {
+            const user = await getUserById(message.senderId);
+            return {
+                ...message,
+                user
+            }
+        } 
+    })
+
+    const finalMessages = await Promise.all(messagesWithUser);
+
+    return finalMessages.filter(message => message && message.senderId);
 }

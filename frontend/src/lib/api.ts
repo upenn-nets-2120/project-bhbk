@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "http://localhost:8000";
 
 export const api = axios.create({
   baseURL: `${BASE_URL}/api`,
@@ -13,3 +13,8 @@ export const chatApi = axios.create({
 })
 
 export const fetcher = (url: string) => api.get(url).then((res) => res.data);
+
+export const createWebSocketConnection = (chatId: number) => {
+  const socket = new WebSocket(`ws://${BASE_URL.replace('http://', '').replace('https://', '')}/chat/${chatId}/message`);
+  return socket;
+}

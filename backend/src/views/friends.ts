@@ -1,6 +1,7 @@
 import { eq , and} from "drizzle-orm";
-import { userFriends, users } from "../database/schema";
+import { chatMessages, userFriends, users } from "../database/schema";
 import { db } from "../database/setup";
+import { ChatMessage } from "../types/chat";
 
 export const addFriends = async (userId: number, friendId: number) => {
   const existingFriendship = await db
@@ -82,4 +83,8 @@ export const getFriends = async (userId: number) => {
   })
 
   return friends;
+}
+
+export const createNewMessage = async (message: ChatMessage) => {
+  await db.insert(chatMessages).values(message);
 }

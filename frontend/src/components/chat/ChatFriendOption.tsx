@@ -1,6 +1,7 @@
 import { api, chatApi } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { useChat } from "@/providers/ChatProvider";
+import { ChatMessage } from "@/types/chat";
 import { User } from "@/types/user";
 import { Separator } from "@radix-ui/react-separator";
 import { FC, useEffect, useState } from "react";
@@ -16,18 +17,25 @@ interface ChatFriendOptionProps {
 export const ChatFriendOption: FC<ChatFriendOptionProps> = ({ friend }) => {
   const [chatId, setChatId] = useState<number | null>();
 
+  const [messages, setMesssages] = useState<ChatMessage[]>([]);
+
   const {
     setChatId: setContextChatId,
     setChatUsers,
     chatId: contextChatId,
     chatUsers,
+    messages: contextMessages,
+    getMessageFromChatId,
   } = useChat();
 
   const getChatId = async () => {
     const { data: chatId } = await chatApi.post("/get", {
       friendId: friend.id,
     });
-    setChatId(chatId);
+
+    if (chatId) {
+      setChatId(chatId.id || -1);
+    }
   };
 
   const onSelect = () => {
@@ -37,10 +45,18 @@ export const ChatFriendOption: FC<ChatFriendOptionProps> = ({ friend }) => {
 
   useEffect(() => {
     getChatId();
-  }, []);
+  }, [contextChatId]);
 
   const isSelected =
     chatUsers.length == 1 && chatUsers[0].username === friend.username;
+
+  useEffect(() => {
+    if (chatId && chatId !== -1) {
+      getMessageFromChatId(chatId).then((fetchedMessages) =>
+        setMesssages(fetchedMessages)
+      );
+    }
+  }, [contextMessages, chatId]);
 
   return (
     <>
@@ -76,7 +92,14 @@ export const ChatFriendOption: FC<ChatFriendOptionProps> = ({ friend }) => {
               )}
             </div>
             <div className="text-opacity-50 text-xs">
-              {chatId ? <>{chatId}</> : <>No chat detected</>}
+              {chatId && messages.length > 0 ? (
+                <>
+                  {messages[messages.length - 1].user.username}:{" "}
+                  {messages[messages.length - 1].content}
+                </>
+              ) : (
+                <>No chat detected</>
+              )}
             </div>
           </div>
         </div>

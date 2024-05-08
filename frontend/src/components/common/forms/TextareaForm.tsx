@@ -1,6 +1,7 @@
 import { Input, InputProps } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea, TextareaProps } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { LabelProps } from "@radix-ui/react-label";
 import React, { FC } from "react";
 
@@ -12,6 +13,7 @@ interface TextareaFormProps {
   setValue?: (value: any) => void;
   value?: any;
   disabled?: boolean;
+  className?: string;
 }
 
 export const TextareaForm: FC<TextareaFormProps> = ({
@@ -22,6 +24,7 @@ export const TextareaForm: FC<TextareaFormProps> = ({
   setValue,
   value,
   disabled,
+  className,
 }) => {
   const onChangeEvent = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = event.target.value;
@@ -32,7 +35,7 @@ export const TextareaForm: FC<TextareaFormProps> = ({
   };
 
   return (
-    <div className="flex flex-col space-y-1.5">
+    <div className={cn("flex flex-col space-y-1.5", className)}>
       <Label htmlFor={label.toLowerCase()} {...labelProps}>
         {label}
       </Label>

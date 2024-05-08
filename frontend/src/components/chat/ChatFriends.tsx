@@ -14,7 +14,7 @@ export const ChatFriends = () => {
 
   return (
     <div className="flex max-w-full md:max-w-[40%] w-full flex-col max-h-screen">
-      <ScrollArea className="h-full mx-2 rounded-md overflow-auto overflow-visible">
+      <ScrollArea className="h-full mx-2 rounded-md max-h-[calc(100vh-100px)] overflow-y-scroll overflow-visible">
         <div className="text-primary text-lg font-semibold">Your friends</div>
         <div className="py-2" />
         {friends.map((friend) => (

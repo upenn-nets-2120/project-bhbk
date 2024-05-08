@@ -16,9 +16,13 @@ import { IoMdLogOut } from "react-icons/io";
 
 interface FriendOptionProps {
   user: User;
+  noSep?: boolean;
 }
 
-export const FriendOption: FC<FriendOptionProps> = ({ user }) => {
+export const FriendOption: FC<FriendOptionProps> = ({
+  user,
+  noSep = false,
+}) => {
   const {
     addFriend,
     friends,
@@ -111,7 +115,7 @@ export const FriendOption: FC<FriendOptionProps> = ({ user }) => {
           </Toggle>
         </div>
       </div>
-      <Separator />
+      {!noSep && <Separator />}
     </>
   );
 };

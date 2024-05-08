@@ -43,6 +43,6 @@ export const checkWSAuthentication = async (
   if (req.session.isLoggedIn && req.session.user) {
     next();
   } else {
-    ws.close(401, "Unauthorized");
+    ws.close(1002, "Unauthorized");
   }
 };

@@ -18,8 +18,11 @@ import { PostCommentsDrawer } from "./PostCommentsDrawer";
 import { Hashtag } from "@/lib/hashtag";
 import { Accordion, AccordionContent, AccordionTrigger } from "../ui/accordion";
 import { AccordionItem } from "@radix-ui/react-accordion";
+import { cn } from "@/lib/utils";
 
-interface PostProps extends PostType {}
+interface PostProps extends PostType {
+  className?: string;
+}
 
 export const Post: FC<PostProps> = ({
   text,
@@ -27,6 +30,7 @@ export const Post: FC<PostProps> = ({
   imageUrl,
   createdAt,
   id,
+  className,
 }) => {
   const timeAgo = getRelativeTime(new Date(createdAt));
 
@@ -128,7 +132,10 @@ export const Post: FC<PostProps> = ({
 
   return (
     <div
-      className="flex border-2 px-3 py-5 border-muted rounded-md flex-col"
+      className={cn(
+        "flex border-2 px-3 py-5 border-muted rounded-md flex-col",
+        className
+      )}
       ref={targetRef}
     >
       <div className="flex space-x-3 items-center">

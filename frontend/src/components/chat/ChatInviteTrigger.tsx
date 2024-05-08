@@ -60,7 +60,7 @@ export const ChatInviteTrigger = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button className="text-xs px-2 py-1.5 w-fit h-fit">Invite</Button>
       </DialogTrigger>
       <DialogContent>

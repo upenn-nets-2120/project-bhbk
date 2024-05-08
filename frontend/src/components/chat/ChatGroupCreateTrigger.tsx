@@ -62,7 +62,7 @@ export const ChatGroupCreateTrigger = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button className="w-fit text-xs">Create group chats</Button>
       </DialogTrigger>
       <DialogContent>

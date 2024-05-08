@@ -4,7 +4,7 @@ import { parseLocalTsv } from "../utils/tsv";
 
 import { searchImages } from "../views/imageSearch";
 
-import { getGPTResponse } from "../views/llmSearch";
+import { getGPTResponse, fetchUsersAndEmbedData, fetchPostsAndEmbedData, directUserSearch, directPostSearch } from "../views/llmSearch";
 
 const router = express.Router();
 
@@ -43,7 +43,7 @@ router.post("/imageSearch", checkAuthentication, async (req, res, next) => {
   }
 });
 
-router.post("/llmsearch", checkAuthentication, async (req, res, next) => {
+router.post("/llmsearch", async (req, res, next) => {
   try {
     const query = req.body.query; 
     if (!query) {
@@ -56,6 +56,50 @@ router.post("/llmsearch", checkAuthentication, async (req, res, next) => {
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("Error during search: ", error);
+    next(error);  
+  }
+});
+
+router.post("/upsertUsers", async (req, res, next) => {
+  try {
+    fetchUsersAndEmbedData(); 
+  } catch (error) {
+    console.log(JSON.stringify(error));
+    console.error("error upserting", error);
+    next(error);  
+  }
+});
+
+router.post("/upsertPosts", async (req, res, next) => {
+  try {
+    fetchPostsAndEmbedData(); 
+  } catch (error) {
+    console.log(JSON.stringify(error));
+    console.error("error upserting", error);
+    next(error);  
+  }
+});
+
+router.post("/directUserSearch", async (req, res, next) => {
+  try {
+    const query = req.body.query; 
+    const response = await directUserSearch(query);
+    return res.send({ result: response }); 
+  } catch (error) {
+    console.log(JSON.stringify(error));
+    console.error("error fetching user", error);
+    next(error);  
+  }
+});
+
+router.post("/directPostSearch", async (req, res, next) => {
+  try {
+    const query = req.body.query; 
+    const response = await directPostSearch(query);
+    return res.send({ result: response }); 
+  } catch (error) {
+    console.log(JSON.stringify(error));
+    console.error("error fetching post", error);
     next(error);  
   }
 });

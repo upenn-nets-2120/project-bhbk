@@ -42,3 +42,18 @@ export const getAllUsers = async (userId: number) => {
 
   return allUsers;
 }
+
+export const getEveryUser = async () => {
+  const everyUser = await db.query.users.findMany({
+    columns: {
+      id: true,
+      username: true,
+      profileUrl: true,
+      linkedActor: true,
+      affiliation: true,
+      isOnline: true
+    }
+  })
+
+  return everyUser;
+}

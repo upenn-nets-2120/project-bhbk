@@ -73,6 +73,8 @@ export const UserProvider: FC<UserProviderProps> = ({
   const [users, setUsers] = useState<User[]>(initialUsers);
   const [friends, setFriends] = useState<User[]>([]);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(initialUser ? true : false);
+
   const { data: revalidateUserData, error: revalidateUserError } = useSWR<User>(
     "/auth",
     fetcher,
@@ -82,18 +84,16 @@ export const UserProvider: FC<UserProviderProps> = ({
   );
 
   const { data: allUsers, error: allUsersError } = useSWR<User[]>(
-    "/user/list",
+    isLoggedIn ? "/user/list" : null,
     fetcher,
     { refreshInterval: 2000 }
   );
 
   const { data: allFriends, error: allFriendsError } = useSWR<User[]>(
-    "/friends/list",
+    isLoggedIn ? "/friends/list" : null,
     fetcher,
     { refreshInterval: 1000 }
   );
-
-  const [isLoggedIn, setIsLoggedIn] = useState(initialUser ? true : false);
 
   const [isMakingRequest, setIsMakingRequest] = useState(false);
 

@@ -59,6 +59,6 @@ router.get("/list", checkAuthentication, async (req, res, next) => {
     console.error(error);
     next(error);
   }
-})
+});
 
 export default router;

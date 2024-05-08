@@ -45,18 +45,18 @@ router.post("/imageSearch", checkAuthentication, async (req, res, next) => {
 
 router.post("/llmsearch", async (req, res, next) => {
   try {
-    const query = req.body.query; 
+    const query = req.body.query;
     if (!query) {
       return res.status(400).send({ message: "Search query is required" });
     }
 
     console.log(`Processing search for query: ${query}`);
     const response = await getGPTResponse(query);
-    return res.send({ result: response });  
+    return res.send({ result: response });
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("Error during search: ", error);
-    next(error);  
+    next(error);
   }
 });
 

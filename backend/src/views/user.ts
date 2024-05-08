@@ -35,12 +35,21 @@ export const getAllUsers = async (userId: number) => {
       profileUrl: true,
       linkedActor: true,
       affiliation: true,
-      isOnline: true
+      isOnline: true,
     },
-    where: not(eq(users.id, userId))
-  })
+    where: not(eq(users.id, userId)),
+  });
 
   return allUsers;
+};
+
+export const getUserById = async (userId: number) => {
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  });
+
+  return user;
+};
 }
 
 export const getEveryUser = async () => {

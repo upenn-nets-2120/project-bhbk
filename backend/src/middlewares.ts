@@ -34,3 +34,15 @@ export const checkAuthentication = (
     res.status(401).json({ message: "Unauthorized" });
   }
 };
+
+export const checkWSAuthentication = async (
+  ws: ws,
+  req: Request,
+  next: NextFunction
+) => {
+  if (req.session.isLoggedIn && req.session.user) {
+    next();
+  } else {
+    ws.close(401, "Unauthorized");
+  }
+};

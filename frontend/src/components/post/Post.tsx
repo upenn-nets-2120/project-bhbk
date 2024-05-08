@@ -15,6 +15,9 @@ import { useUser } from "@/providers/UserProvider";
 import { useRouter } from "next/navigation";
 import { PostLikesDrawer } from "./PostLikesDrawer";
 import { PostCommentsDrawer } from "./PostCommentsDrawer";
+import { Hashtag } from "@/lib/hashtag";
+import { Accordion, AccordionContent, AccordionTrigger } from "../ui/accordion";
+import { AccordionItem } from "@radix-ui/react-accordion";
 
 interface PostProps extends PostType {}
 
@@ -39,12 +42,20 @@ export const Post: FC<PostProps> = ({
 
   const [likedUsers, setLikedUsers] = useState<User[]>([]);
 
+  const [hashtags, setHashtags] = useState<Hashtag[]>([]);
+
   const { data: fetchedLikedUsers, isLoading } = useSWR<User[]>(
     isInViewport ? `/posts/${id}/liked-users` : null,
     fetcher,
     {
       refreshInterval: 1000,
     }
+  );
+
+  const { data: fetchedHashtags } = useSWR<Hashtag[]>(
+    isInViewport ? `/hashtags/posts/${id}` : null,
+    fetcher,
+    { refreshInterval: 1000 }
   );
 
   const likePost = async () => {
@@ -74,6 +85,12 @@ export const Post: FC<PostProps> = ({
       setLikesCount(likesCount - 1);
     }
   };
+
+  useEffect(() => {
+    if (fetchedHashtags) {
+      setHashtags(fetchedHashtags);
+    }
+  }, [fetchedHashtags]);
 
   useEffect(() => {
     if (fetchedLikedUsers) {
@@ -178,6 +195,25 @@ export const Post: FC<PostProps> = ({
           </Button>
         </PostCommentsDrawer>
       </div>
+      {hashtags && hashtags.length > 0 && (
+        <>
+          <div className="py-2" />
+          <Accordion type="multiple">
+            <AccordionItem value={JSON.stringify(id)}>
+              <AccordionTrigger className="text-primary text-sm">
+                Hashtags
+              </AccordionTrigger>
+              <AccordionContent className="flex flex-wrap gap-2">
+                {hashtags.map((hashtag) => (
+                  <div className="text-background bg-primary px-2.5 py-1.5 rounded-full">
+                    {hashtag.content} | 📈 {hashtag.count}
+                  </div>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </>
+      )}
     </div>
   );
 };

@@ -50,7 +50,6 @@ export const getUserById = async (userId: number) => {
 
   return user;
 };
-}
 
 export const getEveryUser = async () => {
   const everyUser = await db.query.users.findMany({

@@ -5,9 +5,11 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
 import { RiProgress8Line } from "react-icons/ri";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
 import { ChatFriendOption } from "./ChatFriendOption";
+import { ChatGroupCreateTrigger } from "./ChatGroupCreateTrigger";
 
 export const ChatFriends = () => {
   const { friends } = useUser();
@@ -20,6 +22,13 @@ export const ChatFriends = () => {
         {friends.map((friend) => (
           <ChatFriendOption friend={friend} />
         ))}
+        <div className="py-3" />
+        <div className="flex justify-between items-center pb-2">
+          <div className="text-primary text-lg font-semibold">
+            Your group chats
+          </div>
+          <ChatGroupCreateTrigger />
+        </div>
       </ScrollArea>
     </div>
   );

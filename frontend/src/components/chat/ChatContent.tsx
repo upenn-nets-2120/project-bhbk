@@ -58,7 +58,12 @@ export const ChatContent = () => {
           ))}
         </div>
       </div>
-      <ScrollArea className="w-full overflow-y-scroll h-full max-h-[500px]">
+      <ScrollArea className="w-full overflow-y-scroll h-full max-h-[80%]">
+        {messages.length === 0 && (
+          <div className="flex w-full items-center justify-center py-4 text-primary">
+            Be the first to chat!
+          </div>
+        )}
         {messages.map((message) => (
           <ChatMessage message={message} />
         ))}

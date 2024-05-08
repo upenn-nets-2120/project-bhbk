@@ -96,6 +96,22 @@ app.post("/chat/create", checkAuthentication, async (req, res, next) => {
   }
 });
 
+app.post("/chat/groups/create", checkAuthentication, async (req, res, next) => {
+  const friendId: number = req.body.friendIds;
+
+  const userId: number = req.session.user.id;
+
+  try {
+    
+    const chatId = await createNewChat(userId, friendId);
+
+    return res.status(200).json(chatId);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 app.get(
   "/api/chat/:chatId/messages",
   checkAuthentication,

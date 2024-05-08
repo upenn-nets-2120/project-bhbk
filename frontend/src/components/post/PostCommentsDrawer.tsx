@@ -1,7 +1,7 @@
 import { api, fetcher } from "@/lib/api";
 import { FC, PropsWithChildren, useEffect, useRef, useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
-import { FaComment } from "react-icons/fa";
+import { FaComment, FaRegUserCircle } from "react-icons/fa";
 import useSWR from "swr";
 import { TextareaForm } from "../common/forms/TextareaForm";
 import { Button } from "../ui/button";
@@ -99,7 +99,11 @@ export const PostCommentsDrawer: FC<PostCommentsDrawerProps> = ({
               <>
                 <div key={idx} className="flex items-center space-x-2 py-2.5">
                   <Avatar className="w-8 h-8">
-                    <AvatarImage src={comment.author.profileUrl} />
+                    {comment.author.profileUrl ? (
+                      <AvatarImage src={comment.author.profileUrl} />
+                    ) : (
+                      <FaRegUserCircle className="w-full h-full text-primary" />
+                    )}
                   </Avatar>
                   <div className="flex flex-col">
                     <div className="font-semibold text-xs">

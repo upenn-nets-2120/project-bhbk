@@ -44,6 +44,22 @@ export const Post: FC<PostProps> = ({
 
   const [hashtags, setHashtags] = useState<Hashtag[]>([]);
 
+  const [commentCount, setCommentCount] = useState<number>(0);
+
+  const { data: fetchedComments } = useSWR<Comment[]>(
+    isInViewport ? `posts/${id}/comments` : null,
+    fetcher,
+    {
+      refreshInterval: 1000,
+    }
+  );
+
+  useEffect(() => {
+    if (fetchedComments) {
+      setCommentCount(fetchedComments.length);
+    }
+  }, [fetchedComments]);
+
   const { data: fetchedLikedUsers, isLoading } = useSWR<User[]>(
     isInViewport ? `/posts/${id}/liked-users` : null,
     fetcher,
@@ -153,8 +169,12 @@ export const Post: FC<PostProps> = ({
           {likesCount > 0 && <span className="text-xs">{likesCount}</span>}
         </Button>
         <PostCommentsDrawer id={id} isPostVisible={isInViewport}>
-          <Button variant="outline" className="w-fit h-full px-2 py-2">
+          <Button
+            variant="outline"
+            className="w-fit h-full px-2 py-2 flex space-x-1"
+          >
             <FaRegComment />
+            {commentCount > 0 && <span>{commentCount}</span>}
           </Button>
         </PostCommentsDrawer>
       </div>

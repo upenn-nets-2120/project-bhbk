@@ -29,12 +29,10 @@ async function run(): Promise<KafkaMessage[]> {
           value: message?.value,
         },
       });
-      console.log({
-        value: message?.value?.toString(),
-      });
-      console.log(kafkaMessages.length)
-      if (kafkaMessages.length > 10) {
-        consumer.disconnect();
+      if (kafkaMessages.length > 100) {
+        await consumer.stop();
+        await consumer.disconnect();
+        console.log("Rate Limited Twitter Stream");
       }
     },
   });
@@ -48,7 +46,6 @@ async function run(): Promise<KafkaMessage[]> {
 
 async function updateNewsTwitter() {
     const kafkaMessages = await run().catch(console.error) || [];
-    let i = 0;
 
     for (const msg of kafkaMessages || []) {
       try{
@@ -75,8 +72,6 @@ async function updateNewsTwitter() {
           await createUser(user);
         }
 
-        console.log(rawPost)
-
         const processedPost = {
           text: rawPost.text || rawPost.tex,
           authorId: 12,
@@ -88,14 +83,10 @@ async function updateNewsTwitter() {
         const newsPost = processedPost satisfies NewPost;
         const post = await createPost(newsPost, 12)
 
-        console.log("log: ", i++);
-        console.log(hashtags.length)
-
         for (const hashtag of hashtags) {
           console.log(hashtag)
           if (post.id){
             await uploadHashtag(post.id, hashtag)
-            console.log("uploaded hashtag ", post.id, hashtag)
           }
         }
       } catch (error) {

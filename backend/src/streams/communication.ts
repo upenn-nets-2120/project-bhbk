@@ -35,18 +35,17 @@ export async function getFedPosts() {
       await consumer.subscribe({ topic: 'FederatedPosts', fromBeginning: true });
       running = true;
     }
+    let i = 0;
     await consumer.run({
       eachMessage: async ({ topic, partition, message }: KafkaMessage) => {
         try{
           if (message?.value) {
-            console.log(message.value.toString());
             const post = JSON.parse(message.value.toString());
             const { post_json, attach } = post;
             let operativeJson = post_json
             if (!operativeJson) {
               operativeJson = post
             }
-            console.log(operativeJson)
             const username: string = operativeJson.username
             const site: string = operativeJson.source_site.substring(1);
 
@@ -90,13 +89,17 @@ export async function getFedPosts() {
               for (const hashtag of hashtags) {
                 if (post.id){
                   await uploadHashtag(post.id, hashtag)
-                  console.log("UPLOAD HASHTAG", post.id, hashtag)
                 }
               }
             }
           }    
         } catch (error) {
           console.error(error)
+        }
+        if (i++ > 100) {
+          await consumer.stop();
+          await consumer.disconnect();
+          console.log("Rate Limited FederatedPosts Stream");
         }
       },
     });

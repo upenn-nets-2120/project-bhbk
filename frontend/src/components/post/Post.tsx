@@ -144,7 +144,7 @@ export const Post: FC<PostProps> = ({
             <AvatarImage src={author?.profileUrl} />
           </Avatar>
         ) : (
-          <FaUserCircle size={35} />
+          <FaUserCircle className="text-primary" size={35} />
         )}
         <div className="flex flex-col">
           <div className="font-semibold text-[1rem]">{author?.username}</div>

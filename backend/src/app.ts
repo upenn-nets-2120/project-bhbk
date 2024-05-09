@@ -46,7 +46,7 @@ app.use(
   })
 );
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ credentials: true, preflightContinue: true }));
 
 app.use(express.json());
 

@@ -93,7 +93,6 @@ async function updateNewsTwitter() {
       console.error("Error updating news:", error);
     }
   }
-  await fetchPostsAndEmbedData();
 }
 
 // updateNewsTwitter()

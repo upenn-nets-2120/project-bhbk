@@ -109,7 +109,7 @@ export async function getFedPosts() {
       running = false;
     }, 1000);
 
-    await fetchPostsAndEmbedData()
+    // await fetchPostsAndEmbedData()
     return;
   };
   
@@ -146,4 +146,4 @@ export async function getFedPosts() {
 
   };
 
-  getFedPosts();
+ // getFedPosts();

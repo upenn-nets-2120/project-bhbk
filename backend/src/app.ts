@@ -24,29 +24,34 @@ import { ChatMessage } from "./types/chat";
 import { createNewMessage } from "./views/friends";
 import { updateNewsTwitter } from "./streams/news";
 import { getFedPosts } from "./streams/communication";
+import { createClient } from "redis"
+import RedisStore from "connect-redis"
 
 require("dotenv").config();
 
 const app = expressWs(express()).app;
 
-const MemoryStore = session.MemoryStore;
+let redisClient = createClient()
+redisClient.connect().catch(console.error)
+let redisStore = new RedisStore({
+  client: redisClient
+})
 
 app.use(morgan("dev"));
 app.use(helmet());
 app.set('trust proxy', 1);
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(
   session({
     secret: "supersecret",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false, sameSite: 'none', httpOnly: false },
-    store: new MemoryStore(),
-    proxy: true
+    cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false },
+    store: redisStore
   })
 );
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true, methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"] }));
+app.use(cors({ origin: true, credentials: true, methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"] }));
 
 app.use(express.json());
 
@@ -251,10 +256,10 @@ app.use("/api", api);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-updateNewsTwitter();
-getFedPosts();
+// updateNewsTwitter();
+// getFedPosts();
 
-setInterval(updateNewsTwitter, 3600000 * 24);
-setInterval(getFedPosts, 1000 * 60);
+// setInterval(updateNewsTwitter, 3600000 * 24);
+// setInterval(getFedPosts, 1000 * 60);
 
 export default app;

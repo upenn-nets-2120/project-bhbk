@@ -149,6 +149,44 @@ export const userHashtags = mysqlTable(
   }
 );
 
+export const friendRecommendations = mysqlTable(
+  "friend_recommendations",
+  {
+    userId: int("user_id")
+    .notNull()
+    .references(() => users.id),
+    friendRecId: int("friend_rec_id")
+    .notNull()
+    .references(() => users.id),
+    rank: int("rank")
+    .notNull(),
+  }, 
+  (t) => {
+    return {
+      pk: primaryKey(t.userId, t.friendRecId),
+    };
+  }
+)
+
+export const postRecommendations = mysqlTable(
+  "post_recommendations",
+  {
+    userId: int("user_id")
+    .notNull()
+    .references(() => users.id),
+    postId: int("post_id")
+    .notNull()
+    .references(() => posts.id),
+    rank: int("rank")
+    .notNull(),
+  }, 
+  (t) => {
+    return {
+      pk: primaryKey(t.userId, t.postId),
+    };
+  }
+)
+
 export const usersRelations = relations(users, ({ many }) => ({
   posts: many(posts),
   comments: many(comments),

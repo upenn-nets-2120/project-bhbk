@@ -30,10 +30,21 @@ public class Config {
 
     public static String BUCKET_NAME = "Instalite";
     public static String JAR = "";
-    public static String GRAPH_UH_FILE = "target/graph_uh.txt";
-	public static String GRAPH_UP_FILE = "target/graph_up.txt";
-	public static String GRAPH_HASHTAG_FILE = "target/graph_hashtag.txt";
-	public static String GRAPH_UU_FILE = "target/graph_uu.txt";
-    public static String GRAPH_POST_FILE = "target/graph_post.txt";
+    public static String GRAPH_UH = "output/graph_uh.txt";
+	public static String GRAPH_UP = "output/graph_up.txt";
+	public static String GRAPH_HASHTAG = "output/graph_hashtag.txt";
+	public static String GRAPH_UU = "output/graph_uu.txt";
+    public static String GRAPH_POST = "output/graph_post.txt";
+    public static String GRAPH_USER = "output/graph_user.txt";
+    public static String GRAPH_SHADOW = "output/graph_shadow.txt";
+
+    public static String GRAPH_UH_S3 = "s3a://Instalite/graph_uh.txt";
+	public static String GRAPH_UP_S3 = "s3a://Instalite/graph_up.txt";
+	public static String GRAPH_HASHTAG_S3 = "s3a://Instalite/graph_hashtag.txt";
+	public static String GRAPH_UU_S3 = "s3a://Instalite/graph_uu.txt";
+    public static String GRAPH_POST_S3 = "s3a://Instalite/graph_post.txt";
+    public static String GRAPH_USER_S3 = "s3a://Instalite/graph_user.txt";
+    public static String GRAPH_SHADOW_S3 = "s3a://Instalite/graph_shadow.txt";
+
 
 }

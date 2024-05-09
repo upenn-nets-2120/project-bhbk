@@ -72,6 +72,8 @@ public class AdsorptionAlgo implements Job<Tuple2<List<MyPair<String, Tuple2<Str
             .union(getEdges(getGraph(Config.GRAPH_POST_S3), 1.0))
             .union(getEdges(getGraph(Config.GRAPH_UP_S3), 0.4))
             .union(getEdges(getGraph(Config.GRAPH_UU_S3), 0.3))
+            .union(getEdges(getGraph(Config.GRAPH_USER_S2), 0.25))
+            .union(getEdges(getGraph(Config.GRAPH_SHADOW_S3), 1.0))
 
         System.out.println(
             "Graph: " + edges.keys().distinct().count() +

@@ -19,6 +19,8 @@ public class GetData {
     private BufferedWriter graph_uu; // User-User (friends)
     private BufferedWriter graph_hashtag; // Hashtag
 	private BufferedWriter graph_post; // Post
+    private BufferedWriter graph_user; // User injection
+    private BufferedWriter graph_shadow; // Shadow to shadow (user)
 
     public GetData() {
     }
@@ -39,11 +41,13 @@ public class GetData {
             throw new RuntimeException("MySQL JDBC driver not found.", e);
         }
 
-        graph_uh = new BufferedWriter(new FileWriter(Config.GRAPH_UH_FILE));
-        graph_up = new BufferedWriter(new FileWriter(Config.GRAPH_UP_FILE));
-        graph_uu = new BufferedWriter(new FileWriter(Config.GRAPH_UU_FILE));
-        graph_hashtag = new BufferedWriter(new FileWriter(Config.GRAPH_HASHTAG_FILE));
-		graph_post = new BufferedWriter(new FileWriter(Config.GRAPH_POST_FILE));
+        graph_uh = new BufferedWriter(new FileWriter(Config.GRAPH_UH));
+        graph_up = new BufferedWriter(new FileWriter(Config.GRAPH_UP));
+        graph_uu = new BufferedWriter(new FileWriter(Config.GRAPH_UU));
+        graph_hashtag = new BufferedWriter(new FileWriter(Config.GRAPH_HASHTAG));
+		graph_post = new BufferedWriter(new FileWriter(Config.GRAPH_POST));
+        graph_user = new BufferedWriter(new FileWriter(Config.GRAPH_USER));
+        graph_shadow = new BufferedWriter(new FileWriter(Config.GRAPH_SHADOW));
     }
 
     /**
@@ -51,6 +55,16 @@ public class GetData {
      */
     public void run() throws SQLException, IOException {
         Statement stmt = connection.createStatement();
+
+        // Fetch injection data
+        ResultSet rsLikes = stmt.executeQuery("SELECT id from users");
+        while (rsLikes.next()) {
+            String user = rsLikes.getString("id");
+            graph_user.write(user + "_s," + user + "_u");
+            graph_user.newLine();
+			graph_shadow.write(user + "_s," + user + "_s");
+            graph_shadow.newLine();
+        }
 
         // Fetch user-post like relations
         ResultSet rsLikes = stmt.executeQuery("SELECT userId, postId FROM posts_likes");
@@ -106,7 +120,10 @@ public class GetData {
             closeWriter(graph_uh);
             closeWriter(graph_up);
             closeWriter(graph_uu);
-            closeWriter(graph_hp);
+            closeWriter(graph_hashtag);
+            closerWriter(graph_post);
+            closeWriter(graph_user);
+            closerWriter(graph_shadow);
         } catch (final IOException | SQLException e) {
             e.printStackTrace();
         }

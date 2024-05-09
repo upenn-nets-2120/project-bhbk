@@ -8,13 +8,14 @@ import { uploadHashtag } from "../views/hashtags"
 import { fetchPostsAndEmbedData } from "../views/llmSearch"
 
 const consumer = kafka.consumer({
-  groupId: "nets-2120-group-100",
+  groupId: "nets-2120-group-107",
 });
 
 
 
 async function run(): Promise<KafkaMessage[]> {
   const kafkaMessages: KafkaMessage[] = [];
+
 
   await consumer.connect();
   await consumer.subscribe({ topic: "Twitter-Kafka", fromBeginning: true });
@@ -32,27 +33,30 @@ async function run(): Promise<KafkaMessage[]> {
         value: message?.value?.toString(),
       });
       console.log(kafkaMessages.length)
+      if (kafkaMessages.length > 10) {
+        consumer.disconnect();
+      }
     },
   });
   await new Promise((resolve) => setTimeout(resolve, 800));
   
+  await consumer.stop();
   await consumer.disconnect();
+
   return kafkaMessages
 };
 
 async function updateNewsTwitter() {
-  try{
-    const kafkaMessages = await run().catch(console.error);
+    const kafkaMessages = await run().catch(console.error) || [];
+    let i = 0;
 
-    for (let msg of kafkaMessages || []) {
+    for (const msg of kafkaMessages || []) {
+      try{
         if (!msg.message.value) {
           return;
         }
-        console.log(msg)
         const rawPost = JSON.parse(msg.message.value.toString());
         const twitterUser = await getUserById(12); //NEWS user has default id 12
-
-        console.log(twitterUser)
 
         if (!twitterUser) {
           let user = {
@@ -84,16 +88,23 @@ async function updateNewsTwitter() {
         const newsPost = processedPost satisfies NewPost;
         const post = await createPost(newsPost, 12)
 
-        hashtags.forEach(async hashtag => {
+        console.log("log: ", i++);
+        console.log(hashtags.length)
+
+        for (const hashtag of hashtags) {
+          console.log(hashtag)
           if (post.id){
             await uploadHashtag(post.id, hashtag)
+            console.log("uploaded hashtag ", post.id, hashtag)
           }
-        })
-        fetchPostsAndEmbedData();
+        }
+      } catch (error) {
+      console.error("Error updating news:", error);
     }
-  } catch (error) {
-    console.error("Error updating news:", error);
   }
+  await fetchPostsAndEmbedData();
 }
+
+// updateNewsTwitter()
 
 export { updateNewsTwitter };

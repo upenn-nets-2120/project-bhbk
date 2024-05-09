@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { hashtags, postsToHashtags, userHashtags } from "../database/schema";
 import { db } from "../database/setup";
 import { getPostById } from "./posts";
@@ -38,11 +38,13 @@ export const uploadHashtag = async (postId: number, hashtag: string) => {
   }
 
   if (hashtagId) {
-    const existingRelation = await db.query.postsToHashtags.findFirst({
-      where: (t) => eq(t.postId, postId) && eq(t.hashtagId, hashtagId),
-    });
+    // const existingRelation = await db.query.postsToHashtags.findMany({
+    //   where: (t) => eq(t.postId, postId) && eq(t.hashtagId, hashtagId),
+    // });
 
-    if (!existingRelation) {
+    const existingRelation = await db.execute(sql`SELECT * FROM posts_to_hashtags WHERE post_id = ${postId} AND hashtag_id = ${hashtagId} LIMIT 1`)
+
+    if (!existingRelation[0].affectedRows) {
       await db.insert(postsToHashtags).values({
         postId,
         hashtagId,

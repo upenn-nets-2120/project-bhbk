@@ -8,12 +8,14 @@ import { Partitioners } from "kafkajs";
 import { uploadHashtag } from "../views/hashtags"
 import { fetchPostsAndEmbedData } from "../views/llmSearch"
 
-const consumer = kafka.consumer({ groupId: "nets-2120-group-59" });
+const consumer = kafka.consumer({ groupId: "nets-2120-group-61" });
 const producer = kafka.producer({createPartitioner: Partitioners.LegacyPartitioner});
 
 function generateRandomString(length: number): string {
   return Array.from({ length }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
 }
+
+let running = false;
 
 const extractHashtags = (text: string) => {
   const regex = /#(\w+)/g;
@@ -28,9 +30,11 @@ const extractHashtags = (text: string) => {
 };
 
 export async function getFedPosts() {
-    await consumer.connect();
-    await consumer.subscribe({ topic: 'FederatedPosts', fromBeginning: true });
-    
+    if (!running) {
+      await consumer.connect();
+      await consumer.subscribe({ topic: 'FederatedPosts', fromBeginning: true });
+      running = true;
+    }
     await consumer.run({
       eachMessage: async ({ topic, partition, message }: KafkaMessage) => {
         try{
@@ -83,20 +87,27 @@ export async function getFedPosts() {
             
               const post = await createPost(newPost, authorId)
 
-              hashtags.forEach(async hashtag => {
+              for (const hashtag of hashtags) {
                 if (post.id){
                   await uploadHashtag(post.id, hashtag)
+                  console.log("UPLOAD HASHTAG", post.id, hashtag)
                 }
-              })
+              }
             }
-          }        
+          }    
         } catch (error) {
           console.error(error)
         }
       },
     });
-    setTimeout(() => consumer.disconnect(), 1000);
-    fetchPostsAndEmbedData()
+    setTimeout(async () => {
+      await consumer.stop();
+      await consumer.disconnect();
+      running = false;
+    }, 1000);
+
+    await fetchPostsAndEmbedData()
+    return;
   };
   
 
@@ -132,4 +143,4 @@ export async function getFedPosts() {
 
   };
 
-  // getFedPosts();
+  getFedPosts();

@@ -1,4 +1,4 @@
-import { Kafka, EachMessagePayload, CompressionTypes, CompressionCodecs } from "kafkajs";
+import { Kafka, EachMessagePayload, CompressionTypes, CompressionCodecs, EachBatchPayload } from "kafkajs";
 import { SnappyCodec } from "kafkajs-snappy-typescript";
 
 CompressionCodecs[CompressionTypes.Snappy] = new SnappyCodec().codec;
@@ -17,4 +17,4 @@ interface KafkaMessage {
   };
 }
 
-export { kafka, KafkaMessage };
+export { kafka, KafkaMessage, EachMessagePayload, EachBatchPayload };

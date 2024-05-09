@@ -40,7 +40,7 @@ app.use(
     secret: "supersecret",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24, secure: true, sameSite: 'none', httpOnly: true },
+    cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false, sameSite: 'none', httpOnly: false },
     store: new MemoryStore(),
     proxy: true
   })

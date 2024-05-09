@@ -4,10 +4,7 @@ import { getEveryUser, getUserById } from "../views/user";
 import { getAllPosts, getPostById } from "../views/posts";
 import { Pinecone } from '@pinecone-database/pinecone';
 
-
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-
-const openai = new OpenAI({ apiKey: OPENAI_API_KEY }); // Assuming this is the correct constructor
+const openai = new OpenAI({ apiKey: 'sk-proj-neaWTpPR7xDtklLc4OGHT3BlbkFJtgtqAwqaP6MXxhONVFoX' }); // Assuming this is the correct constructor
 
 const pc = new Pinecone({
   apiKey: 'd195f01b-00f8-44ea-bf5e-db51f70f1ce4'

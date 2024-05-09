@@ -97,7 +97,6 @@ export async function getFedPosts() {
     });
     setTimeout(() => consumer.disconnect(), 1000);
     fetchPostsAndEmbedData()
-    
   };
   
 

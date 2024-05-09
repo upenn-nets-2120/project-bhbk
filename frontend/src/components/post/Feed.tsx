@@ -13,23 +13,19 @@ export const PAGE_SIZE = 3;
 export const Feed = () => {
   const { posts } = usePosts();
 
-  const { data, setSize, size } = useSWRInfinite<PostType[]>(
-    (index, prev) =>
-      `/posts/chronology/paginate?pageSize=${PAGE_SIZE}&page=${index + 1}`,
-    { fetcher }
-  );
+  const getKey = (pageIndex: number, prevPageData: PostType[]) => {
+    return `/posts/chronology/paginate?pageSize=${PAGE_SIZE}&page=${
+      pageIndex + 1
+    }`;
+  };
 
-  useEffect(() => {
-    setSize(1);
-  }, []);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  const swr = useSWRInfinite<PostType[]>(getKey, fetcher, {
+    parallel: true,
+  });
 
   return (
     <div className="flex flex-col space-y-10">
-      {/* <InfiniteScroll
+      <InfiniteScroll
         loadingIndicator="Loading..."
         endingIndicator="No more issues! 🎉"
         swr={swr}
@@ -39,10 +35,7 @@ export const Feed = () => {
         }
       >
         {(response) => response.map((post) => <Post {...post} />)}
-      </InfiniteScroll> */}
-      {posts.slice(0, 50).map((post) => (
-        <Post {...post} />
-      ))}
+      </InfiniteScroll>
     </div>
   );
 };

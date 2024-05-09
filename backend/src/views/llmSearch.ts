@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { OpenAI } from 'openai';
-import { getEveryUser } from "../views/user";
-import { getAllPosts } from "../views/posts";
+import { getEveryUser, getUserById } from "../views/user";
+import { getAllPosts, getPostById } from "../views/posts";
 import { Pinecone } from '@pinecone-database/pinecone';
 
 
@@ -199,9 +199,9 @@ async function getGPTResponse(prompt: string) {
   console.log("Inputs:", prompt);
 
   const systemPrompt = `
-      Assistant is a bot designed to answer general queries that users ask within an 'Instagram' like
-      social media platform. The bot is designed to provide information about users, posts, and comments. 
-      The bot can also answer general knowledge questions as well. 
+      You are a bot designed to answer general queries that users ask within an 'Instagram' like
+      social media platform. You should provide information about users, posts, and comments. 
+      The bot are given access to user and post details. Use them as context to augment the responses. 
     `;
 
     const embeddingResponse = await openai.embeddings.create({
@@ -219,18 +219,31 @@ async function getGPTResponse(prompt: string) {
     console.log('User Results:', userResults);
     console.log('Post Results:', postResults);
 
-    // You might want to combine or process these results in some way before or after calling OpenAI
-    const combinedResults = { userResults: userResults, postResults: postResults };
+    const userRequests = userResults.matches.map(match => {
+      const id =  parseInt(match.id);
+
+      return getUserById(id);
+    })
+
+    const users = await Promise.all(userRequests);
+
+    const postsRequests = postResults.matches.map(match => {
+      const id =  parseInt(match.id);
+
+      return getPostById(id);
+    })
+
+    const postSearches = await Promise.all(postsRequests);
+
+    const combinedResults = { userResults: users, postResults: postSearches };
+
 
     // Optional: Enhance the prompt with data from Pinecone before sending to OpenAI
-    const enhancedPrompt = `${systemPrompt} Here are some user details: ${JSON.stringify(combinedResults.userResults)} and post details: ${JSON.stringify(combinedResults.postResults)}. What else can I help with?`;
+    const enhancedPrompt = `${systemPrompt} Here are some user details: ${JSON.stringify(combinedResults.userResults)} and post details: ${JSON.stringify(combinedResults.postResults)}. Your task is to formulate a summary of all this details and then use this as context to answe the user query. Al include the summary in your response and then answer the user query. Be concise!`;
 
     let results = '';
     try {
         results = await callOpenAI(enhancedPrompt, prompt, 0.5);
-        if (results) {
-            results = JSON.parse(results);
-        }
     } catch (e) {
         console.error(e);
     }

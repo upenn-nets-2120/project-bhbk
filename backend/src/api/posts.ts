@@ -51,13 +51,14 @@ router.get("/chronology", async (_, res, next) => {
 
 router.get("/chronology/paginate", async (req, res, next) => {
   try {
-    const page: number = parseInt(req.params.page);
 
-    const pageSize: number = parseInt(req.params.pageSize)
+    const page: number = parseInt(req.query.page as string);
 
-    const posts = await getPaginatedPostByChronology(pageSize, page);
+    const pageSize: number = parseInt(req.query.pageSize as string);
 
-    return res.status(200).json(posts);
+    const paginatedPosts = await getPaginatedPostByChronology(pageSize, page);
+
+    return res.status(200).json(paginatedPosts );
   } catch (error) {
     console.error(error);
     next(error);

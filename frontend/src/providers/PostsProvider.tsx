@@ -49,16 +49,6 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
   const [error, setError] = useState<string | undefined>();
   const [posts, setPosts] = useState<Post[]>([]);
 
-  const { data: fetchedPost } = useSWR<Post[]>("/posts/chronology", fetcher, {
-    refreshInterval: 2000,
-  });
-
-  const getAllPosts = async () => {
-    const { data: posts } = await api.get<Post[]>("/posts/chronology");
-
-    setPosts(posts);
-  };
-
   const uploadPost = async (post: Post) => {
     try {
       setIsMakingRequest(true);
@@ -68,8 +58,6 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
       setError(undefined);
 
       toast("Sucessfully uploaded post's content");
-
-      await getAllPosts();
 
       api.post("/search/upsertPosts");
 
@@ -102,8 +90,6 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
 
       toast("Sucessfully uploaded post's graphic");
 
-      await getAllPosts();
-
       return fileUrl;
     } catch (error: any | AxiosError) {
       setIsMakingRequest(false);
@@ -125,8 +111,6 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
 
       setIsMakingRequest(false);
 
-      await getAllPosts();
-
       toast("Sucessfully uploaded post's hashtags");
     } catch (error: any | AxiosError) {
       setIsMakingRequest(false);
@@ -137,12 +121,6 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
       }
     }
   };
-
-  useEffect(() => {
-    if (fetchedPost) {
-      setPosts(fetchedPost);
-    }
-  }, [fetchedPost]);
 
   const value = useMemo(
     () => ({

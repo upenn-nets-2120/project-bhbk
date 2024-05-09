@@ -25,11 +25,7 @@ router.post("/create", checkAuthentication, async (req, res, next) => {
 
     const createdPost = await createPost(newPost, userId);
 
-    try{
-      await pushFedPost(createdPost)
-    } catch(error) {
-      console.error(error)
-    }
+    pushFedPost(createdPost)
 
     return res.status(200).json(createdPost);
   } catch (error) {

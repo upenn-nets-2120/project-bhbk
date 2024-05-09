@@ -12,7 +12,7 @@ import { Toggle } from "../ui/toggle";
 import { FriendOption } from "./FriendOption";
 
 export const FriendsPanel = () => {
-  const { users, friendRecs } = useUser();
+  const { users, friendRecs, friends } = useUser();
   const [displayedUsers, setDisplayedUsers] = useState<User[]>([]);
   const [recommendedUsers, setRecommendedUsers] = useState<User[]>([]);
 
@@ -24,7 +24,11 @@ export const FriendsPanel = () => {
 
   useEffect(() => {
     if (friendRecs) {
-      setRecommendedUsers(friendRecs);
+      const friendIdsSet = new Set(friends.map((friend) => friend.id));
+      const filteredFriends = friendRecs.filter(
+        (friend) => !friendIdsSet.has(friend.id)
+      );
+      setRecommendedUsers(filteredFriends);
     }
   }, [friendRecs]);
 
@@ -63,9 +67,7 @@ export const FriendsPanel = () => {
       <div className="flex">
         {recommendedUsers.length > 0 && (
           <ScrollArea className="border rounded-md min-h-[200px] max-h-[500px] overflow-auto h-full w-full">
-            <div className="font-semibold px-3 pt-5">
-              People across InstaLite
-            </div>
+            <div className="font-semibold px-3 pt-5">Who you should follow</div>
             {recommendedUsers.map((user) => (
               <FriendOption key={user.username} user={user} />
             ))}

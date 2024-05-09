@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 chroma = "*"
 mysql-connector-python = "*"
+requests = "*"
+pyspark = "*"
 
 [dev-packages]
 

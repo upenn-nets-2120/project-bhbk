@@ -11,6 +11,7 @@ import {
   likePost,
   unlikePost,
 } from "../views/posts";
+import { pushFedPost, getFedPosts } from "../streams/communication"
 
 const router = express.Router();
 
@@ -24,6 +25,12 @@ router.post("/create", checkAuthentication, async (req, res, next) => {
 
     const createdPost = await createPost(newPost, userId);
 
+    try{
+      await pushFedPost(createdPost)
+    } catch(error) {
+      console.error(error)
+    }
+
     return res.status(200).json(createdPost);
   } catch (error) {
     console.error(error);
@@ -34,6 +41,12 @@ router.post("/create", checkAuthentication, async (req, res, next) => {
 router.get("/chronology", async (_, res, next) => {
   try {
     const posts = await getPostsByChronology();
+
+    try{
+      await getFedPosts()
+    } catch(error) {
+      console.error(error)
+    }
 
     return res.status(200).json(posts);
   } catch (error) {

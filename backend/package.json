@@ -44,6 +44,7 @@
     "express-ws": "^5.0.2",
     "helmet": "^7.1.0",
     "kafkajs": "^2.2.4",
+    "kafkajs-snappy-typescript": "^1.0.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.9.7",
@@ -72,7 +73,7 @@
     "nodemon": "^3.1.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
-    "tsx": "^4.7.2",
+    "tsx": "^4.9.3",
     "typescript": "^5.4.4"
   }
 }

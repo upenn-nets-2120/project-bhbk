@@ -38,7 +38,7 @@ app.use(
   session({
     secret: "supersecret",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false },
     store: new MemoryStore(),
     proxy: true

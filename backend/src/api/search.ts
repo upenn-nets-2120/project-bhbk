@@ -95,7 +95,7 @@ router.post("/directUserSearch", async (req, res, next) => {
 
     const users = await Promise.all(userRequests)
 
-    return res.status(200).json(users);
+    return res.status(200).json(users.filter(user => user !== undefined));
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("error fetching user", error);
@@ -116,7 +116,7 @@ router.post("/directPostSearch", async (req, res, next) => {
 
     const postSearches = await Promise.all(postsRequests);
 
-    return res.status(200).json(postSearches);
+    return res.status(200).json(postSearches.filter(post => post !== undefined));
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("error fetching post", error);

@@ -5,6 +5,7 @@ import {
   addCommentToPost,
   createPost,
   getCommentsOfPost,
+  getPaginatedPostByChronology,
   getPostsByChronology,
   getUsersByLikedPost,
   likePost,
@@ -33,6 +34,21 @@ router.post("/create", checkAuthentication, async (req, res, next) => {
 router.get("/chronology", async (_, res, next) => {
   try {
     const posts = await getPostsByChronology();
+
+    return res.status(200).json(posts);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+router.get("/chronology/paginate", async (req, res, next) => {
+  try {
+    const page: number = parseInt(req.params.page);
+
+    const pageSize: number = parseInt(req.params.pageSize)
+
+    const posts = await getPaginatedPostByChronology(pageSize, page);
 
     return res.status(200).json(posts);
   } catch (error) {

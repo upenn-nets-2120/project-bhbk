@@ -91,7 +91,7 @@ export const SearchBar = () => {
           <>
             <div className="py-2" />
             <div className="flex text-white bg-primary px-2 py-4 rounded-md space-x-2">
-              <HiSparkles className="w-[20px] h-[20px]" />
+              <HiSparkles size={50} />
               <div className="text-sm prose whitespace-pre-wrap">
                 {aiResponse}
               </div>
@@ -106,9 +106,13 @@ export const SearchBar = () => {
             </div>
             <ScrollArea className="w-full whitespace-nowrap rounded-md border border-primary">
               <div className="flex w-max space-x-4 p-4">
-                {userResults.map((user) => (
+                {userResults.map((user, index) => (
                   <div className="border rounded-md">
-                    <FriendOption key={user.username} user={user} noSep />
+                    <FriendOption
+                      key={user?.username || index}
+                      user={user}
+                      noSep
+                    />
                   </div>
                 ))}
               </div>

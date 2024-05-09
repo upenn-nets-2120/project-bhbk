@@ -120,6 +120,27 @@
       "when": 1715187156770,
       "tag": "0016_milky_viper",
       "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "5",
+      "when": 1715210925513,
+      "tag": "0017_skinny_carnage",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "5",
+      "when": 1715212150292,
+      "tag": "0018_jazzy_butterfly",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "5",
+      "when": 1715212587505,
+      "tag": "0019_blue_roughhouse",
+      "breakpoints": true
     }
   ]
 }

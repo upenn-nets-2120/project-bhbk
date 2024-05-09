@@ -244,9 +244,9 @@ async function getGPTResponse(prompt: string) {
     let results = '';
     try {
         results = await callOpenAI(enhancedPrompt, prompt, 0.5);
-        if (results) {
-            results = JSON.parse(results);
-        }
+
+
+        console.log(results);
     } catch (e) {
         console.error(e);
     }

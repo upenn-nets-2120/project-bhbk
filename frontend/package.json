@@ -35,6 +35,7 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
+    "react-swr-infinite-scroll": "^1.0.1",
     "sonner": "^1.4.41",
     "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",

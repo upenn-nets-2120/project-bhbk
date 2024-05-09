@@ -42,12 +42,6 @@ router.get("/chronology", async (_, res, next) => {
   try {
     const posts = await getPostsByChronology();
 
-    try{
-      await getFedPosts()
-    } catch(error) {
-      console.error(error)
-    }
-
     return res.status(200).json(posts);
   } catch (error) {
     console.error(error);

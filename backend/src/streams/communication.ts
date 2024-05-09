@@ -8,7 +8,7 @@ import { Partitioners } from "kafkajs";
 import { uploadHashtag } from "../views/hashtags"
 import { fetchPostsAndEmbedData } from "../views/llmSearch"
 
-const consumer = kafka.consumer({ groupId: "nets-2120-group-bhbk" });
+const consumer = kafka.consumer({ groupId: "nets-2120-group-59" });
 const producer = kafka.producer({createPartitioner: Partitioners.LegacyPartitioner});
 
 function generateRandomString(length: number): string {
@@ -35,8 +35,8 @@ export async function getFedPosts() {
       eachMessage: async ({ topic, partition, message }: KafkaMessage) => {
         try{
           if (message?.value) {
+            console.log(message.value.toString());
             const post = JSON.parse(message.value.toString());
-            console.log(post)
             const { post_json, attach } = post;
             let operativeJson = post_json
             if (!operativeJson) {
@@ -45,6 +45,10 @@ export async function getFedPosts() {
             console.log(operativeJson)
             const username: string = operativeJson.username
             const site: string = operativeJson.source_site.substring(1);
+
+            if (site == "g16") {
+              return;
+            }
 
             const foreignUser = await getForeignUser(username, site);
             let authorId;
@@ -91,7 +95,7 @@ export async function getFedPosts() {
         }
       },
     });
-    setTimeout(() => consumer.disconnect(), 800);
+    setTimeout(() => consumer.disconnect(), 1000);
     fetchPostsAndEmbedData()
     
   };

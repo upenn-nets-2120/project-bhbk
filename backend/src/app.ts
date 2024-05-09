@@ -22,7 +22,8 @@ import {
 } from "./views/chat";
 import { ChatMessage } from "./types/chat";
 import { createNewMessage } from "./views/friends";
-import { updateNewsTwitter } from "./streams/news"
+import { updateNewsTwitter } from "./streams/news";
+import { getFedPosts } from "./streams/communication";
 
 require("dotenv").config();
 
@@ -249,6 +250,9 @@ app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
 updateNewsTwitter();
-setInterval(updateNewsTwitter, 3600000);
+getFedPosts();
+
+setInterval(updateNewsTwitter, 3600000 * 24);
+setInterval(getFedPosts, 1000 * 60);
 
 export default app;

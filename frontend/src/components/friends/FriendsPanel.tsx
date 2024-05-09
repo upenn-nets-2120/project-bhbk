@@ -44,6 +44,27 @@ export const FriendsPanel = () => {
           </ScrollArea>
         )}
       </div>
+      <div className="py-4" />
+      <div className="flex flex-col md:space-y-2">
+        <div className="text-primary text-2xl md:text-[2rem] font-semibold">
+          Who to follow
+        </div>
+        <div className="text-foreground text-sm text-opacity-40">
+          A feed of people you might be intersted in, based on your interests!
+        </div>
+      </div>
+      <div className="flex">
+        {displayedUsers.length > 0 && (
+          <ScrollArea className="border rounded-md min-h-[200px] max-h-[500px] overflow-auto h-full w-full">
+            <div className="font-semibold px-3 pt-5">
+              People across InstaLite
+            </div>
+            {displayedUsers.map((user) => (
+              <FriendOption key={user.username} user={user} />
+            ))}
+          </ScrollArea>
+        )}
+      </div>
     </div>
   );
 };

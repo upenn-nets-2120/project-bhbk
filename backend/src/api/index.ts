@@ -6,6 +6,7 @@ import posts from "./posts";
 import hashtags from "./hashtags";
 import search from "./search";
 import friends from "./friends";
+import graph from "./graph"
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ router.use("/posts", posts);
 router.use("/hashtags", hashtags);
 router.use("/search", search);
 router.use("/friends", friends);
+router.use("/graph", graph);
 
 export default router;

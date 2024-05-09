@@ -36,6 +36,7 @@ interface UserContextProps {
   isMakingRequest: boolean;
   friends: User[];
   actorRecommendations: string[];
+  friendRecs: User[];
 }
 
 export const UserContext = createContext<UserContextProps | undefined>(
@@ -71,6 +72,7 @@ export const UserProvider: FC<UserProviderProps> = ({
   );
 
   const [users, setUsers] = useState<User[]>(initialUsers);
+  const [friendRecs, setFriendRecs] = useState<User[]>([]);
   const [friends, setFriends] = useState<User[]>([]);
 
   const [isLoggedIn, setIsLoggedIn] = useState(initialUser ? true : false);
@@ -88,11 +90,18 @@ export const UserProvider: FC<UserProviderProps> = ({
     fetcher,
     { refreshInterval: 2000 }
   );
+  
 
   const { data: allFriends, error: allFriendsError } = useSWR<User[]>(
     isLoggedIn ? "/friends/list" : null,
     fetcher,
     { refreshInterval: 1000 }
+  );
+
+  const { data: allFriendsRecs, error: allFriendsRecsError } = useSWR<User[]>(
+    isLoggedIn ? "/friends/friends_rec" : null,
+    fetcher,
+    { refreshInterval: 2000 }
   );
 
   const [isMakingRequest, setIsMakingRequest] = useState(false);
@@ -305,6 +314,17 @@ export const UserProvider: FC<UserProviderProps> = ({
   }, [user?.profileUrl]);
 
   useEffect(() => {
+    if (allFriendsRecsError) {
+      setFriendRecs([]);
+      return;
+    }
+
+    if (allFriendsRecs) {
+      setFriendRecs(allFriendsRecs)
+    }
+  }, [allFriendsRecs, allFriendsRecsError])
+
+  useEffect(() => {
     if (allUsersError) {
       setUsers([]);
       return;
@@ -360,6 +380,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       removeFriend,
       friends,
       setFriends,
+      friendRecs
     }),
     [
       user,
@@ -381,6 +402,7 @@ export const UserProvider: FC<UserProviderProps> = ({
       removeFriend,
       friends,
       setFriends,
+      friendRecs
     ]
   );
 

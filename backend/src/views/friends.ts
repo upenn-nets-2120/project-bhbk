@@ -1,5 +1,5 @@
-import { eq, and } from "drizzle-orm";
-import { chatMessages, userFriends, users } from "../database/schema";
+import { eq, and, asc } from "drizzle-orm";
+import { chatMessages, userFriends, users, friendRecommendations } from "../database/schema";
 import { db } from "../database/setup";
 import { ChatMessage } from "../types/chat";
 
@@ -79,6 +79,38 @@ export const getFriends = async (userId: number) => {
       inArray(
         user.id,
         friendIds.map((id) => id.friendId)
+      ),
+    columns: {
+      id: true,
+      username: true,
+      profileUrl: true,
+      linkedActor: true,
+      affiliation: true,
+      isOnline: true,
+    },
+  });
+
+  return friends;
+};
+
+export const getFriendRecommendations = async (userId: number) => {
+  const friendIds = await db.query.friendRecommendations.findMany({
+    where: eq(friendRecommendations.userId, userId),
+    columns: {
+      friendRecId: true,
+    },
+    orderBy: asc(friendRecommendations.rank),
+  });
+
+  if (friendIds.length <= 0) {
+    return [];
+  }
+
+  const friends = await db.query.users.findMany({
+    where: (user, { inArray }) =>
+      inArray(
+        user.id,
+        friendIds.map((id) => id.friendRecId)
       ),
     columns: {
       id: true,

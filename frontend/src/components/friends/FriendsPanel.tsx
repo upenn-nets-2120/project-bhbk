@@ -12,14 +12,21 @@ import { Toggle } from "../ui/toggle";
 import { FriendOption } from "./FriendOption";
 
 export const FriendsPanel = () => {
-  const { users } = useUser();
+  const { users, friendRecs } = useUser();
   const [displayedUsers, setDisplayedUsers] = useState<User[]>([]);
+  const [recommendedUsers, setRecommendedUsers] = useState<User[]>([]);
 
   useEffect(() => {
     if (users) {
       setDisplayedUsers(users);
     }
   }, [users]);
+
+  useEffect(() => {
+    if (friendRecs) {
+      setRecommendedUsers(friendRecs);
+    }
+  }, [friendRecs]);
 
   return (
     <div className="flex flex-col space-y-6">
@@ -54,12 +61,12 @@ export const FriendsPanel = () => {
         </div>
       </div>
       <div className="flex">
-        {displayedUsers.length > 0 && (
+        {recommendedUsers.length > 0 && (
           <ScrollArea className="border rounded-md min-h-[200px] max-h-[500px] overflow-auto h-full w-full">
             <div className="font-semibold px-3 pt-5">
               People across InstaLite
             </div>
-            {displayedUsers.map((user) => (
+            {recommendedUsers.map((user) => (
               <FriendOption key={user.username} user={user} />
             ))}
           </ScrollArea>

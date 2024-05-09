@@ -5,6 +5,8 @@ import { parseLocalTsv } from "../utils/tsv";
 import { searchImages } from "../views/imageSearch";
 
 import { getGPTResponse, fetchUsersAndEmbedData, fetchPostsAndEmbedData, directUserSearch, directPostSearch } from "../views/llmSearch";
+import { getPostById } from "../views/posts";
+import { getUserById } from "../views/user";
 
 const router = express.Router();
 
@@ -52,7 +54,7 @@ router.post("/llmsearch", async (req, res, next) => {
 
     console.log(`Processing search for query: ${query}`);
     const response = await getGPTResponse(query);
-    return res.send({ result: response });
+    return res.status(200).json(response);
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("Error during search: ", error);
@@ -84,7 +86,16 @@ router.post("/directUserSearch", async (req, res, next) => {
   try {
     const query = req.body.query; 
     const response = await directUserSearch(query);
-    return res.send({ result: response }); 
+
+    const userRequests = response.matches.map(match => {
+      const id =  parseInt(match.id);
+      
+      return getUserById(id);
+    })
+
+    const users = await Promise.all(userRequests)
+
+    return res.status(200).json(users.filter(user => user !== undefined));
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("error fetching user", error);
@@ -96,7 +107,16 @@ router.post("/directPostSearch", async (req, res, next) => {
   try {
     const query = req.body.query; 
     const response = await directPostSearch(query);
-    return res.send({ result: response }); 
+
+    const postsRequests = response.matches.map(match => {
+      const id =  parseInt(match.id);
+      
+      return getPostById(id);
+    })
+
+    const postSearches = await Promise.all(postsRequests);
+
+    return res.status(200).json(postSearches.filter(post => post !== undefined));
   } catch (error) {
     console.log(JSON.stringify(error));
     console.error("error fetching post", error);

@@ -71,6 +71,8 @@ export const PostsProvider: FC<PostsProviderProps> = ({ children }) => {
 
       await getAllPosts();
 
+      api.post("/search/upsertPosts");
+
       return newPost;
     } catch (error: any | AxiosError) {
       setIsMakingRequest(false);

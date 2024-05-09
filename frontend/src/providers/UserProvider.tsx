@@ -103,6 +103,7 @@ export const UserProvider: FC<UserProviderProps> = ({
     try {
       setIsMakingRequest(true);
       await api.post("/auth/sign-up", user);
+      api.post("/search/upsertUsers");
       router.push("/log-in");
       setIsMakingRequest(false);
       toast(

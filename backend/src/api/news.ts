@@ -1,14 +1,18 @@
 const express = require("express");
-const { Kafka, EachMessagePayload } = require("kafkajs");
+const { Kafka, EachMessagePayload, CompressionTypes, CompressionCodecs } = require("kafkajs");
+
+const SnappyCodec = require('kafkajs-snappy')
+
+CompressionCodecs[CompressionTypes.Snappy] = SnappyCodec
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: ["127.0.0.1:9092"],
 });
 
 const consumer = kafka.consumer({
   groupId: "nets-2120-group-a",
-  bootstrapServers: ["localhost:9092"],
+  bootstrapServers: ["127.0.0.1:9092"],
 });
 
 const kafka_messages = [];

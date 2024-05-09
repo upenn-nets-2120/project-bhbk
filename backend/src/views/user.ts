@@ -51,6 +51,14 @@ export const getUserById = async (userId: number) => {
   return user;
 };
 
+export const getForeignUser = async (username: string, affiliation: string) => {
+  const user = await db.query.users.findFirst({
+    where: eq(users.username, username) && eq(users.affiliation, affiliation),
+  })
+
+  return user;
+}
+
 export const getEveryUser = async () => {
   const everyUser = await db.query.users.findMany({
     columns: {

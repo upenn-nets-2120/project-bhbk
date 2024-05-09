@@ -34,7 +34,7 @@ export const users = mysqlTable(
 
 export const posts = mysqlTable("posts", {
   id: int("id").primaryKey().autoincrement(),
-  imageUrl: varchar("imageUrl", { length: 256 }),
+  imageUrl: varchar("imageUrl", { length: 1000 }),
   text: text("text"),
   authorId: int("authorId").references(() => users.id, { onDelete: "cascade" }),
   createdAt: timestamp("createdAt").defaultNow(),
@@ -52,7 +52,7 @@ export const comments = mysqlTable("comments", {
 
 export const hashtags = mysqlTable("hashtags", {
   id: int("id").primaryKey().autoincrement(),
-  content: varchar("content", { length: 2048 }),
+  content: varchar("content", { length: 5000 }),
   createdAt: timestamp("createdAt").defaultNow(),
   updatedAt: timestamp("updatedAt").defaultNow(),
   count: int("count").default(0).notNull(),
@@ -61,13 +61,11 @@ export const hashtags = mysqlTable("hashtags", {
 export const postLikes = mysqlTable(
   "posts_likes",
   {
+    id: int("id").primaryKey().autoincrement(),
     postId: int("postId").references(() => posts.id),
     userId: int("userId").references(() => users.id),
     likedAt: timestamp("likedAt").defaultNow(),
-  },
-  (postLikes) => ({
-    primaryKey: ["postId", "userId"],
-  })
+  }
 );
 
 export const chats = mysqlTable("chats", {

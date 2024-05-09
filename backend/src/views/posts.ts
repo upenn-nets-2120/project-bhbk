@@ -53,6 +53,17 @@ export const deletePost = async (postId: number) => {
 export const getPostById = async (postId: number) => {
   const selectedPost = await db.query.posts.findFirst({
     where: eq(posts.id, postId),
+    with: {
+      author: {
+        columns: {
+          id: true,
+          username: true,
+          profileUrl: true,
+          affiliation: true,
+          linkedActor: true,
+        }
+      }
+    }
   });
   return selectedPost;
 };
@@ -86,6 +97,27 @@ export const getPostsByChronology = async () => {
 
   return post;
 };
+
+export const getPaginatedPostByChronology = async (pageSize: number, page: number) => {
+  const post = await db.query.posts.findMany({
+    orderBy: [desc(posts.createdAt)],
+    limit: pageSize,
+    offset: (page - 1) * pageSize,
+    with: {
+      author: {
+        columns: {
+          id: true,
+          username: true,
+          profileUrl: true,
+          affiliation: true,
+          linkedActor: true,
+        },
+      },
+    },
+  });
+
+  return post;
+}
 
 export const getHashtagsByPostId = async (postId: number) => {
   const hashtagPosts = await db.query.postsToHashtags.findMany({

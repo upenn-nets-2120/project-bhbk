@@ -33,6 +33,7 @@ const MemoryStore = session.MemoryStore;
 
 app.use(morgan("dev"));
 app.use(helmet());
+app.set('trust proxy', 1);
 app.use(cookieParser());
 app.use(
   session({

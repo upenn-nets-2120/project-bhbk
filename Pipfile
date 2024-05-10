@@ -8,6 +8,7 @@ chroma = "*"
 mysql-connector-python = "*"
 requests = "*"
 pyspark = "*"
+graphframes = "*"
 
 [dev-packages]
 

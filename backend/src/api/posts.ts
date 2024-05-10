@@ -6,6 +6,7 @@ import {
   createPost,
   getCommentsOfPost,
   getPaginatedPostByChronology,
+  getPaginatedPostRecs,
   getPostsByChronology,
   getUsersByLikedPost,
   likePost,
@@ -55,6 +56,48 @@ router.get("/chronology/paginate", async (req, res, next) => {
     const paginatedPosts = await getPaginatedPostByChronology(pageSize, page);
 
     return res.status(200).json(paginatedPosts );
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+router.get("/blended/paginate", async (req, res, next) => {
+  try {
+
+    const page: number = parseInt(req.query.page as string);
+
+    const pageSize: number = parseInt(req.query.pageSize as string);
+
+    const userId: number = req.session.user?.id;
+
+    const paginatedPostsChrono = await getPaginatedPostByChronology(pageSize, page);
+
+    const paginatedPostsRecs = userId ? await getPaginatedPostRecs(pageSize, page, userId) : [];
+
+    const l = Math.min(paginatedPostsChrono.length, paginatedPostsRecs.length);
+
+    const blendedPosts = [].concat(...Array.from({ length: l }, (_, i) => [paginatedPostsChrono[i], paginatedPostsRecs[i]]), paginatedPostsChrono.slice(l), paginatedPostsRecs.slice(l));
+
+    return res.status(200).json(blendedPosts);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+router.get("/recommendations/paginate", async (req, res, next) => {
+  try {
+
+    const page: number = parseInt(req.query.page as string);
+
+    const pageSize: number = parseInt(req.query.pageSize as string);
+
+    const userId: number = req.session.user.id;
+  
+    const paginatedPosts = await getPaginatedPostRecs(pageSize, page, userId);
+
+    return res.status(200).json(paginatedPosts);
   } catch (error) {
     console.error(error);
     next(error);

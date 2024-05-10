@@ -159,7 +159,7 @@ async function getOpenAICompletion(
   await checkRequiredEnvVars(["OPENAI_API_KEY"]);
 
   try {
-    const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
+    const openai = new OpenAI({ apiKey: 'sk-proj-neaWTpPR7xDtklLc4OGHT3BlbkFJtgtqAwqaP6MXxhONVFoX' });
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       max_tokens: 1024,

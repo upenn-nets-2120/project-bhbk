@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = process.env.NODE_ENV === 'production' ? "http://54.84.157.10:8000" : "http://localhost:8000";
+export const BASE_URL = process.env.NODE_ENV === 'production' ? "http://100.25.138.192:8000" : "http://localhost:8000";
 
 export const api = axios.create({
   baseURL: `${BASE_URL}/api`,

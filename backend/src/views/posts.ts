@@ -4,6 +4,7 @@ import {
   postLikes,
   comments,
   postsToHashtags,
+  postRecommendations,
 } from "../database/schema";
 import { NewPost, UpdatePost } from "../types/post";
 import { sql, desc, eq, and } from "drizzle-orm";
@@ -117,6 +118,23 @@ export const getPaginatedPostByChronology = async (pageSize: number, page: numbe
   });
 
   return post;
+}
+
+export const getPaginatedPostRecs = async (pageSize: number, page: number, userId: number) => {
+  const postIds = await db.query.postRecommendations.findMany({
+    where: eq(postRecommendations.userId, userId),
+    orderBy: desc(postRecommendations.rank),
+    limit: pageSize,
+    offset: (page - 1) * pageSize,
+  })
+
+  const postRecsRequests = postIds.map(postId => {
+    return getPostById(postId.postId);
+  })
+
+  const postRecs = await Promise.all(postRecsRequests);
+
+  return postRecs;
 }
 
 export const getHashtagsByPostId = async (postId: number) => {

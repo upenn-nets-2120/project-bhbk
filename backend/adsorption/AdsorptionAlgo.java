@@ -100,7 +100,7 @@ public class AdsorptionAlgo implements Job<Tuple2<List<MyPair<String, Tuple2<Str
             
             JavaPairRDD<String,Double> totalRanks = newRanks
                 .mapToPair(x->new Tuple2<String,Double>(x._1,x._2._2))
-                .reduceByKey((a,b)->a+b);
+                .reduceByKey( (a,b)->a+b);
             
             newRanks = newRanks
                 .join(totalRanks)

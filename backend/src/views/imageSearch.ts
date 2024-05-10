@@ -131,7 +131,7 @@ const indexData = async (collection: any) => {
 };
 
 export const searchImages = async (imageURL: string) => {
-  const client = new ChromaClient({ path: "http://localhost:3030" });
+  const client = new ChromaClient({ path: "http://100.25.138.192:3030" });
   await initializeFaceModels();
 
   const collection = await client.getOrCreateCollection({

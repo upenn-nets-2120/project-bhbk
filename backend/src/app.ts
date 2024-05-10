@@ -256,10 +256,15 @@ app.use("/api", api);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-// updateNewsTwitter();
-// getFedPosts();
+try {
+  updateNewsTwitter();
+  getFedPosts();
 
-// setInterval(updateNewsTwitter, 3600000 * 24);
-// setInterval(getFedPosts, 1000 * 60);
+  setInterval(updateNewsTwitter, 3600000 * 24);
+  setInterval(getFedPosts, 1000 * 60);
+
+} catch (error) {
+  console.error(error)
+}
 
 export default app;

@@ -9,6 +9,9 @@ import {
   uniqueIndex,
   boolean,
   primaryKey,
+  decimal,
+  float,
+  double
 } from "drizzle-orm/mysql-core";
 import { relations } from "drizzle-orm";
 
@@ -158,8 +161,7 @@ export const friendRecommendations = mysqlTable(
     friendRecId: int("friend_rec_id")
     .notNull()
     .references(() => users.id),
-    rank: int("rank")
-    .notNull(),
+    rank: decimal('rank', { precision: 20, scale: 10 }).$type<number>().notNull(),
   }, 
   (t) => {
     return {
@@ -177,8 +179,7 @@ export const postRecommendations = mysqlTable(
     postId: int("post_id")
     .notNull()
     .references(() => posts.id),
-    rank: int("rank")
-    .notNull(),
+    rank: decimal('rank', { precision: 20, scale: 10 }).$type<number>().notNull(),
   }, 
   (t) => {
     return {

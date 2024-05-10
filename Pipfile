@@ -9,6 +9,9 @@ mysql-connector-python = "*"
 requests = "*"
 pyspark = "*"
 graphframes = "*"
+pandas = "*"
+findspark = "*"
+schedule = "*"
 
 [dev-packages]
 
